@@ -1,10 +1,10 @@
-#ifndef PLAYER_HPP
-#define PLAYER_HPP
+#ifndef COMMON_HPP
+#define COMMON_HPP
 
 #include <string>
 #include <vector>
 
-namespace player {
+namespace common {
 
 enum class position {
   POINT_GUARD,
@@ -41,6 +41,6 @@ struct team {
   int m_id;
   std::vector<player> m_players;
 };
-} // namespace player
+} // namespace common
 
 #endif

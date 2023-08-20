@@ -1,10 +1,10 @@
 #include "settings.hpp"
 
-#include "player.hpp"
+#include "common.hpp"
 
 #include <vector>
 
-bool settings::verify(const std::vector<player::team> &league) {
+bool settings::verify(const std::vector<common::team> &league) {
   if (league.size() != g_k_league_size) {
     return false;
   } else {

@@ -1,4 +1,4 @@
-#include "player.hpp"
+#include "common.hpp"
 #include "scoring.hpp"
 #include "settings.hpp"
 

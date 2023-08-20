@@ -1,7 +1,7 @@
 #ifndef SCORING_HPP
 #define SCORING_HPP
 
-#include "player.hpp"
+#include "common.hpp"
 #include "settings.hpp"
 
 #include <vector>
@@ -12,17 +12,27 @@ struct result {
   int m_score;
 };
 
-std::vector<result> score_league(const std::vector<player::team> &league);
+std::vector<result> score_league(const std::vector<common::team> &league);
 
 namespace impl {
 
-struct team_stats {
-  int m_id;
-  player::stats m_stats;
+struct stats {
+  double m_points;
+  double m_rebounds;
+  double m_assists;
+  double m_steals;
+  double m_blocks;
+  double m_threes;
+  double m_field_goals;
+  double m_free_throws;
 };
 
-struct scorecard {
-  int m_total;
+struct team_stats {
+  int m_id;
+  stats m_stats;
+};
+
+struct ranks {
   int m_points;
   int m_rebounds;
   int m_assists;
@@ -33,16 +43,36 @@ struct scorecard {
   int m_free_throws;
 };
 
-struct team_score {
+struct team_ranks {
   int m_id;
-  scorecard m_scorecard;
+  ranks m_ranks;
 };
 
-std::vector<result> score_league(const std::vector<player::team> &league);
+struct scores {
+  int m_points;
+  int m_rebounds;
+  int m_assists;
+  int m_steals;
+  int m_blocks;
+  int m_threes;
+  int m_field_goals;
+  int m_free_throws;
+};
 
-std::vector<team_stats> sum_team_stats(const std::vector<player::team> &league);
+struct team_scores {
+  int m_id;
+  scores m_scores;
+};
 
-constexpr int get_points_for_rank(const int rank);
+std::vector<result> score_league(const std::vector<common::team> &league);
+
+std::vector<team_stats>
+calc_team_stats(const std::vector<common::team> &league);
+
+std::vector<team_ranks> calc_team_ranks(const std::vector<team_stats> &league);
+
+std::vector<team_scores>
+calc_team_scores(const std::vector<team_ranks> &league);
 } // namespace impl
 } // namespace scoring
 
