@@ -1,7 +1,6 @@
 #include "scoring.hpp"
 
 #include "common.hpp"
-#include "settings.hpp"
 
 #include <algorithm>
 #include <exception>
@@ -10,27 +9,22 @@
 #include <type_traits>
 #include <vector>
 
-std::vector<scoring::result>
-scoring::score_league(const std::vector<common::team> &league) {
+common::league_array<scoring::result>
+scoring::score_league(const common::league_array<common::team> &league) {
   return impl::score_league(league);
 }
 
-std::vector<scoring::result>
-scoring::impl::score_league(const std::vector<common::team> &league) {
-  if (settings::verify(league) == false) {
-    throw std::runtime_error{"league/team size differs from global setting"};
-  }
-
+common::league_array<scoring::result>
+scoring::impl::score_league(const common::league_array<common::team> &league) {
   // TODO sum scores
 }
 
-std::vector<scoring::impl::team_stats>
-scoring::impl::calc_team_stats(const std::vector<common::team> &league) {
-  std::vector<team_stats> ret_val{};
-  ret_val.reserve(league.size());
+common::league_array<scoring::impl::team_stats> scoring::impl::calc_team_stats(
+    const common::league_array<common::team> &league) {
+  common::league_array<team_stats> ret_val{};
 
-  for (auto p_team{league.begin()}; p_team != league.end(); ++p_team) {
-    ret_val.emplace_back(p_team->m_id, stats{});
+  for (std::size_t i_team{0}; i_team < league.size(); ++i_team) {
+    ret_val[i_team] = {league[i_team].m_id, stats{}};
 
     double field_goals_made_temp{};
     double field_goals_attempted_temp{};
@@ -38,14 +32,14 @@ scoring::impl::calc_team_stats(const std::vector<common::team> &league) {
     double free_throws_made_temp{};
     double free_throws_attempted_temp{};
 
-    for (auto p_player{p_team->m_players.begin()};
-         p_player != p_team->m_players.end(); ++p_player) {
-      ret_val.back().m_stats.m_points += p_player->m_stats.m_points;
-      ret_val.back().m_stats.m_rebounds += p_player->m_stats.m_rebounds;
-      ret_val.back().m_stats.m_assists += p_player->m_stats.m_assists;
-      ret_val.back().m_stats.m_steals += p_player->m_stats.m_steals;
-      ret_val.back().m_stats.m_blocks += p_player->m_stats.m_blocks;
-      ret_val.back().m_stats.m_threes += p_player->m_stats.m_threes;
+    for (auto p_player{league[i_team].m_players.begin()};
+         p_player != league[i_team].m_players.end(); ++p_player) {
+      ret_val[i_team].m_stats.m_points += p_player->m_stats.m_points;
+      ret_val[i_team].m_stats.m_rebounds += p_player->m_stats.m_rebounds;
+      ret_val[i_team].m_stats.m_assists += p_player->m_stats.m_assists;
+      ret_val[i_team].m_stats.m_steals += p_player->m_stats.m_steals;
+      ret_val[i_team].m_stats.m_blocks += p_player->m_stats.m_blocks;
+      ret_val[i_team].m_stats.m_threes += p_player->m_stats.m_threes;
 
       // ret_val.back().m_stats.m_field_goals_made +=
       //     p_player->m_stats.m_field_goals_made;
@@ -62,24 +56,23 @@ scoring::impl::calc_team_stats(const std::vector<common::team> &league) {
       free_throws_attempted_temp += p_player->m_stats.m_free_throws_attempted;
     }
 
-    ret_val.back().m_stats.m_field_goals =
+    ret_val[i_team].m_stats.m_field_goals =
         (field_goals_made_temp / field_goals_attempted_temp);
-    ret_val.back().m_stats.m_free_throws =
+    ret_val[i_team].m_stats.m_free_throws =
         (free_throws_made_temp / free_throws_attempted_temp);
   }
 
   return ret_val;
 }
 
-std::vector<scoring::impl::team_ranks>
-scoring::impl::calc_team_ranks(const std::vector<team_stats> &league) {
-  std::vector<team_ranks> ret_val{};
-  ret_val.reserve(league.size());
-  for (auto p_team{league.begin()}; p_team != league.end(); ++p_team) {
-    ret_val.emplace_back(p_team->m_id, ranks{});
+common::league_array<scoring::impl::team_ranks>
+scoring::impl::calc_team_ranks(const common::league_array<team_stats> &league) {
+  common::league_array<team_ranks> ret_val{};
+  for (std::size_t i_team{0}; i_team != league.size(); ++i_team) {
+    ret_val[i_team].m_id = league[i_team].m_id;
   }
 
-  std::vector<size_t> indices(league.size());
+  common::league_array<std::size_t> indices{};
   std::iota(indices.begin(), indices.end(), 0);
 
   auto do_calc_team_ranks{
@@ -94,8 +87,8 @@ scoring::impl::calc_team_ranks(const std::vector<team_stats> &league) {
           t_struct_member_access_helper_ranks struct_member_access_helper_ranks)
           ->void{std::sort(
               indices.begin(), indices.end(),
-              [&league, &struct_member_access_helper_stats](size_t i,
-                                                            size_t j) -> bool {
+              [&league, &struct_member_access_helper_stats](
+                  std::size_t i, std::size_t j) -> bool {
                 return (struct_member_access_helper_stats(league[i].m_stats) >
                         struct_member_access_helper_stats(league[j].m_stats));
               });
@@ -103,7 +96,6 @@ scoring::impl::calc_team_ranks(const std::vector<team_stats> &league) {
   int rank{1};
   for (auto p_index{indices.begin()}; p_index != indices.end();
        ++p_index, ++rank) {
-    ret_val[*p_index].m_ranks.m_points = rank;
     struct_member_access_helper_ranks(ret_val[*p_index].m_ranks) = rank;
   }
 }
@@ -146,33 +138,78 @@ do_calc_team_ranks(([](const stats &s) -> const double & {
 return ret_val;
 }
 
-std::vector<scoring::impl::team_scores>
-scoring::impl::calc_team_scores(const std::vector<team_ranks> &league) {
-  std::vector<team_scores> ret_val{};
-  ret_val.reserve(league.size());
+common::league_array<scoring::impl::team_scores>
+scoring::impl::calc_team_scores(
+    const common::league_array<team_ranks> &league) {
+  common::league_array<team_scores> ret_val{};
 
   constexpr auto get_points_for_rank{[](const int rank) -> int {
-    return (settings::g_k_league_size - (rank - 1));
+    return (common::g_k_league_size - (rank - 1));
   }};
 
-  for (auto p_team{league.begin()}; p_team != league.end(); ++p_team) {
-    ret_val.emplace_back(p_team->m_id, scores{});
-    ret_val.back().m_scores.m_points =
-        get_points_for_rank(p_team->m_ranks.m_points);
-    ret_val.back().m_scores.m_rebounds =
-        get_points_for_rank(p_team->m_ranks.m_rebounds);
-    ret_val.back().m_scores.m_assists =
-        get_points_for_rank(p_team->m_ranks.m_assists);
-    ret_val.back().m_scores.m_steals =
-        get_points_for_rank(p_team->m_ranks.m_steals);
-    ret_val.back().m_scores.m_blocks =
-        get_points_for_rank(p_team->m_ranks.m_blocks);
-    ret_val.back().m_scores.m_threes =
-        get_points_for_rank(p_team->m_ranks.m_threes);
-    ret_val.back().m_scores.m_field_goals =
-        get_points_for_rank(p_team->m_ranks.m_field_goals);
-    ret_val.back().m_scores.m_free_throws =
-        get_points_for_rank(p_team->m_ranks.m_free_throws);
+  for (std::size_t i_team{0}; i_team < league.size(); ++i_team) {
+    ret_val[i_team] = {league[i_team].m_id, scores{}};
+    ret_val[i_team].m_scores.m_points =
+        get_points_for_rank(league[i_team].m_ranks.m_points);
+    ret_val[i_team].m_scores.m_rebounds =
+        get_points_for_rank(league[i_team].m_ranks.m_rebounds);
+    ret_val[i_team].m_scores.m_assists =
+        get_points_for_rank(league[i_team].m_ranks.m_assists);
+    ret_val[i_team].m_scores.m_steals =
+        get_points_for_rank(league[i_team].m_ranks.m_steals);
+    ret_val[i_team].m_scores.m_blocks =
+        get_points_for_rank(league[i_team].m_ranks.m_blocks);
+    ret_val[i_team].m_scores.m_threes =
+        get_points_for_rank(league[i_team].m_ranks.m_threes);
+    ret_val[i_team].m_scores.m_field_goals =
+        get_points_for_rank(league[i_team].m_ranks.m_field_goals);
+    ret_val[i_team].m_scores.m_free_throws =
+        get_points_for_rank(league[i_team].m_ranks.m_free_throws);
+  }
+
+  return ret_val;
+}
+
+common::league_array<scoring::impl::team_total_score>
+scoring::impl::calc_team_total_score(
+    const common::league_array<team_scores> &league) {
+  common::league_array<team_total_score> ret_val{};
+
+  for (std::size_t i_team{0}; i_team < league.size(); ++i_team) {
+    ret_val[i_team].m_id = league[i_team].m_id;
+    ret_val[i_team].m_total_score += league[i_team].m_scores.m_points;
+    ret_val[i_team].m_total_score += league[i_team].m_scores.m_rebounds;
+    ret_val[i_team].m_total_score += league[i_team].m_scores.m_assists;
+    ret_val[i_team].m_total_score += league[i_team].m_scores.m_steals;
+    ret_val[i_team].m_total_score += league[i_team].m_scores.m_blocks;
+    ret_val[i_team].m_total_score += league[i_team].m_scores.m_threes;
+    ret_val[i_team].m_total_score += league[i_team].m_scores.m_field_goals;
+    ret_val[i_team].m_total_score += league[i_team].m_scores.m_free_throws;
+  }
+
+  return ret_val;
+}
+
+common::league_array<scoring::impl::team_total_rank>
+scoring::impl::calc_team_total_rank(
+    const common::league_array<team_total_score> &league) {
+  common::league_array<team_total_rank> ret_val{};
+  for (std::size_t i_team{0}; i_team < league.size(); ++i_team) {
+    ret_val[i_team].m_id = league[i_team].m_id;
+  }
+
+  common::league_array<std::size_t> indices{};
+  std::iota(indices.begin(), indices.end(), 0);
+
+  std::sort(indices.begin(), indices.end(),
+            [&league](std::size_t i, std::size_t j) -> bool {
+              return ((league[i].m_total_score) > (league[j].m_total_score));
+            });
+
+  int rank{1};
+  for (auto p_index{indices.begin()}; p_index != indices.end();
+       ++p_index, ++rank) {
+    ret_val[*p_index].m_total_rank = rank;
   }
 
   return ret_val;

@@ -2,9 +2,8 @@
 #define SCORING_HPP
 
 #include "common.hpp"
-#include "settings.hpp"
 
-#include <vector>
+#include <array>
 
 namespace scoring {
 struct result {
@@ -12,7 +11,8 @@ struct result {
   int m_score;
 };
 
-std::vector<result> score_league(const std::vector<common::team> &league);
+common::league_array<result>
+score_league(const common::league_array<common::team> &league);
 
 namespace impl {
 
@@ -64,15 +64,33 @@ struct team_scores {
   scores m_scores;
 };
 
-std::vector<result> score_league(const std::vector<common::team> &league);
+struct team_total_score {
+  int m_id;
+  int m_total_score;
+};
 
-std::vector<team_stats>
-calc_team_stats(const std::vector<common::team> &league);
+struct team_total_rank {
+  int m_id;
+  int m_total_rank;
+};
 
-std::vector<team_ranks> calc_team_ranks(const std::vector<team_stats> &league);
+common::league_array<result>
+score_league(const common::league_array<common::team> &league);
 
-std::vector<team_scores>
-calc_team_scores(const std::vector<team_ranks> &league);
+common::league_array<team_stats>
+calc_team_stats(const common::league_array<common::team> &league);
+
+common::league_array<team_ranks>
+calc_team_ranks(const common::league_array<team_stats> &league);
+
+common::league_array<team_scores>
+calc_team_scores(const common::league_array<team_ranks> &league);
+
+common::league_array<team_total_score>
+calc_team_total_score(const common::league_array<team_scores> &league);
+
+common::league_array<team_total_rank> calc_team_total_rank(
+    const common::league_array<team_total_score> &league); // TODO
 } // namespace impl
 } // namespace scoring
 

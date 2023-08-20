@@ -1,10 +1,17 @@
 #ifndef COMMON_HPP
 #define COMMON_HPP
 
+#include <array>
 #include <string>
 #include <vector>
 
 namespace common {
+
+static constexpr int g_k_team_size{10};
+static constexpr int g_k_league_size{12};
+
+template <typename T> using league_array = std::array<T, g_k_league_size>;
+template <typename T> using team_array = std::array<T, g_k_team_size>;
 
 enum class position {
   POINT_GUARD,
@@ -39,8 +46,9 @@ struct player {
 
 struct team {
   int m_id;
-  std::vector<player> m_players;
+  team_array<player> m_players;
 };
+
 } // namespace common
 
 #endif
