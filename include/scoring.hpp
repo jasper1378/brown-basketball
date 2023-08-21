@@ -4,17 +4,17 @@
 #include "common.hpp"
 
 #include <array>
+#include <variant>
 
 namespace scoring {
-struct result {
-  int m_id;
-  int m_score;
+
+enum class return_value_type {
+  TEAM_STATS,
+  TEAM_RANKS,
+  TEAM_SCORES,
+  TEAM_TOTAL_SCORE,
+  TEAM_TOTAL_RANK,
 };
-
-common::league_array<result>
-score_league(const common::league_array<common::team> &league);
-
-namespace impl {
 
 struct stats {
   double m_points;
@@ -74,8 +74,21 @@ struct team_total_rank {
   int m_total_rank;
 };
 
-common::league_array<result>
-score_league(const common::league_array<common::team> &league);
+std::variant<common::league_array<team_stats>, common::league_array<team_ranks>,
+             common::league_array<team_scores>,
+             common::league_array<team_total_score>,
+             common::league_array<team_total_rank>>
+score_league(const common::league_array<common::team> &league,
+             return_value_type ret_val);
+
+namespace impl {
+
+std::variant<common::league_array<team_stats>, common::league_array<team_ranks>,
+             common::league_array<team_scores>,
+             common::league_array<team_total_score>,
+             common::league_array<team_total_rank>>
+score_league(const common::league_array<common::team> &league,
+             return_value_type ret_val);
 
 common::league_array<team_stats>
 calc_team_stats(const common::league_array<common::team> &league);
@@ -89,8 +102,8 @@ calc_team_scores(const common::league_array<team_ranks> &league);
 common::league_array<team_total_score>
 calc_team_total_score(const common::league_array<team_scores> &league);
 
-common::league_array<team_total_rank> calc_team_total_rank(
-    const common::league_array<team_total_score> &league); // TODO
+common::league_array<team_total_rank>
+calc_team_total_rank(const common::league_array<team_total_score> &league);
 } // namespace impl
 } // namespace scoring
 
