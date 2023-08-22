@@ -3,7 +3,6 @@
 
 #include "common.hpp"
 
-#include <array>
 #include <variant>
 
 namespace scoring {
