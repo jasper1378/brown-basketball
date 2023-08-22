@@ -7,7 +7,7 @@
 #include <numeric>
 #include <stdexcept>
 #include <type_traits>
-#include <vector>
+#include <variant>
 
 std::variant<common::league_array<scoring::team_stats>,
              common::league_array<scoring::team_ranks>,
