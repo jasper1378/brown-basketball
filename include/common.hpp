@@ -9,11 +9,10 @@ namespace common {
 
 static constexpr int g_k_team_size{10};
 static constexpr int g_k_league_size{12};
-
-template <typename T> using league_array = std::array<T, g_k_league_size>;
-template <typename T> using team_array = std::array<T, g_k_team_size>;
+static constexpr int g_k_player_count{g_k_team_size * g_k_league_size};
 
 enum class position {
+  NONE,
   POINT_GUARD,
   SHOOTING_GUARD,
   SMALL_FORWARD,
@@ -46,7 +45,7 @@ struct player {
 
 struct team {
   int m_id;
-  team_array<player> m_players;
+  std::array<player, g_k_team_size> m_players;
 };
 
 } // namespace common

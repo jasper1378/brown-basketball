@@ -9,48 +9,51 @@
 #include <type_traits>
 #include <variant>
 
-std::variant<common::league_array<scoring::team_stats>,
-             common::league_array<scoring::team_ranks>,
-             common::league_array<scoring::team_scores>,
-             common::league_array<scoring::team_total_score>,
-             common::league_array<scoring::team_total_rank>>
-scoring::score_league(const common::league_array<common::team> &league,
-                      return_value_type ret_val) {
+std::variant<std::array<scoring::team_stats, common::g_k_league_size>,
+             std::array<scoring::team_ranks, common::g_k_league_size>,
+             std::array<scoring::team_scores, common::g_k_league_size>,
+             std::array<scoring::team_total_score, common::g_k_league_size>,
+             std::array<scoring::team_total_rank, common::g_k_league_size>>
+scoring::score_league(
+    const std::array<common::team, common::g_k_league_size> &league,
+    return_value_type ret_val) {
   return impl::score_league(league, ret_val);
 }
 
-std::variant<common::league_array<scoring::team_stats>,
-             common::league_array<scoring::team_ranks>,
-             common::league_array<scoring::team_scores>,
-             common::league_array<scoring::team_total_score>,
-             common::league_array<scoring::team_total_rank>>
-scoring::impl::score_league(const common::league_array<common::team> &league,
-                            return_value_type ret_val) {
+std::variant<std::array<scoring::team_stats, common::g_k_league_size>,
+             std::array<scoring::team_ranks, common::g_k_league_size>,
+             std::array<scoring::team_scores, common::g_k_league_size>,
+             std::array<scoring::team_total_score, common::g_k_league_size>,
+             std::array<scoring::team_total_rank, common::g_k_league_size>>
+scoring::impl::score_league(
+    const std::array<common::team, common::g_k_league_size> &league,
+    return_value_type ret_val) {
 
-  common::league_array<team_stats> step1_team_stats{calc_team_stats(league)};
+  std::array<team_stats, common::g_k_league_size> step1_team_stats{
+      calc_team_stats(league)};
   if (ret_val == return_value_type::TEAM_STATS) {
     return step1_team_stats;
   }
 
-  common::league_array<team_ranks> step2_team_ranks{
+  std::array<team_ranks, common::g_k_league_size> step2_team_ranks{
       calc_team_ranks(step1_team_stats)};
   if (ret_val == return_value_type::TEAM_RANKS) {
     return step2_team_ranks;
   }
 
-  common::league_array<team_scores> step3_team_scores{
+  std::array<team_scores, common::g_k_league_size> step3_team_scores{
       calc_team_scores(step2_team_ranks)};
   if (ret_val == return_value_type::TEAM_SCORES) {
     return step3_team_scores;
   }
 
-  common::league_array<team_total_score> step4_team_total_score{
+  std::array<team_total_score, common::g_k_league_size> step4_team_total_score{
       calc_team_total_score(step3_team_scores)};
   if (ret_val == return_value_type::TEAM_TOTAL_SCORE) {
     return step4_team_total_score;
   }
 
-  common::league_array<team_total_rank> step5_team_total_rank{
+  std::array<team_total_rank, common::g_k_league_size> step5_team_total_rank{
       calc_team_total_rank(step4_team_total_score)};
   if (ret_val == return_value_type::TEAM_TOTAL_RANK) {
     return step5_team_total_rank;
@@ -59,9 +62,10 @@ scoring::impl::score_league(const common::league_array<common::team> &league,
   throw std::runtime_error{"impossible!"};
 }
 
-common::league_array<scoring::team_stats> scoring::impl::calc_team_stats(
-    const common::league_array<common::team> &league) {
-  common::league_array<team_stats> ret_val{};
+std::array<scoring::team_stats, common::g_k_league_size>
+scoring::impl::calc_team_stats(
+    const std::array<common::team, common::g_k_league_size> &league) {
+  std::array<team_stats, common::g_k_league_size> ret_val{};
 
   for (std::size_t i_team{0}; i_team < league.size(); ++i_team) {
     ret_val[i_team] = {league[i_team].m_id, stats{}};
@@ -105,14 +109,15 @@ common::league_array<scoring::team_stats> scoring::impl::calc_team_stats(
   return ret_val;
 }
 
-common::league_array<scoring::team_ranks>
-scoring::impl::calc_team_ranks(const common::league_array<team_stats> &league) {
-  common::league_array<team_ranks> ret_val{};
+std::array<scoring::team_ranks, common::g_k_league_size>
+scoring::impl::calc_team_ranks(
+    const std::array<team_stats, common::g_k_league_size> &league) {
+  std::array<team_ranks, common::g_k_league_size> ret_val{};
   for (std::size_t i_team{0}; i_team != league.size(); ++i_team) {
     ret_val[i_team].m_id = league[i_team].m_id;
   }
 
-  common::league_array<std::size_t> indices{};
+  std::array<std::size_t, common::g_k_league_size> indices{};
   std::iota(indices.begin(), indices.end(), 0);
 
   auto do_calc_team_ranks{
@@ -178,9 +183,10 @@ do_calc_team_ranks(([](const stats &s) -> const double & {
 return ret_val;
 }
 
-common::league_array<scoring::team_scores> scoring::impl::calc_team_scores(
-    const common::league_array<team_ranks> &league) {
-  common::league_array<team_scores> ret_val{};
+std::array<scoring::team_scores, common::g_k_league_size>
+scoring::impl::calc_team_scores(
+    const std::array<team_ranks, common::g_k_league_size> &league) {
+  std::array<team_scores, common::g_k_league_size> ret_val{};
 
   constexpr auto get_points_for_rank{[](const int rank) -> int {
     return (common::g_k_league_size - (rank - 1));
@@ -209,10 +215,10 @@ common::league_array<scoring::team_scores> scoring::impl::calc_team_scores(
   return ret_val;
 }
 
-common::league_array<scoring::team_total_score>
+std::array<scoring::team_total_score, common::g_k_league_size>
 scoring::impl::calc_team_total_score(
-    const common::league_array<team_scores> &league) {
-  common::league_array<team_total_score> ret_val{};
+    const std::array<team_scores, common::g_k_league_size> &league) {
+  std::array<team_total_score, common::g_k_league_size> ret_val{};
 
   for (std::size_t i_team{0}; i_team < league.size(); ++i_team) {
     ret_val[i_team].m_id = league[i_team].m_id;
@@ -229,15 +235,15 @@ scoring::impl::calc_team_total_score(
   return ret_val;
 }
 
-common::league_array<scoring::team_total_rank>
+std::array<scoring::team_total_rank, common::g_k_league_size>
 scoring::impl::calc_team_total_rank(
-    const common::league_array<team_total_score> &league) {
-  common::league_array<team_total_rank> ret_val{};
+    const std::array<team_total_score, common::g_k_league_size> &league) {
+  std::array<team_total_rank, common::g_k_league_size> ret_val{};
   for (std::size_t i_team{0}; i_team < league.size(); ++i_team) {
     ret_val[i_team].m_id = league[i_team].m_id;
   }
 
-  common::league_array<std::size_t> indices{};
+  std::array<std::size_t, common::g_k_league_size> indices{};
   std::iota(indices.begin(), indices.end(), 0);
 
   std::sort(indices.begin(), indices.end(),
