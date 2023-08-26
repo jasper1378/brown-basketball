@@ -69,7 +69,8 @@ database::impl::read_database(const std::string &file_path) {
                 libconfigfile::node_ptr_cast<libconfigfile::string_node>(
                     check_contains_and_type(g_k_key_str_name,
                                             libconfigfile::node_type::STRING))};
-            ret_val[i_player].m_info.m_name = ;
+            ret_val[i_player].m_info.m_name =
+                libconfigfile::node_to_base(std::move(*field_name));
 
             libconfigfile::node_ptr<libconfigfile::array_node> field_position{
                 libconfigfile::node_ptr_cast<libconfigfile::array_node>(
@@ -81,31 +82,43 @@ database::impl::read_database(const std::string &file_path) {
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_points,
                                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_points =
+                libconfigfile::node_to_base(std::move(*field_points));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_rebounds{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_rebounds,
                                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_rebounds =
+                libconfigfile::node_to_base(std::move(*field_rebounds));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_assists{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_assists,
                                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_assists =
+                libconfigfile::node_to_base(std::move(*field_assists));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_steals{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_steals,
                                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_steals =
+                libconfigfile::node_to_base(std::move(*field_steals));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_blocks{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_blocks,
                                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_blocks =
+                libconfigfile::node_to_base(std::move(*field_blocks));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_threes{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_threes,
                                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_threes =
+                libconfigfile::node_to_base(std::move(*field_threes));
 
             libconfigfile::node_ptr<libconfigfile::float_node>
                 field_field_goals_made{
@@ -113,6 +126,8 @@ database::impl::read_database(const std::string &file_path) {
                         check_contains_and_type(
                             g_k_key_str_field_goals_made,
                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_field_goals_made =
+                libconfigfile::node_to_base(std::move(*field_field_goals_made));
 
             libconfigfile::node_ptr<libconfigfile::float_node>
                 field_field_goals_attempted{
@@ -120,6 +135,9 @@ database::impl::read_database(const std::string &file_path) {
                         check_contains_and_type(
                             g_k_key_str_field_goals_attempted,
                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_field_goals_attempted =
+                libconfigfile::node_to_base(
+                    std::move(*field_field_goals_attempted));
 
             libconfigfile::node_ptr<libconfigfile::float_node>
                 field_free_throws_made{
@@ -127,6 +145,8 @@ database::impl::read_database(const std::string &file_path) {
                         check_contains_and_type(
                             g_k_key_str_free_throws_made,
                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_free_throws_made =
+                libconfigfile::node_to_base(std::move(*field_free_throws_made));
 
             libconfigfile::node_ptr<libconfigfile::float_node>
                 field_free_throws_attempted{
@@ -134,11 +154,15 @@ database::impl::read_database(const std::string &file_path) {
                         check_contains_and_type(
                             g_k_key_str_free_throws_attempted,
                             libconfigfile::node_type::FLOAT))};
+            ret_val[i_player].m_stats.m_free_throws_attempted =
+                libconfigfile::node_to_base(
+                    std::move(*field_free_throws_attempted));
 
           } else {
             throw std::runtime_error{"incorrect data type in player database"};
           }
         }
+        return ret_val;
       } else {
         throw std::runtime_error{"incorrect player count in player database"};
       }
