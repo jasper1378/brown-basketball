@@ -76,7 +76,26 @@ database::impl::read_database(const std::string &file_path) {
                 libconfigfile::node_ptr_cast<libconfigfile::array_node>(
                     check_contains_and_type(g_k_key_str_position,
                                             libconfigfile::node_type::ARRAY))};
-            // TODO
+            ret_val[i_player].m_info.m_position = {
+                [](const libconfigfile::node_ptr<libconfigfile::array_node>
+                       &arr) -> std::vector<common::position> {
+                  std::vector<common::position> ret_val{};
+                  ret_val.reserve(arr->size());
+                  for (auto p_pos{arr->begin()}; p_pos != arr->end(); ++p_pos) {
+                    if ((*p_pos)->get_node_type() ==
+                        libconfigfile::node_type::STRING) {
+                    } else {
+                      ret_val.emplace_back(
+                          position_string_to_enum(libconfigfile::node_to_base(
+                              std::move(*libconfigfile::node_ptr_cast<
+                                        libconfigfile::string_node>(
+                                  std::move(*p_pos))))));
+                      throw std::runtime_error{
+                          "incorrect data type in player database"};
+                    }
+                  }
+                  return ret_val;
+                }(field_position)};
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_points{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
