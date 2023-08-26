@@ -73,36 +73,38 @@ struct team_total_rank {
   int m_total_rank;
 };
 
-std::variant<common::league_array<team_stats>, common::league_array<team_ranks>,
-             common::league_array<team_scores>,
-             common::league_array<team_total_score>,
-             common::league_array<team_total_rank>>
-score_league(const common::league_array<common::team> &league,
+std::variant<std::array<team_stats, common::g_k_league_size>,
+             std::array<team_ranks, common::g_k_league_size>,
+             std::array<team_scores, common::g_k_league_size>,
+             std::array<team_total_score, common::g_k_league_size>,
+             std::array<team_total_rank, common::g_k_league_size>>
+score_league(const std::array<common::team, common::g_k_league_size> &league,
              return_value_type ret_val);
 
 namespace impl {
 
-std::variant<common::league_array<team_stats>, common::league_array<team_ranks>,
-             common::league_array<team_scores>,
-             common::league_array<team_total_score>,
-             common::league_array<team_total_rank>>
-score_league(const common::league_array<common::team> &league,
+std::variant<std::array<team_stats, common::g_k_league_size>,
+             std::array<team_ranks, common::g_k_league_size>,
+             std::array<team_scores, common::g_k_league_size>,
+             std::array<team_total_score, common::g_k_league_size>,
+             std::array<team_total_rank, common::g_k_league_size>>
+score_league(const std::array<common::team, common::g_k_league_size> &league,
              return_value_type ret_val);
 
-common::league_array<team_stats>
-calc_team_stats(const common::league_array<common::team> &league);
+std::array<team_stats, common::g_k_league_size> calc_team_stats(
+    const std::array<common::team, common::g_k_league_size> &league);
 
-common::league_array<team_ranks>
-calc_team_ranks(const common::league_array<team_stats> &league);
+std::array<team_ranks, common::g_k_league_size>
+calc_team_ranks(const std::array<team_stats, common::g_k_league_size> &league);
 
-common::league_array<team_scores>
-calc_team_scores(const common::league_array<team_ranks> &league);
+std::array<team_scores, common::g_k_league_size>
+calc_team_scores(const std::array<team_ranks, common::g_k_league_size> &league);
 
-common::league_array<team_total_score>
-calc_team_total_score(const common::league_array<team_scores> &league);
+std::array<team_total_score, common::g_k_league_size> calc_team_total_score(
+    const std::array<team_scores, common::g_k_league_size> &league);
 
-common::league_array<team_total_rank>
-calc_team_total_rank(const common::league_array<team_total_score> &league);
+std::array<team_total_rank, common::g_k_league_size> calc_team_total_rank(
+    const std::array<team_total_score, common::g_k_league_size> &league);
 } // namespace impl
 } // namespace scoring
 
