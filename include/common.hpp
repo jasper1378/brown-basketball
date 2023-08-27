@@ -2,6 +2,7 @@
 #define COMMON_HPP
 
 #include <array>
+#include <cstddef>
 #include <string>
 #include <vector>
 
@@ -44,7 +45,7 @@ struct player {
 };
 
 struct team {
-  int m_id;
+  std::size_t m_id;
   std::array<player, g_k_team_size> m_players;
 };
 

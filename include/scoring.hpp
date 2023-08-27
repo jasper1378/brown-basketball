@@ -3,6 +3,7 @@
 
 #include "common.hpp"
 
+#include <cstddef>
 #include <variant>
 
 namespace scoring {
@@ -27,7 +28,7 @@ struct stats {
 };
 
 struct team_stats {
-  int m_id;
+  std::size_t m_id;
   stats m_stats;
 };
 
@@ -43,7 +44,7 @@ struct ranks {
 };
 
 struct team_ranks {
-  int m_id;
+  std::size_t m_id;
   ranks m_ranks;
 };
 
@@ -59,17 +60,17 @@ struct scores {
 };
 
 struct team_scores {
-  int m_id;
+  std::size_t m_id;
   scores m_scores;
 };
 
 struct team_total_score {
-  int m_id;
+  std::size_t m_id;
   int m_total_score;
 };
 
 struct team_total_rank {
-  int m_id;
+  std::size_t m_id;
   int m_total_rank;
 };
 
