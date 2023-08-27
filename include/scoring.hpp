@@ -28,7 +28,7 @@ struct stats {
 };
 
 struct team_stats {
-  std::size_t m_id;
+  const common::team *m_team;
   stats m_stats;
 };
 
@@ -44,7 +44,7 @@ struct ranks {
 };
 
 struct team_ranks {
-  std::size_t m_id;
+  const common::team *m_team;
   ranks m_ranks;
 };
 
@@ -60,17 +60,17 @@ struct scores {
 };
 
 struct team_scores {
-  std::size_t m_id;
+  const common::team *m_team;
   scores m_scores;
 };
 
 struct team_total_score {
-  std::size_t m_id;
+  const common::team *m_team;
   int m_total_score;
 };
 
 struct team_total_rank {
-  std::size_t m_id;
+  const common::team *m_team;
   int m_total_rank;
 };
 

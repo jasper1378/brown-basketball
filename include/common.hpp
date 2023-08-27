@@ -45,7 +45,6 @@ struct player {
 };
 
 struct team {
-  std::size_t m_id;
   std::array<player, g_k_team_size> m_players;
 };
 
