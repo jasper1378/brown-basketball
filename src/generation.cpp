@@ -20,7 +20,7 @@ generation::impl::generate_league(
     indices[i_index] = {i_index, false};
   }
 
-  class random rand {};
+  my_rand::random rand{};
 
   basic_generation(indices, database, rand);
 
@@ -42,6 +42,6 @@ void generation::impl::basic_generation(
     std::array<index, common::g_k_player_count> &indices,
     [[maybe_unused]] const std::array<common::player, common::g_k_player_count>
         &database,
-    class random &rand) {
+    my_rand::random &rand) {
   std::shuffle(indices.begin(), indices.end(), rand.get_generator());
 }
