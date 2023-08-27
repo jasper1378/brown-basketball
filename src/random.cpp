@@ -3,7 +3,7 @@
 #include <chrono>
 #include <random>
 
-random::random()
+my_rand::random::random()
     : m_rd{},
       m_ss{static_cast<unsigned int>(
                std::chrono::steady_clock::now().time_since_epoch().count()),
@@ -17,6 +17,6 @@ random::random()
            m_rd()},
       m_mt{m_ss} {}
 
-random::~random() {}
+my_rand::random::~random() {}
 
-std::mt19937 &random::get_generator() { return m_mt; }
+std::mt19937 &my_rand::random::get_generator() { return m_mt; }

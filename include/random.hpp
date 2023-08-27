@@ -5,6 +5,7 @@
 #include <concepts>
 #include <random>
 
+namespace my_rand {
 class random {
 private:
   std::random_device m_rd;
@@ -36,5 +37,6 @@ public:
   random &operator=(const random &other) = delete;
   random &operator==(random &&other) = delete;
 };
+} // namespace my_rand
 
 #endif

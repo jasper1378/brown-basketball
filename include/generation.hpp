@@ -26,7 +26,7 @@ void basic_generation(
     std::array<index, common::g_k_player_count> &indices,
     [[maybe_unused]] const std::array<common::player, common::g_k_player_count>
         &database,
-    class random &rand);
+    my_rand::random &rand);
 } // namespace impl
 } // namespace generation
 
