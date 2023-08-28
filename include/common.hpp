@@ -12,6 +12,9 @@ static constexpr int g_k_team_size{10};
 static constexpr int g_k_league_size{12};
 static constexpr int g_k_player_count{g_k_team_size * g_k_league_size};
 
+static constexpr int g_k_rank_top{1};
+static constexpr int g_k_rank_cutoff{4};
+
 enum class position {
   NONE,
   POINT_GUARD,

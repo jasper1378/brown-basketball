@@ -11,6 +11,8 @@
 
 namespace analysis {
 
+namespace impl {
+
 struct rank_cats_counts {
   std::size_t m_top;
   std::size_t m_cutoff;
@@ -26,6 +28,8 @@ struct rank_counts {
   rank_cats_counts m_field_goals;
   rank_cats_counts m_free_throws;
 };
+
+} // namespace impl
 
 struct rank_cats_probs {
   double m_top;
@@ -45,13 +49,14 @@ struct rank_probs {
 
 class accum_state {
 private:
-  std::array<std::pair<const common::player *, rank_counts>,
+  std::array<std::pair<const common::player *, impl::rank_counts>,
              common::g_k_player_count>
       m_accum_state;
   std::size_t m_trial_count;
 
 public:
-  accum_state(const std::array<common::player, common::g_k_player_count> &);
+  accum_state(
+      const std::array<common::player, common::g_k_player_count> &database);
   accum_state(const accum_state &other) = default;
   accum_state(accum_state &&other) noexcept(
       std::is_nothrow_move_constructible_v<decltype(m_accum_state)>) = default;
@@ -71,9 +76,23 @@ public:
 };
 
 namespace impl {
-static constexpr int g_k_rank_top{1};
-static constexpr int g_k_rank_cutoff{4};
+std::array<std::pair<const common::player *, impl::rank_counts>,
+           common::g_k_player_count>
+accum_state_init_accum_state(
+    const std::array<common::player, common::g_k_player_count> &database);
+std::size_t accum_state_init_trial_count();
+void accum_state_add(
+    std::array<std::pair<const common::player *, impl::rank_counts>,
+               common::g_k_player_count> &accum_state,
+    std::size_t &trial_count,
+    const std::array<scoring::team_ranks, common::g_k_league_size> &league);
+const std::array<std::pair<const common::player *, rank_probs>,
+                 common::g_k_player_count> &
+accum_state_read(
+    const std::array<std::pair<const common::player *, impl::rank_counts>,
+                     common::g_k_player_count> &accum_state,
+    const std::size_t trial_count);
 } // namespace impl
-}; // namespace analysis
+} // namespace analysis
 
 #endif
