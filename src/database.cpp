@@ -65,6 +65,8 @@ database::impl::read_database(const std::string &file_path) {
                   }
                 }};
 
+            ret_val[i_player].m_idx = i_player;
+
             libconfigfile::node_ptr<libconfigfile::string_node> field_name{
                 libconfigfile::node_ptr_cast<libconfigfile::string_node>(
                     check_contains_and_type(g_k_key_str_name,

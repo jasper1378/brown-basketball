@@ -36,8 +36,8 @@ generation::impl::generate_league(
     common::team cur_team{};
     for (std::size_t i_player{0}; i_player < common::g_k_team_size;
          ++i_player) {
-      cur_team.m_players[i_player] =
-          database[indices[(i_team * common::g_k_team_size) + i_player].m_idx];
+      cur_team.m_players[i_player] = &(
+          database[indices[(i_team * common::g_k_team_size) + i_player].m_idx]);
     }
   }
 
