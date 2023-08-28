@@ -78,18 +78,21 @@ scoring::impl::calc_team_stats(
 
     for (auto p_player{league[i_team].m_players.begin()};
          p_player != league[i_team].m_players.end(); ++p_player) {
-      ret_val[i_team].m_stats.m_points += p_player->m_stats.m_points;
-      ret_val[i_team].m_stats.m_rebounds += p_player->m_stats.m_rebounds;
-      ret_val[i_team].m_stats.m_assists += p_player->m_stats.m_assists;
-      ret_val[i_team].m_stats.m_steals += p_player->m_stats.m_steals;
-      ret_val[i_team].m_stats.m_blocks += p_player->m_stats.m_blocks;
-      ret_val[i_team].m_stats.m_threes += p_player->m_stats.m_threes;
+      ret_val[i_team].m_stats.m_points += (*p_player)->m_stats.m_points;
+      ret_val[i_team].m_stats.m_points += (*p_player)->m_stats.m_points;
+      ret_val[i_team].m_stats.m_rebounds += (*p_player)->m_stats.m_rebounds;
+      ret_val[i_team].m_stats.m_assists += (*p_player)->m_stats.m_assists;
+      ret_val[i_team].m_stats.m_steals += (*p_player)->m_stats.m_steals;
+      ret_val[i_team].m_stats.m_blocks += (*p_player)->m_stats.m_blocks;
+      ret_val[i_team].m_stats.m_threes += (*p_player)->m_stats.m_threes;
 
-      field_goals_made_temp += p_player->m_stats.m_field_goals_made;
-      field_goals_attempted_temp += p_player->m_stats.m_field_goals_attempted;
+      field_goals_made_temp += (*p_player)->m_stats.m_field_goals_made;
+      field_goals_attempted_temp +=
+          (*p_player)->m_stats.m_field_goals_attempted;
 
-      free_throws_made_temp += p_player->m_stats.m_free_throws_made;
-      free_throws_attempted_temp += p_player->m_stats.m_free_throws_attempted;
+      free_throws_made_temp += (*p_player)->m_stats.m_free_throws_made;
+      free_throws_attempted_temp +=
+          (*p_player)->m_stats.m_free_throws_attempted;
     }
 
     ret_val[i_team].m_stats.m_field_goals =
@@ -112,7 +115,7 @@ scoring::impl::calc_team_ranks(
   std::array<std::size_t, common::g_k_league_size> indices{};
   std::iota(indices.begin(), indices.end(), 0);
 
-  auto do_calc_team_ranks{
+  const auto do_calc_team_ranks{
       [&indices, &league,
        &ret_val]<typename t_struct_member_access_helper_stats,
                  typename t_struct_member_access_helper_ranks> requires std::

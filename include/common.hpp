@@ -40,12 +40,13 @@ struct info {
 };
 
 struct player {
+  std::size_t m_idx;
   info m_info;
   stats m_stats;
 };
 
 struct team {
-  std::array<player, g_k_team_size> m_players;
+  std::array<const player *, g_k_team_size> m_players;
 };
 
 } // namespace common
