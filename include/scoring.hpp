@@ -9,11 +9,11 @@
 namespace scoring {
 
 enum class return_value_type {
-  TEAM_STATS,
-  TEAM_RANKS,
-  TEAM_SCORES,
-  TEAM_TOTAL_SCORE,
-  TEAM_TOTAL_RANK,
+  TEAM_STATS = 0,
+  TEAM_RANKS = 1,
+  TEAM_SCORES = 2,
+  TEAM_TOTAL_SCORE = 3,
+  TEAM_TOTAL_RANK = 4,
 };
 
 struct stats {
