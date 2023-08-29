@@ -4,6 +4,6 @@
 
 // database d
 // d -> analysis a
-// d -> generation -> scoring -> a
+// d -> generation -> scoring -> a -> printing
 
 int main() {}
