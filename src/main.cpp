@@ -19,7 +19,7 @@
 int main(int argc, char *argv[]) {
   if (argc != 2) {
     std::cerr << "program requires a single file path argument representing "
-                 "the configuration file";
+                 "the configuration file\n";
     std::exit(EXIT_FAILURE);
   }
   auto d{database::read_database(argv[1])};
