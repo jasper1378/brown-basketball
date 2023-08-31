@@ -208,6 +208,10 @@ database::impl::position_string_to_enum(const std::string &str) {
     return common::position::POWER_FORWARD;
   } else if (str == "C") {
     return common::position::CENTER;
+  } else if (str == "G") {
+    return common::position::GUARD;
+  } else if (str == "F") {
+    return common::position::FORWARD;
   } else {
     return common::position::NONE;
   }

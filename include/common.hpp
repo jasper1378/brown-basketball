@@ -24,6 +24,8 @@ enum class position {
   SMALL_FORWARD,
   POWER_FORWARD,
   CENTER,
+  GUARD,
+  FORWARD,
 };
 
 struct stats {
