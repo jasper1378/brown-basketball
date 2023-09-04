@@ -1,0 +1,222 @@
+g:
+
+Walker Kessler; Deandre Ayton; Karl-Anthony Towns; Clint Capela; Joel Embiid; Kristaps Porzingis; Damian Lillard; Buddy Hield; Klay Thompson; Ivica Zubac; 
+
+Anfernee Simons; Giannis Antetokounmpo; Devin Vassell; Zion Williamson; Jonas Valanciunas; Jaylen Brown; Paul George; Michael Porter Jr.; De'Anthony Melton; Mitchell Robinson; 
+
+Devin Booker; Robert Williams III; Tre Jones; Jaren Jackson Jr.; Spencer Dinwiddie; Jalen Williams; Jalen Brunson; Andrew Wiggins; Josh Hart; Brandon Ingram; 
+
+Chet Holmgren; Pascal Siakam; LeBron James; Mark Williams; Zach LaVine; Victor Wembanyama; Cameron Johnson; Domantas Sabonis; Jrue Holiday; Lauri Markkanen; 
+
+Tyrese Haliburton; Miles Bridges; Fred VanVleet; Zach Collins; Jalen Duren; Jimmy Butler; Tyler Herro; Cade Cunningham; Tobias Harris; Bojan Bogdanovic; 
+
+Donovan Mitchell; Alperen Sengün; Kawhi Leonard; Mike Conley; Anthony Davis; OG Anunoby; De'Aaron Fox; Immanuel Quickley; Anthony Edwards; DeMar DeRozan; 
+
+Luka Doncic; Dejounte Murray; Paolo Banchero; Nikola Jokic; Chris Paul; Brook Lopez; Kevin Durant; Jakob Poeltl; Nikola Vucevic; Ja Morant; 
+
+Derrick White; Evan Mobley; Khris Middleton; James Harden; Rudy Gobert; Shai Gilgeous-Alexander; Jarrett Allen; Tyus Jones; Myles Turner; LaMelo Ball; 
+
+Bobby Portis; Kyle Kuzma; CJ McCollum; Darius Garland; Wendell Carter Jr.; Scottie Barnes; Bruce Brown; Bradley Beal; Jabari Smith Jr.; Josh Giddey; 
+
+Onyeka Okongwu; Trey Murphy III; John Collins; Scoot Henderson; Keegan Murray; Draymond Green; Jamal Murray; Desmond Bane; Al Horford; Malcolm Brogdon; 
+
+Jayson Tatum; Jordan Poole; Trae Young; Jerami Grant; Herbert Jones; Mikal Bridges; Daniel Gafford; Markelle Fultz; Jusuf Nurkic; Franz Wagner; 
+
+Stephen Curry; Kyrie Irving; Nicolas Claxton; Marcus Smart; Bam Adebayo; Tyrese Maxey; Terry Rozier; Austin Reaves; D'Angelo Russell; Julius Randle; 
+
+
+s1:
+
+Walker Kessler; Deandre Ayton; Karl-Anthony Towns; Clint Capela; Joel Embiid; Kristaps Porzingis; Damian Lillard; Buddy Hield; Klay Thompson; Ivica Zubac; 
+points:381.4; rebounds:81.5; assists:28.7; steals:7.3; blocks:11; threes:16.4; field_goals:0.523273; free_throws:0.802691; 
+
+Anfernee Simons; Giannis Antetokounmpo; Devin Vassell; Zion Williamson; Jonas Valanciunas; Jaylen Brown; Paul George; Michael Porter Jr.; De'Anthony Melton; Mitchell Robinson; 
+points:391.8; rebounds:68.2; assists:33.8; steals:10.2; blocks:6.7; threes:18.7; field_goals:0.495192; free_throws:0.749446; 
+
+Devin Booker; Robert Williams III; Tre Jones; Jaren Jackson Jr.; Spencer Dinwiddie; Jalen Williams; Jalen Brunson; Andrew Wiggins; Josh Hart; Brandon Ingram; 
+points:352.2; rebounds:55; assists:43.6; steals:10.6; blocks:7.8; threes:14.3; field_goals:0.491742; free_throws:0.805195; 
+
+Chet Holmgren; Pascal Siakam; LeBron James; Mark Williams; Zach LaVine; Victor Wembanyama; Cameron Johnson; Domantas Sabonis; Jrue Holiday; Lauri Markkanen; 
+points:392.4; rebounds:77.5; assists:38.1; steals:9; blocks:8.8; threes:17.2; field_goals:0.499651; free_throws:0.794702; 
+
+Tyrese Haliburton; Miles Bridges; Fred VanVleet; Zach Collins; Jalen Duren; Jimmy Butler; Tyler Herro; Cade Cunningham; Tobias Harris; Bojan Bogdanovic; 
+points:360.6; rebounds:59; assists:45.5; steals:10.5; blocks:5.7; threes:17.8; field_goals:0.47342; free_throws:0.832884; 
+
+Donovan Mitchell; Alperen Sengün; Kawhi Leonard; Mike Conley; Anthony Davis; OG Anunoby; De'Aaron Fox; Immanuel Quickley; Anthony Edwards; DeMar DeRozan; 
+points:422.6; rebounds:57.5; assists:42.8; steals:12.5; blocks:6.4; threes:18; field_goals:0.490446; free_throws:0.8125; 
+
+Luka Doncic; Dejounte Murray; Paolo Banchero; Nikola Jokic; Chris Paul; Brook Lopez; Kevin Durant; Jakob Poeltl; Nikola Vucevic; Ja Morant; 
+points:415.2; rebounds:76.6; assists:54.9; steals:10.3; blocks:8.1; threes:14.7; field_goals:0.502611; free_throws:0.781124; 
+
+Derrick White; Evan Mobley; Khris Middleton; James Harden; Rudy Gobert; Shai Gilgeous-Alexander; Jarrett Allen; Tyus Jones; Myles Turner; LaMelo Ball; 
+points:360.4; rebounds:68.8; assists:48.3; steals:10.3; blocks:9.9; threes:14.8; field_goals:0.494217; free_throws:0.814815; 
+
+Bobby Portis; Kyle Kuzma; CJ McCollum; Darius Garland; Wendell Carter Jr.; Scottie Barnes; Bruce Brown; Bradley Beal; Jabari Smith Jr.; Josh Giddey; 
+points:348; rebounds:65.7; assists:42.2; steals:8.8; blocks:6.2; threes:16.9; field_goals:0.467697; free_throws:0.780328; 
+
+Onyeka Okongwu; Trey Murphy III; John Collins; Scoot Henderson; Keegan Murray; Draymond Green; Jamal Murray; Desmond Bane; Al Horford; Malcolm Brogdon; 
+points:293; rebounds:57.1; assists:34.6; steals:9; blocks:6.7; threes:17.9; field_goals:0.482728; free_throws:0.821577; 
+
+Jayson Tatum; Jordan Poole; Trae Young; Jerami Grant; Herbert Jones; Mikal Bridges; Daniel Gafford; Markelle Fultz; Jusuf Nurkic; Franz Wagner; 
+points:388.6; rebounds:53.1; assists:41.8; steals:10.6; blocks:6.4; threes:16.6; field_goals:0.481507; free_throws:0.828452; 
+
+Stephen Curry; Kyrie Irving; Nicolas Claxton; Marcus Smart; Bam Adebayo; Tyrese Maxey; Terry Rozier; Austin Reaves; D'Angelo Russell; Julius Randle; 
+points:391; rebounds:57.1; assists:45.2; steals:10.2; blocks:6.5; threes:21.9; field_goals:0.489244; free_throws:0.814634; 
+
+
+s2:
+
+Walker Kessler; Deandre Ayton; Karl-Anthony Towns; Clint Capela; Joel Embiid; Kristaps Porzingis; Damian Lillard; Buddy Hield; Klay Thompson; Ivica Zubac; 
+points:7; rebounds:1; assists:12; steals:12; blocks:1; threes:9; field_goals:1; free_throws:8; 
+
+Anfernee Simons; Giannis Antetokounmpo; Devin Vassell; Zion Williamson; Jonas Valanciunas; Jaylen Brown; Paul George; Michael Porter Jr.; De'Anthony Melton; Mitchell Robinson; 
+points:4; rebounds:5; assists:11; steals:7; blocks:7; threes:2; field_goals:4; free_throws:12; 
+
+Devin Booker; Robert Williams III; Tre Jones; Jaren Jackson Jr.; Spencer Dinwiddie; Jalen Williams; Jalen Brunson; Andrew Wiggins; Josh Hart; Brandon Ingram; 
+points:10; rebounds:11; assists:5; steals:2; blocks:5; threes:12; field_goals:6; free_throws:7; 
+
+Chet Holmgren; Pascal Siakam; LeBron James; Mark Williams; Zach LaVine; Victor Wembanyama; Cameron Johnson; Domantas Sabonis; Jrue Holiday; Lauri Markkanen; 
+points:3; rebounds:2; assists:9; steals:9; blocks:3; threes:6; field_goals:3; free_throws:9; 
+
+Tyrese Haliburton; Miles Bridges; Fred VanVleet; Zach Collins; Jalen Duren; Jimmy Butler; Tyler Herro; Cade Cunningham; Tobias Harris; Bojan Bogdanovic; 
+points:8; rebounds:7; assists:3; steals:4; blocks:12; threes:5; field_goals:11; free_throws:1; 
+
+Donovan Mitchell; Alperen Sengün; Kawhi Leonard; Mike Conley; Anthony Davis; OG Anunoby; De'Aaron Fox; Immanuel Quickley; Anthony Edwards; DeMar DeRozan; 
+points:1; rebounds:8; assists:6; steals:1; blocks:10; threes:3; field_goals:7; free_throws:6; 
+
+Luka Doncic; Dejounte Murray; Paolo Banchero; Nikola Jokic; Chris Paul; Brook Lopez; Kevin Durant; Jakob Poeltl; Nikola Vucevic; Ja Morant; 
+points:2; rebounds:3; assists:1; steals:5; blocks:4; threes:11; field_goals:2; free_throws:10; 
+
+Derrick White; Evan Mobley; Khris Middleton; James Harden; Rudy Gobert; Shai Gilgeous-Alexander; Jarrett Allen; Tyus Jones; Myles Turner; LaMelo Ball; 
+points:9; rebounds:4; assists:2; steals:6; blocks:2; threes:10; field_goals:5; free_throws:4; 
+
+Bobby Portis; Kyle Kuzma; CJ McCollum; Darius Garland; Wendell Carter Jr.; Scottie Barnes; Bruce Brown; Bradley Beal; Jabari Smith Jr.; Josh Giddey; 
+points:11; rebounds:6; assists:7; steals:11; blocks:11; threes:7; field_goals:12; free_throws:11; 
+
+Onyeka Okongwu; Trey Murphy III; John Collins; Scoot Henderson; Keegan Murray; Draymond Green; Jamal Murray; Desmond Bane; Al Horford; Malcolm Brogdon; 
+points:12; rebounds:10; assists:10; steals:10; blocks:6; threes:4; field_goals:9; free_throws:3; 
+
+Jayson Tatum; Jordan Poole; Trae Young; Jerami Grant; Herbert Jones; Mikal Bridges; Daniel Gafford; Markelle Fultz; Jusuf Nurkic; Franz Wagner; 
+points:6; rebounds:12; assists:8; steals:3; blocks:9; threes:8; field_goals:10; free_throws:2; 
+
+Stephen Curry; Kyrie Irving; Nicolas Claxton; Marcus Smart; Bam Adebayo; Tyrese Maxey; Terry Rozier; Austin Reaves; D'Angelo Russell; Julius Randle; 
+points:5; rebounds:9; assists:4; steals:8; blocks:8; threes:1; field_goals:8; free_throws:5; 
+
+
+s3:
+
+Walker Kessler; Deandre Ayton; Karl-Anthony Towns; Clint Capela; Joel Embiid; Kristaps Porzingis; Damian Lillard; Buddy Hield; Klay Thompson; Ivica Zubac; 
+points:6; rebounds:12; assists:1; steals:1; blocks:12; threes:4; field_goals:12; free_throws:5; 
+
+Anfernee Simons; Giannis Antetokounmpo; Devin Vassell; Zion Williamson; Jonas Valanciunas; Jaylen Brown; Paul George; Michael Porter Jr.; De'Anthony Melton; Mitchell Robinson; 
+points:9; rebounds:8; assists:2; steals:6; blocks:6; threes:11; field_goals:9; free_throws:1; 
+
+Devin Booker; Robert Williams III; Tre Jones; Jaren Jackson Jr.; Spencer Dinwiddie; Jalen Williams; Jalen Brunson; Andrew Wiggins; Josh Hart; Brandon Ingram; 
+points:3; rebounds:2; assists:8; steals:11; blocks:8; threes:1; field_goals:7; free_throws:6; 
+
+Chet Holmgren; Pascal Siakam; LeBron James; Mark Williams; Zach LaVine; Victor Wembanyama; Cameron Johnson; Domantas Sabonis; Jrue Holiday; Lauri Markkanen; 
+points:10; rebounds:11; assists:4; steals:4; blocks:10; threes:7; field_goals:10; free_throws:4; 
+
+Tyrese Haliburton; Miles Bridges; Fred VanVleet; Zach Collins; Jalen Duren; Jimmy Butler; Tyler Herro; Cade Cunningham; Tobias Harris; Bojan Bogdanovic; 
+points:5; rebounds:6; assists:10; steals:9; blocks:1; threes:8; field_goals:2; free_throws:12; 
+
+Donovan Mitchell; Alperen Sengün; Kawhi Leonard; Mike Conley; Anthony Davis; OG Anunoby; De'Aaron Fox; Immanuel Quickley; Anthony Edwards; DeMar DeRozan; 
+points:12; rebounds:5; assists:7; steals:12; blocks:3; threes:10; field_goals:6; free_throws:7; 
+
+Luka Doncic; Dejounte Murray; Paolo Banchero; Nikola Jokic; Chris Paul; Brook Lopez; Kevin Durant; Jakob Poeltl; Nikola Vucevic; Ja Morant; 
+points:11; rebounds:10; assists:12; steals:8; blocks:9; threes:2; field_goals:11; free_throws:3; 
+
+Derrick White; Evan Mobley; Khris Middleton; James Harden; Rudy Gobert; Shai Gilgeous-Alexander; Jarrett Allen; Tyus Jones; Myles Turner; LaMelo Ball; 
+points:4; rebounds:9; assists:11; steals:7; blocks:11; threes:3; field_goals:8; free_throws:9; 
+
+Bobby Portis; Kyle Kuzma; CJ McCollum; Darius Garland; Wendell Carter Jr.; Scottie Barnes; Bruce Brown; Bradley Beal; Jabari Smith Jr.; Josh Giddey; 
+points:2; rebounds:7; assists:6; steals:2; blocks:2; threes:6; field_goals:1; free_throws:2; 
+
+Onyeka Okongwu; Trey Murphy III; John Collins; Scoot Henderson; Keegan Murray; Draymond Green; Jamal Murray; Desmond Bane; Al Horford; Malcolm Brogdon; 
+points:1; rebounds:3; assists:3; steals:3; blocks:7; threes:9; field_goals:4; free_throws:10; 
+
+Jayson Tatum; Jordan Poole; Trae Young; Jerami Grant; Herbert Jones; Mikal Bridges; Daniel Gafford; Markelle Fultz; Jusuf Nurkic; Franz Wagner; 
+points:7; rebounds:1; assists:5; steals:10; blocks:4; threes:5; field_goals:3; free_throws:11; 
+
+Stephen Curry; Kyrie Irving; Nicolas Claxton; Marcus Smart; Bam Adebayo; Tyrese Maxey; Terry Rozier; Austin Reaves; D'Angelo Russell; Julius Randle; 
+points:8; rebounds:4; assists:9; steals:5; blocks:5; threes:12; field_goals:5; free_throws:8; 
+
+
+s4:
+
+Walker Kessler; Deandre Ayton; Karl-Anthony Towns; Clint Capela; Joel Embiid; Kristaps Porzingis; Damian Lillard; Buddy Hield; Klay Thompson; Ivica Zubac; 
+53
+
+Anfernee Simons; Giannis Antetokounmpo; Devin Vassell; Zion Williamson; Jonas Valanciunas; Jaylen Brown; Paul George; Michael Porter Jr.; De'Anthony Melton; Mitchell Robinson; 
+52
+
+Devin Booker; Robert Williams III; Tre Jones; Jaren Jackson Jr.; Spencer Dinwiddie; Jalen Williams; Jalen Brunson; Andrew Wiggins; Josh Hart; Brandon Ingram; 
+46
+
+Chet Holmgren; Pascal Siakam; LeBron James; Mark Williams; Zach LaVine; Victor Wembanyama; Cameron Johnson; Domantas Sabonis; Jrue Holiday; Lauri Markkanen; 
+60
+
+Tyrese Haliburton; Miles Bridges; Fred VanVleet; Zach Collins; Jalen Duren; Jimmy Butler; Tyler Herro; Cade Cunningham; Tobias Harris; Bojan Bogdanovic; 
+53
+
+Donovan Mitchell; Alperen Sengün; Kawhi Leonard; Mike Conley; Anthony Davis; OG Anunoby; De'Aaron Fox; Immanuel Quickley; Anthony Edwards; DeMar DeRozan; 
+62
+
+Luka Doncic; Dejounte Murray; Paolo Banchero; Nikola Jokic; Chris Paul; Brook Lopez; Kevin Durant; Jakob Poeltl; Nikola Vucevic; Ja Morant; 
+66
+
+Derrick White; Evan Mobley; Khris Middleton; James Harden; Rudy Gobert; Shai Gilgeous-Alexander; Jarrett Allen; Tyus Jones; Myles Turner; LaMelo Ball; 
+62
+
+Bobby Portis; Kyle Kuzma; CJ McCollum; Darius Garland; Wendell Carter Jr.; Scottie Barnes; Bruce Brown; Bradley Beal; Jabari Smith Jr.; Josh Giddey; 
+28
+
+Onyeka Okongwu; Trey Murphy III; John Collins; Scoot Henderson; Keegan Murray; Draymond Green; Jamal Murray; Desmond Bane; Al Horford; Malcolm Brogdon; 
+40
+
+Jayson Tatum; Jordan Poole; Trae Young; Jerami Grant; Herbert Jones; Mikal Bridges; Daniel Gafford; Markelle Fultz; Jusuf Nurkic; Franz Wagner; 
+46
+
+Stephen Curry; Kyrie Irving; Nicolas Claxton; Marcus Smart; Bam Adebayo; Tyrese Maxey; Terry Rozier; Austin Reaves; D'Angelo Russell; Julius Randle; 
+56
+
+
+s5:
+
+Walker Kessler; Deandre Ayton; Karl-Anthony Towns; Clint Capela; Joel Embiid; Kristaps Porzingis; Damian Lillard; Buddy Hield; Klay Thompson; Ivica Zubac; 
+6
+
+Anfernee Simons; Giannis Antetokounmpo; Devin Vassell; Zion Williamson; Jonas Valanciunas; Jaylen Brown; Paul George; Michael Porter Jr.; De'Anthony Melton; Mitchell Robinson; 
+8
+
+Devin Booker; Robert Williams III; Tre Jones; Jaren Jackson Jr.; Spencer Dinwiddie; Jalen Williams; Jalen Brunson; Andrew Wiggins; Josh Hart; Brandon Ingram; 
+9
+
+Chet Holmgren; Pascal Siakam; LeBron James; Mark Williams; Zach LaVine; Victor Wembanyama; Cameron Johnson; Domantas Sabonis; Jrue Holiday; Lauri Markkanen; 
+4
+
+Tyrese Haliburton; Miles Bridges; Fred VanVleet; Zach Collins; Jalen Duren; Jimmy Butler; Tyler Herro; Cade Cunningham; Tobias Harris; Bojan Bogdanovic; 
+7
+
+Donovan Mitchell; Alperen Sengün; Kawhi Leonard; Mike Conley; Anthony Davis; OG Anunoby; De'Aaron Fox; Immanuel Quickley; Anthony Edwards; DeMar DeRozan; 
+2
+
+Luka Doncic; Dejounte Murray; Paolo Banchero; Nikola Jokic; Chris Paul; Brook Lopez; Kevin Durant; Jakob Poeltl; Nikola Vucevic; Ja Morant; 
+1
+
+Derrick White; Evan Mobley; Khris Middleton; James Harden; Rudy Gobert; Shai Gilgeous-Alexander; Jarrett Allen; Tyus Jones; Myles Turner; LaMelo Ball; 
+3
+
+Bobby Portis; Kyle Kuzma; CJ McCollum; Darius Garland; Wendell Carter Jr.; Scottie Barnes; Bruce Brown; Bradley Beal; Jabari Smith Jr.; Josh Giddey; 
+12
+
+Onyeka Okongwu; Trey Murphy III; John Collins; Scoot Henderson; Keegan Murray; Draymond Green; Jamal Murray; Desmond Bane; Al Horford; Malcolm Brogdon; 
+11
+
+Jayson Tatum; Jordan Poole; Trae Young; Jerami Grant; Herbert Jones; Mikal Bridges; Daniel Gafford; Markelle Fultz; Jusuf Nurkic; Franz Wagner; 
+10
+
+Stephen Curry; Kyrie Irving; Nicolas Claxton; Marcus Smart; Bam Adebayo; Tyrese Maxey; Terry Rozier; Austin Reaves; D'Angelo Russell; Julius Randle; 
+5
+
+
