@@ -141,8 +141,12 @@ analysis::impl::accum_state_read(
     }
   }
 
+  static const std::array<std::pair<const common::player *, impl::rank_counts>,
+                          common::g_k_player_count> *prev_accum_state{
+      &accum_state};
   static bool prev_trial_count{0};
-  if (prev_trial_count != trial_count) {
+
+  if ((prev_accum_state != &accum_state) || (prev_trial_count != trial_count)) {
     for (std::size_t i_player{0}; i_player < accum_state.size(); ++i_player) {
 
       ret_val[i_player].second.m_points.m_top =
@@ -201,6 +205,7 @@ analysis::impl::accum_state_read(
           (accum_state[i_player].second.m_free_throws.m_cutoff /
            static_cast<double>(trial_count));
     }
+    prev_accum_state = &accum_state;
     prev_trial_count = trial_count;
   }
   return ret_val;
