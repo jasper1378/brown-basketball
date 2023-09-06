@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
   analysis::accum_state a{d};
   for (std::size_t i_trial{0}; i_trial < common::g_k_trial_count; ++i_trial) {
     auto g{generation::generate_league(d, generation::generation_type::BASIC)};
-    // XXX DEBUG BEGIN
+#ifdef DEBUG
     std::cerr << "g:\n\n";
     for (std::size_t i{0}; i < g.size(); ++i) {
       for (std::size_t j{0}; j < g[i].m_players.size(); ++j) {
@@ -34,7 +34,6 @@ int main(int argc, char *argv[]) {
       }
       std::cerr << "\n\n";
     }
-    std::cerr << '\n';
 
     auto s1{std::get<static_cast<std::size_t>(
         scoring::return_value_type::TEAM_STATS)>(
@@ -55,7 +54,6 @@ int main(int argc, char *argv[]) {
       std::cerr << "free_throws:" << s1[i].m_stats.m_free_throws << "; ";
       std::cerr << "\n\n";
     }
-    std::cerr << '\n';
 
     auto s2{std::get<static_cast<std::size_t>(
         scoring::return_value_type::TEAM_RANKS)>(
@@ -76,7 +74,6 @@ int main(int argc, char *argv[]) {
       std::cerr << "free_throws:" << s2[i].m_ranks.m_free_throws << "; ";
       std::cerr << "\n\n";
     }
-    std::cerr << '\n';
 
     auto s3{std::get<static_cast<std::size_t>(
         scoring::return_value_type::TEAM_SCORES)>(
@@ -97,7 +94,6 @@ int main(int argc, char *argv[]) {
       std::cerr << "free_throws:" << s3[i].m_scores.m_free_throws << "; ";
       std::cerr << "\n\n";
     }
-    std::cerr << '\n';
 
     auto s4{std::get<static_cast<std::size_t>(
         scoring::return_value_type::TEAM_TOTAL_SCORE)>(
@@ -112,7 +108,6 @@ int main(int argc, char *argv[]) {
       std::cerr << s4[i].m_total_score;
       std::cerr << "\n\n";
     }
-    std::cerr << '\n';
 
     auto s5{std::get<static_cast<std::size_t>(
         scoring::return_value_type::TEAM_TOTAL_RANK)>(
@@ -126,10 +121,7 @@ int main(int argc, char *argv[]) {
       std::cerr << s5[i].m_total_rank;
       std::cerr << "\n\n";
     }
-    std::cerr << '\n';
-
-    std::exit(0);
-    // XXX DEBUG END
+#endif // DEBUG
     auto s{scoring::score_league(g, scoring::return_value_type::TEAM_RANKS)};
     a.add(std::get<static_cast<std::size_t>(
               scoring::return_value_type::TEAM_RANKS)>(s));
