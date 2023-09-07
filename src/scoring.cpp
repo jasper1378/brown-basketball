@@ -79,7 +79,6 @@ scoring::impl::calc_team_stats(
     for (auto p_player{league[i_team].m_players.begin()};
          p_player != league[i_team].m_players.end(); ++p_player) {
       ret_val[i_team].m_stats.m_points += (*p_player)->m_stats.m_points;
-      ret_val[i_team].m_stats.m_points += (*p_player)->m_stats.m_points;
       ret_val[i_team].m_stats.m_rebounds += (*p_player)->m_stats.m_rebounds;
       ret_val[i_team].m_stats.m_assists += (*p_player)->m_stats.m_assists;
       ret_val[i_team].m_stats.m_steals += (*p_player)->m_stats.m_steals;
