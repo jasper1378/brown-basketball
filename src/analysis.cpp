@@ -55,7 +55,7 @@ void analysis::impl::accum_state_add(
     for (auto p_player{p_team->m_team->m_players.begin()};
          p_player != p_team->m_team->m_players.end(); ++p_player) {
       {
-        if (p_team->m_ranks.m_points == common::g_k_rank_cutoff) {
+        if (p_team->m_ranks.m_points == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx].second.m_points.m_top);
         }
         if (p_team->m_ranks.m_points >= common::g_k_rank_cutoff) {
@@ -63,7 +63,7 @@ void analysis::impl::accum_state_add(
         }
       }
       {
-        if (p_team->m_ranks.m_rebounds == common::g_k_rank_cutoff) {
+        if (p_team->m_ranks.m_rebounds == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx].second.m_rebounds.m_top);
         }
         if (p_team->m_ranks.m_rebounds >= common::g_k_rank_cutoff) {
@@ -71,7 +71,7 @@ void analysis::impl::accum_state_add(
         }
       }
       {
-        if (p_team->m_ranks.m_assists == common::g_k_rank_cutoff) {
+        if (p_team->m_ranks.m_assists == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx].second.m_assists.m_top);
         }
         if (p_team->m_ranks.m_assists >= common::g_k_rank_cutoff) {
@@ -79,7 +79,7 @@ void analysis::impl::accum_state_add(
         }
       }
       {
-        if (p_team->m_ranks.m_steals == common::g_k_rank_cutoff) {
+        if (p_team->m_ranks.m_steals == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx].second.m_steals.m_top);
         }
         if (p_team->m_ranks.m_steals >= common::g_k_rank_cutoff) {
@@ -87,7 +87,7 @@ void analysis::impl::accum_state_add(
         }
       }
       {
-        if (p_team->m_ranks.m_blocks == common::g_k_rank_cutoff) {
+        if (p_team->m_ranks.m_blocks == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx].second.m_blocks.m_top);
         }
         if (p_team->m_ranks.m_blocks >= common::g_k_rank_cutoff) {
@@ -95,7 +95,7 @@ void analysis::impl::accum_state_add(
         }
       }
       {
-        if (p_team->m_ranks.m_threes == common::g_k_rank_cutoff) {
+        if (p_team->m_ranks.m_threes == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx].second.m_threes.m_top);
         }
         if (p_team->m_ranks.m_threes >= common::g_k_rank_cutoff) {
@@ -103,7 +103,7 @@ void analysis::impl::accum_state_add(
         }
       }
       {
-        if (p_team->m_ranks.m_field_goals == common::g_k_rank_cutoff) {
+        if (p_team->m_ranks.m_field_goals == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx].second.m_field_goals.m_top);
         }
         if (p_team->m_ranks.m_field_goals >= common::g_k_rank_cutoff) {
@@ -111,7 +111,7 @@ void analysis::impl::accum_state_add(
         }
       }
       {
-        if (p_team->m_ranks.m_free_throws == common::g_k_rank_cutoff) {
+        if (p_team->m_ranks.m_free_throws == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx].second.m_free_throws.m_top);
         }
         if (p_team->m_ranks.m_free_throws >= common::g_k_rank_cutoff) {
