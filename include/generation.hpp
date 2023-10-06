@@ -16,8 +16,9 @@ enum class generation_type {
 };
 
 std::array<common::team, common::g_k_league_size> generate_league(
-    const std::array<common::player, common::g_k_player_count> &database,
+    const std::array<common::player, common::g_k_pool_size> &database,
     const generation_type gen_type);
+
 namespace impl {
 struct index {
   std::size_t m_idx;
@@ -25,12 +26,12 @@ struct index {
 };
 
 std::array<common::team, common::g_k_league_size> generate_league(
-    const std::array<common::player, common::g_k_player_count> &database,
+    const std::array<common::player, common::g_k_pool_size> &database,
     const generation_type gen_type);
 
 void basic_generation(
-    std::array<index, common::g_k_player_count> &indices,
-    [[maybe_unused]] const std::array<common::player, common::g_k_player_count>
+    std::array<index, common::g_k_pool_size> &indices,
+    [[maybe_unused]] const std::array<common::player, common::g_k_pool_size>
         &database,
     my_rand::random &rand);
 } // namespace impl

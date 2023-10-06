@@ -9,12 +9,12 @@
 #include <stdexcept>
 #include <string>
 
-std::array<common::player, common::g_k_player_count>
+std::array<common::player, common::g_k_pool_size>
 database::read_database(const std::string &file_path) {
   return impl::read_database(file_path);
 }
 
-std::array<common::player, common::g_k_player_count>
+std::array<common::player, common::g_k_pool_size>
 database::impl::read_database(const std::string &file_path) {
   libconfigfile::node_ptr<libconfigfile::map_node> parsed_database{nullptr};
   try {
@@ -34,8 +34,8 @@ database::impl::read_database(const std::string &file_path) {
           player_database_as_array{
               libconfigfile::node_ptr_cast<libconfigfile::array_node>(
                   std::move(player_database))};
-      if (player_database_as_array->size() == common::g_k_player_count) {
-        std::array<common::player, common::g_k_player_count> ret_val{};
+      if (player_database_as_array->size() == common::g_k_pool_size) {
+        std::array<common::player, common::g_k_pool_size> ret_val{};
 
         for (std::size_t i_player{0};
              i_player < player_database_as_array->size(); ++i_player) {

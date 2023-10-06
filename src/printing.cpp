@@ -10,14 +10,14 @@
 void printing::print_result(
     std::ostream &out,
     const std::array<std::pair<const common::player *, analysis::rank_probs>,
-                     common::g_k_player_count> &result) {
+                     common::g_k_pool_size> &result) {
   return impl::print_result(out, result);
 }
 
 void printing::impl::print_result(
     std::ostream &out,
     const std::array<std::pair<const common::player *, analysis::rank_probs>,
-                     common::g_k_player_count> &result) {
+                     common::g_k_pool_size> &result) {
   out << compose_header() << g_k_row_separator;
 
   for (auto p_player{result.begin()}; p_player != result.end(); ++p_player) {

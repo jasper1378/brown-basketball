@@ -8,16 +8,16 @@
 #include <random>
 
 std::array<common::team, common::g_k_league_size> generation::generate_league(
-    const std::array<common::player, common::g_k_player_count> &database,
+    const std::array<common::player, common::g_k_pool_size> &database,
     const generation_type gen_type) {
   return impl::generate_league(database, gen_type);
 }
 
 std::array<common::team, common::g_k_league_size>
 generation::impl::generate_league(
-    const std::array<common::player, common::g_k_player_count> &database,
+    const std::array<common::player, common::g_k_pool_size> &database,
     const generation_type gen_type) {
-  std::array<index, common::g_k_player_count> indices{};
+  std::array<index, common::g_k_pool_size> indices{};
   for (std::size_t i_index{0}; i_index < indices.size(); ++i_index) {
     indices[i_index] = {i_index, false};
   }
@@ -44,8 +44,8 @@ generation::impl::generate_league(
 }
 
 void generation::impl::basic_generation(
-    std::array<index, common::g_k_player_count> &indices,
-    [[maybe_unused]] const std::array<common::player, common::g_k_player_count>
+    std::array<index, common::g_k_pool_size> &indices,
+    [[maybe_unused]] const std::array<common::player, common::g_k_pool_size>
         &database,
     my_rand::random &rand) {
   std::shuffle(indices.begin(), indices.end(), rand.get_generator());
