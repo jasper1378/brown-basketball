@@ -54,9 +54,8 @@ void analysis::impl::accum_state_add(
   for (auto p_team{league.begin()}; p_team != league.end(); ++p_team) {
     for (auto p_player{p_team->m_team->m_players.begin()};
          p_player != p_team->m_team->m_players.end(); ++p_player) {
+      ++(accum_state[(*p_player)->m_idx].second.m_trial_count);
       {
-        ++(accum_state[(*p_player)->m_idx].second.m_trial_count);
-
         if (p_team->m_ranks.m_points == common::g_k_rank_top) {
           ++(accum_state[(*p_player)->m_idx]
                  .second.m_rank_counts.m_points.m_top);
