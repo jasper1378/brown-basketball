@@ -8,11 +8,13 @@
 
 namespace common {
 
-static constexpr std::size_t g_k_trial_count{10'000'000};
+// static constexpr std::size_t g_k_trial_count{10'000'000};
+static constexpr std::size_t g_k_trial_count{1000};
 
 static constexpr int g_k_team_size{10};
 static constexpr int g_k_league_size{12};
 static constexpr int g_k_player_count{g_k_team_size * g_k_league_size};
+static constexpr int g_k_pool_size{120}; // TODO
 
 static constexpr int g_k_rank_top{1};
 static constexpr int g_k_rank_cutoff{4};
