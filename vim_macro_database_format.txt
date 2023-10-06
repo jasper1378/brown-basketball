@@ -1,71 +1,0 @@
-Vim macro to convert the following:
-
-```
-player_database = [
-
-Aaron Gordon;PF;16.00;6.30;2.80;0.70;0.70;1.10;6.20;11.40;2.60;3.90;
-Al Horford;PF,C;9.40;6.60;3.00;0.60;1.10;1.70;3.50;7.50;0.60;0.80;
-Alex Caruso;PG,SG;6.30;3.20;3.30;1.60;0.60;0.90;2.20;5.10;1.10;1.40;
-# ...
-
-];
-```
-
-To the following:
-
-```
-player_database = [
-
-  {
-    name = "Aaron Gordon";
-    position = [PF];
-    points = 16.00;
-    rebounds = 6.30;
-    assists = 2.80;
-    steals = 0.70;
-    blocks = 0.70;
-    threes = 1.10;
-    field_goals_made = 6.20;
-    field_goals_attempted = 11.40;
-    free_throws_made = 2.60;
-    free_throws_attempted = 3.90;
-  }
-
-  {
-    name = "Al Horford";
-    position = [PF,C];
-    points = 9.40;
-    rebounds = 6.60;
-    assists = 3.00;
-    steals = 0.60;
-    blocks = 1.10;
-    threes = 1.70;
-    field_goals_made = 3.50;
-    field_goals_attempted = 7.50;
-    free_throws_made = 0.60;
-    free_throws_attempted = 0.80;
-  }
-
-  {
-    name = "Alex Caruso";
-    position = [PG,SG];
-    points = 6.30;
-    rebounds = 3.20;
-    assists = 3.30;
-    steals = 1.60;
-    blocks = 0.60;
-    threes = 0.90;
-    field_goals_made = 2.20;
-    field_goals_attempted = 5.10;
-    free_throws_made = 1.10;
-    free_throws_attempted = 1.40;
-  }
-
-# ...
-
-];
-```
-
-##########
-
-0O	{€ýk€kd0o	}€ýk€ku0>>>>iname = "€ýkf;€ýai"€ýk€kraposition = [€ýkf;€ýai[€kb]€ýk€krapoints = €ýkf;€ýaareboui€kbnds = €ýkf;€ýaaassists = €ýkf;€ýaasteals = €ýkf;€ýaablocks = €ýkf;€ýaathrees = €ýkf;€ýaafield_goals_mak€kbde = €ýkf;€ýaafield_goals_attempted = €ýkf;€ýaafree_throug€kb€kbws_made = €ýkf;€ýaafree_throws_attempted = €ýk0€kd] €kd0
