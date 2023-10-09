@@ -15,19 +15,23 @@ static constexpr int g_k_team_size{10};
 static constexpr int g_k_league_size{12};
 static constexpr int g_k_player_count{g_k_team_size * g_k_league_size};
 static constexpr int g_k_pool_size{207};
+static_assert(g_k_pool_size >= g_k_player_count);
 
 static constexpr int g_k_rank_top{1};
 static constexpr int g_k_rank_cutoff{4};
 
-enum class position {
-  NONE,
-  POINT_GUARD,
-  SHOOTING_GUARD,
-  SMALL_FORWARD,
-  POWER_FORWARD,
-  CENTER,
-  GUARD,
-  FORWARD,
+struct position {
+  using type = unsigned int;
+  enum : type {
+    // clang-format off
+  NONE            = 0b00000,
+  POINT_GUARD     = 0b00001,
+  SHOOTING_GUARD  = 0b00010,
+  SMALL_FORWARD   = 0b00100,
+  POWER_FORWARD   = 0b01000,
+  CENTER          = 0b10000,
+    // clang-format on
+  };
 };
 
 struct stats {
@@ -45,7 +49,7 @@ struct stats {
 
 struct info {
   std::string m_name;
-  std::vector<position> m_position;
+  position::type m_positions;
 };
 
 struct player {
