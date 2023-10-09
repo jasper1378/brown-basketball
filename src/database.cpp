@@ -78,20 +78,25 @@ database::impl::read_database(const std::string &file_path) {
                 libconfigfile::node_ptr_cast<libconfigfile::array_node>(
                     check_contains_and_type(g_k_key_str_position,
                                             libconfigfile::node_type::ARRAY))};
-            ret_val[i_player].m_info.m_position = {
+            ret_val[i_player].m_info.m_positions = {
                 [](const libconfigfile::node_ptr<libconfigfile::array_node>
-                       &arr) -> std::vector<common::position> {
-                  std::vector<common::position> ret_val{};
-                  ret_val.reserve(arr->size());
+                       &arr) -> common::position::type {
+                  common::position::type ret_val{0};
                   for (auto p_pos{arr->begin()}; p_pos != arr->end(); ++p_pos) {
                     if ((*p_pos)->get_node_type() ==
                         libconfigfile::node_type::STRING) {
-                    } else {
-                      ret_val.emplace_back(
+                      common::position::type next_pos{
                           position_string_to_enum(libconfigfile::node_to_base(
                               std::move(*libconfigfile::node_ptr_cast<
                                         libconfigfile::string_node>(
-                                  std::move(*p_pos))))));
+                                  std::move(*p_pos)))))};
+                      if (next_pos == common::position::NONE) {
+                        throw std::runtime_error{
+                            "invalid position string in player database"};
+                      } else {
+                        ret_val |= next_pos;
+                      }
+                    } else {
                       throw std::runtime_error{
                           "incorrect data type in player database"};
                     }
@@ -196,7 +201,7 @@ database::impl::read_database(const std::string &file_path) {
   }
 }
 
-common::position
+common::position::type
 database::impl::position_string_to_enum(const std::string &str) {
   if (str == "PG") {
     return common::position::POINT_GUARD;
@@ -208,10 +213,6 @@ database::impl::position_string_to_enum(const std::string &str) {
     return common::position::POWER_FORWARD;
   } else if (str == "C") {
     return common::position::CENTER;
-  } else if (str == "G") {
-    return common::position::GUARD;
-  } else if (str == "F") {
-    return common::position::FORWARD;
   } else {
     return common::position::NONE;
   }
