@@ -25,8 +25,8 @@ int main(int argc, char *argv[]) {
   auto d{database::read_database(argv[1])};
   analysis::accum_state a{d};
   for (std::size_t i_trial{0}; i_trial < common::g_k_trial_count; ++i_trial) {
-    auto g{generation::generate_league(
-        d, generation::generation_type::POSITION_AWARE)};
+    auto g{generation::generate_league(d, (generation::flags::POSITION_AWARE |
+                                           generation::flags::DRAFT_AWARE))};
     auto s{scoring::score_league(g, scoring::return_value_type::TEAM_RANKS)};
     a.add(std::get<static_cast<std::size_t>(
               scoring::return_value_type::TEAM_RANKS)>(s));
