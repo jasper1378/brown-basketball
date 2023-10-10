@@ -40,13 +40,13 @@ analysis::impl::accum_state_init_accum_state(
   return ret_val;
 }
 
-std::size_t analysis::impl::accum_state_init_total_trial_count() { return 0; }
+unsigned long analysis::impl::accum_state_init_total_trial_count() { return 0; }
 
 void analysis::impl::accum_state_add(
     std::array<
         std::pair<const common::player *, analysis::impl::trial_rank_counts>,
         common::g_k_pool_size> &accum_state,
-    std::size_t &total_trial_count,
+    unsigned long &total_trial_count,
     const std::array<scoring::team_ranks, common::g_k_league_size> &league) {
 
   ++total_trial_count;
@@ -144,7 +144,7 @@ const std::array<std::pair<const common::player *, analysis::rank_probs>,
 analysis::impl::accum_state_read(
     const std::array<std::pair<const common::player *, impl::trial_rank_counts>,
                      common::g_k_pool_size> &accum_state,
-    const std::size_t total_trial_count) {
+    const unsigned long total_trial_count) {
 
   static std::array<std::pair<const common::player *, analysis::rank_probs>,
                     common::g_k_pool_size>
