@@ -50,6 +50,8 @@ struct stats {
 struct info {
   std::string m_name;
   position::type m_positions;
+  unsigned long m_draft_range_begin;
+  unsigned long m_draft_range_end;
 };
 
 struct player {
