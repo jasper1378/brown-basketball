@@ -104,6 +104,41 @@ database::impl::read_database(const std::string &file_path) {
                   return ret_val;
                 }(field_position)};
 
+            libconfigfile::node_ptr<libconfigfile::integer_node>
+                field_draft_range_begin{
+                    libconfigfile::node_ptr_cast<libconfigfile::integer_node>(
+                        check_contains_and_type(
+                            g_k_key_str_draft_range_begin,
+                            libconfigfile::node_type::INTEGER))};
+            if (!((field_draft_range_begin->get() > 0) &&
+                  (field_draft_range_begin->get() <= common::g_k_pool_size))) {
+              throw std::runtime_error{
+                  "invalid draft range in player database"};
+            }
+            ret_val[i_player].m_info.m_draft_range_begin =
+                libconfigfile::node_to_base(
+                    std::move(*field_draft_range_begin));
+
+            libconfigfile::node_ptr<libconfigfile::integer_node>
+                field_draft_range_end{
+                    libconfigfile::node_ptr_cast<libconfigfile::integer_node>(
+                        check_contains_and_type(
+                            g_k_key_str_draft_range_end,
+                            libconfigfile::node_type::INTEGER))};
+            if (!((field_draft_range_end->get() > 0) &&
+                  (field_draft_range_end->get() <= common::g_k_pool_size))) {
+              throw std::runtime_error{
+                  "invalid draft range in player database"};
+            }
+            ret_val[i_player].m_info.m_draft_range_end =
+                libconfigfile::node_to_base(std::move(*field_draft_range_end));
+
+            if (ret_val[i_player].m_info.m_draft_range_begin >
+                ret_val[i_player].m_info.m_draft_range_end) {
+              throw std::runtime_error{
+                  "invalid draft range in player database"};
+            }
+
             libconfigfile::node_ptr<libconfigfile::float_node> field_points{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_points,
