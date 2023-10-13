@@ -1,0 +1,77 @@
+initial file:
+```
+name	positions	draft_range_begin	draft_range_end	points	rebounds	assists	steals	blocks	threes	field_goals_made	field_goals_attempted	free_throws_made	free_throws_attempted
+Aaron Gordon	PF	109	144	16.00	6.30	2.80	0.70	0.70	1.10	6.20	11.40	2.60	3.90
+Al Horford	PF,C	109	144	9.40	6.60	3.00	0.60	1.10	1.70	3.50	7.50	0.60	0.80
+Alex Caruso	PG,SG	157	180	6.30	3.20	3.30	1.60	0.60	0.90	2.20	5.10	1.10	1.40
+...
+```
+
+final file
+```
+player_database = [
+
+  {
+    name = "Aaron Gordon";
+    positions = ["PF"];
+    points = 16.00;
+    rebounds = 6.30;
+    assists = 2.80;
+    steals = 0.70;
+    blocks = 0.70;
+    threes = 1.10;
+    field_goals_made = 6.20;
+    field_goals_attempted = 11.40;
+    free_throws_made = 2.60;
+    free_throws_attempted = 3.90;
+  },
+
+  {
+    name = "Al Horford";
+    positions = ["PF","C"];
+    points = 9.40;
+    rebounds = 6.60;
+    assists = 3.00;
+    steals = 0.60;
+    blocks = 1.10;
+    threes = 1.70;
+    field_goals_made = 3.50;
+    field_goals_attempted = 7.50;
+    free_throws_made = 0.60;
+    free_throws_attempted = 0.80;
+  },
+
+  {
+    name = "Alex Caruso";
+    positions = ["PG","SG"];
+    points = 6.30;
+    rebounds = 3.20;
+    assists = 3.30;
+    steals = 1.60;
+    blocks = 0.60;
+    threes = 0.90;
+    field_goals_made = 2.20;
+    field_goals_attempted = 5.10;
+    free_throws_made = 1.10;
+    free_throws_attempted = 1.40;
+  },
+
+  ...
+];
+```
+
+macro 'a'
+```
+gg0:%s/	/;/ggg0"cyyo:r !wc -l %wd$x0"dywddkddggddOplayer_database = [oj0:norm! d@bo];gg0jVGk:s/\[/\["/ggg0jVGk:s/\]/"\]/ggg0jVGk:s/[A-Z],/&"/ggg0jVGk:s/,"[A-Z]/"&/ggg0
+```
+
+macro 'b'
+```
+0O{jo}k"cP"dywdwxj"dPa = "f;i"lakk"dywdwxjj"dPa = [f;i]lakkk"dywdwxjjj"dPa = f;akkkk"dywdwxjjjj"dPa = f;akkkkk"dywdwxjjjjj"dPa = f;akkkkkk"dywdwxjjjjjj"dPa = f;akkkkkkk"dywdwxjjjjjjj"dPa = f;akkkkkkkk"dywdwxjjjjjjjj"dPa = f;akkkkkkkkk"dywdwxjjjjjjjjj"dPa = f;akkkkkkkkkk"dywdwxjjjjjjjjjj"dPa = f;akkkkkkkkkkk"dywdwxjjjjjjjjjjj"dPa = f;akkkkkkkkkkkk"dywdwxjjjjjjjjjjjj"dPa = f;akkkkkkkkkkkkk"dywdwxjjjjjjjjjjjjj"dPa = f;akkkkkkkkkkkkkk"dywdwddjjjjjjjjjjjjj"dPa = A;0jVkkkkkkkkkkkkkkk>jVjjjjjjjjjjjjj>jA,oj0
+```
+
+instructions
+  place contents of macro 'a' in register 'a'
+  place contents of macro 'b' in register 'b'
+  note that registers 'c' and 'd' will be used
+  execute '@a'
