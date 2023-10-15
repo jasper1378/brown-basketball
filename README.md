@@ -1,7 +1,7 @@
 # brown-basketball
 
 ## About
-Fantasy basketball simulations created for my data teacher, Mr. Brown
+Fantasy basketball simulations created for my stats teacher, Mr. Brown
 
 ## Installation
 Acquire the sources
