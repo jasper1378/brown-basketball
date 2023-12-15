@@ -29,7 +29,7 @@ database::impl::read_database(const std::string &file_path) {
       p_player_database != parsed_database->end()) {
     libconfigfile::node_ptr<libconfigfile::node> player_database{
         std::move(p_player_database->second)};
-    if (player_database->get_node_type() == libconfigfile::node_type::ARRAY) {
+    if (player_database->get_node_type() == libconfigfile::node_type::Array) {
       libconfigfile::node_ptr<libconfigfile::array_node>
           player_database_as_array{
               libconfigfile::node_ptr_cast<libconfigfile::array_node>(
@@ -41,7 +41,7 @@ database::impl::read_database(const std::string &file_path) {
              i_player < player_database_as_array->size(); ++i_player) {
 
           if (player_database_as_array->operator[](i_player)->get_node_type() ==
-              libconfigfile::node_type::MAP) {
+              libconfigfile::node_type::Map) {
             libconfigfile::node_ptr<libconfigfile::map_node>
                 player_database_player_as_map{
                     libconfigfile::node_ptr_cast<libconfigfile::map_node>(
@@ -70,21 +70,21 @@ database::impl::read_database(const std::string &file_path) {
             libconfigfile::node_ptr<libconfigfile::string_node> field_name{
                 libconfigfile::node_ptr_cast<libconfigfile::string_node>(
                     check_contains_and_type(g_k_key_str_name,
-                                            libconfigfile::node_type::STRING))};
+                                            libconfigfile::node_type::String))};
             ret_val[i_player].m_info.m_name =
                 libconfigfile::node_to_base(std::move(*field_name));
 
             libconfigfile::node_ptr<libconfigfile::array_node> field_position{
                 libconfigfile::node_ptr_cast<libconfigfile::array_node>(
                     check_contains_and_type(g_k_key_str_position,
-                                            libconfigfile::node_type::ARRAY))};
+                                            libconfigfile::node_type::Array))};
             ret_val[i_player].m_info.m_positions = {
                 [](const libconfigfile::node_ptr<libconfigfile::array_node>
                        &arr) -> common::position::type {
                   common::position::type ret_val{0};
                   for (auto p_pos{arr->begin()}; p_pos != arr->end(); ++p_pos) {
                     if ((*p_pos)->get_node_type() ==
-                        libconfigfile::node_type::STRING) {
+                        libconfigfile::node_type::String) {
                       common::position::type next_pos{
                           position_string_to_enum(libconfigfile::node_to_base(
                               std::move(*libconfigfile::node_ptr_cast<
@@ -109,7 +109,7 @@ database::impl::read_database(const std::string &file_path) {
                     libconfigfile::node_ptr_cast<libconfigfile::integer_node>(
                         check_contains_and_type(
                             g_k_key_str_draft_range_begin,
-                            libconfigfile::node_type::INTEGER))};
+                            libconfigfile::node_type::Integer))};
             if (!((field_draft_range_begin->get() > 0) &&
                   (field_draft_range_begin->get() <= common::g_k_pool_size))) {
               throw std::runtime_error{
@@ -124,7 +124,7 @@ database::impl::read_database(const std::string &file_path) {
                     libconfigfile::node_ptr_cast<libconfigfile::integer_node>(
                         check_contains_and_type(
                             g_k_key_str_draft_range_end,
-                            libconfigfile::node_type::INTEGER))};
+                            libconfigfile::node_type::Integer))};
             if (!((field_draft_range_end->get() > 0) &&
                   (field_draft_range_end->get() <= common::g_k_pool_size))) {
               throw std::runtime_error{
@@ -142,42 +142,42 @@ database::impl::read_database(const std::string &file_path) {
             libconfigfile::node_ptr<libconfigfile::float_node> field_points{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_points,
-                                            libconfigfile::node_type::FLOAT))};
+                                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_points =
                 libconfigfile::node_to_base(std::move(*field_points));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_rebounds{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_rebounds,
-                                            libconfigfile::node_type::FLOAT))};
+                                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_rebounds =
                 libconfigfile::node_to_base(std::move(*field_rebounds));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_assists{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_assists,
-                                            libconfigfile::node_type::FLOAT))};
+                                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_assists =
                 libconfigfile::node_to_base(std::move(*field_assists));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_steals{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_steals,
-                                            libconfigfile::node_type::FLOAT))};
+                                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_steals =
                 libconfigfile::node_to_base(std::move(*field_steals));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_blocks{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_blocks,
-                                            libconfigfile::node_type::FLOAT))};
+                                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_blocks =
                 libconfigfile::node_to_base(std::move(*field_blocks));
 
             libconfigfile::node_ptr<libconfigfile::float_node> field_threes{
                 libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                     check_contains_and_type(g_k_key_str_threes,
-                                            libconfigfile::node_type::FLOAT))};
+                                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_threes =
                 libconfigfile::node_to_base(std::move(*field_threes));
 
@@ -186,7 +186,7 @@ database::impl::read_database(const std::string &file_path) {
                     libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                         check_contains_and_type(
                             g_k_key_str_field_goals_made,
-                            libconfigfile::node_type::FLOAT))};
+                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_field_goals_made =
                 libconfigfile::node_to_base(std::move(*field_field_goals_made));
 
@@ -195,7 +195,7 @@ database::impl::read_database(const std::string &file_path) {
                     libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                         check_contains_and_type(
                             g_k_key_str_field_goals_attempted,
-                            libconfigfile::node_type::FLOAT))};
+                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_field_goals_attempted =
                 libconfigfile::node_to_base(
                     std::move(*field_field_goals_attempted));
@@ -205,7 +205,7 @@ database::impl::read_database(const std::string &file_path) {
                     libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                         check_contains_and_type(
                             g_k_key_str_free_throws_made,
-                            libconfigfile::node_type::FLOAT))};
+                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_free_throws_made =
                 libconfigfile::node_to_base(std::move(*field_free_throws_made));
 
@@ -214,7 +214,7 @@ database::impl::read_database(const std::string &file_path) {
                     libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                         check_contains_and_type(
                             g_k_key_str_free_throws_attempted,
-                            libconfigfile::node_type::FLOAT))};
+                            libconfigfile::node_type::Float))};
             ret_val[i_player].m_stats.m_free_throws_attempted =
                 libconfigfile::node_to_base(
                     std::move(*field_free_throws_attempted));
