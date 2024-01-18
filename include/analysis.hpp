@@ -1,5 +1,5 @@
-#ifndef ANALYSIS_HPP
-#define ANALYSIS_HPP
+#ifndef BROWN_BASKETBALL_ANALYSIS_HPP
+#define BROWN_BASKETBALL_ANALYSIS_HPP
 
 #include "common.hpp"
 #include "scoring.hpp"
