@@ -1,5 +1,5 @@
-#ifndef PRINTING_HPP
-#define PRINTING_HPP
+#ifndef BROWN_BASKETBALL_PRINTING_HPP
+#define BROWN_BASKETBALL_PRINTING_HPP
 
 #include "analysis.hpp"
 #include "common.hpp"

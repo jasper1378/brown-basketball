@@ -1,5 +1,5 @@
-#ifndef RANDOM_HPP
-#define RANDOM_HPP
+#ifndef BROWN_BASKETBALL_RANDOM_HPP
+#define BROWN_BASKETBALL_RANDOM_HPP
 
 #include <cassert>
 #include <concepts>

@@ -1,5 +1,5 @@
-#ifndef GENERATION_HPP
-#define GENERATION_HPP
+#ifndef BROWN_BASKETBALL_GENERATION_HPP
+#define BROWN_BASKETBALL_GENERATION_HPP
 
 #include "common.hpp"
 

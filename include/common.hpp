@@ -1,5 +1,5 @@
-#ifndef COMMON_HPP
-#define COMMON_HPP
+#ifndef BROWN_BASKETBALL_COMMON_HPP
+#define BROWN_BASKETBALL_COMMON_HPP
 
 #include <array>
 #include <cstddef>

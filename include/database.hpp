@@ -1,5 +1,5 @@
-#ifndef DATABASE_HPP
-#define DATABASE_HPP
+#ifndef BROWN_BASKETBALL_DATABASE_HPP
+#define BROWN_BASKETBALL_DATABASE_HPP
 
 #include "common.hpp"
 
