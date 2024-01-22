@@ -2,7 +2,7 @@
 
 #include "common.hpp"
 
-#include "libconfigfile.hpp"
+#include "libconfigfile/libconfigfile.hpp"
 
 #include <array>
 #include <exception>
