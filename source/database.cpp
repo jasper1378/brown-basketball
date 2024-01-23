@@ -8,14 +8,15 @@
 #include <exception>
 #include <stdexcept>
 #include <string>
+#include <string_view>
 
 std::array<common::player, common::g_k_pool_size>
-database::read_database(const std::string &file_path) {
+database::read_database(const std::string_view file_path) {
   return impl::read_database(file_path);
 }
 
 std::array<common::player, common::g_k_pool_size>
-database::impl::read_database(const std::string &file_path) {
+database::impl::read_database(const std::string_view file_path) {
   libconfigfile::node_ptr<libconfigfile::map_node> parsed_database{nullptr};
   try {
     parsed_database = libconfigfile::parse_file(file_path);
@@ -237,7 +238,7 @@ database::impl::read_database(const std::string &file_path) {
 }
 
 common::position::type
-database::impl::position_string_to_enum(const std::string &str) {
+database::impl::position_string_to_enum(const std::string_view str) {
   if (str == "PG") {
     return common::position::POINT_GUARD;
   } else if (str == "SG") {
