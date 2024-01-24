@@ -1,7 +1,7 @@
 #include "generation.hpp"
 
 #include "common.hpp"
-#include "random.hpp"
+#include "my_random.hpp"
 
 #include <algorithm>
 #include <array>
@@ -36,7 +36,7 @@ brown_basketball::generation::impl::generate_league(
     indices[i_index] = {i_index, false};
   }
 
-  brown_basketball::my_rand::random rand{};
+  brown_basketball::my_random::random rand{};
 
   std::array<std::array<index, brown_basketball::common::g_k_team_size>,
              brown_basketball::common::g_k_league_size>
@@ -67,7 +67,7 @@ brown_basketball::generation::impl::basic_step1_generation(
     [[maybe_unused]] const std::array<brown_basketball::common::player,
                                       brown_basketball::common::g_k_pool_size>
         &database,
-    brown_basketball::my_rand::random &rand) {
+    brown_basketball::my_random::random &rand) {
   std::shuffle(indices.begin(), indices.end(), rand.get_generator());
   return indices;
 }
@@ -78,7 +78,7 @@ brown_basketball::generation::impl::draft_aware_step1_generation(
     std::array<index, brown_basketball::common::g_k_pool_size> &&indices,
     const std::array<brown_basketball::common::player,
                      brown_basketball::common::g_k_pool_size> &database,
-    brown_basketball::my_rand::random &rand) {
+    brown_basketball::my_random::random &rand) {
   const auto draft_range_midpoint{
       [](const brown_basketball::common::player &player)
           -> decltype(brown_basketball::common::info::m_draft_range_begin) {
@@ -116,7 +116,7 @@ brown_basketball::generation::impl::draft_aware_step1_generation_alt(
     std::array<index, brown_basketball::common::g_k_pool_size> &&indices,
     const std::array<brown_basketball::common::player,
                      brown_basketball::common::g_k_pool_size> &database,
-    brown_basketball::my_rand::random &rand) {
+    brown_basketball::my_random::random &rand) {
   std::shuffle(indices.begin(), indices.end(), rand.get_generator());
 
   std::array<index, brown_basketball::common::g_k_pool_size> indices_res;
@@ -165,7 +165,7 @@ brown_basketball::generation::impl::basic_step2_generation(
     [[maybe_unused]] const std::array<brown_basketball::common::player,
                                       brown_basketball::common::g_k_pool_size>
         &database,
-    [[maybe_unused]] brown_basketball::my_rand::random &rand) {
+    [[maybe_unused]] brown_basketball::my_random::random &rand) {
   std::array<std::array<index, brown_basketball::common::g_k_team_size>,
              brown_basketball::common::g_k_league_size>
       ret_val{};
@@ -188,7 +188,7 @@ brown_basketball::generation::impl::position_aware_step2_generation(
     std::array<index, brown_basketball::common::g_k_pool_size> &&indices,
     const std::array<brown_basketball::common::player,
                      brown_basketball::common::g_k_pool_size> &database,
-    brown_basketball::my_rand::random &rand) {
+    brown_basketball::my_random::random &rand) {
   enum class team_positions_specificity_1 : unsigned int {
     POINT_GUARD_1 = 0,
     SHOOTING_GUARD_1,
