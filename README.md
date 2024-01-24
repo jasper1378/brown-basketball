@@ -116,7 +116,7 @@ For optimization reasons, certain settings must be configured in the program bef
 
 After running the simulation, the program will output statistics for each player in CSV (actually comma-separated this time) format. These statistics consist of the probability that each player will be drafted in a team whose rank is 1 or 1-4 (my teacher tells me that the number 4 is important for some reason...) in each of the player statistics categories (points, rebounds, assists, steals, blocks, 3's, field goals, free throws).
 
-The simulation involves randomly generating leagues, scoring the teams, and then recording the results. Although I said 'random', the generation is biased in such a way to better reflect reality. For example, it will take into acccount properly filling the various positions on a team and the likelihood that a player will be drafted in a specific round (the latter is currently in progress).
+The simulation involves randomly generating leagues, scoring the teams, and then recording the results. Although I said 'random', the generation is biased in such a way to better reflect reality. For example, it will take into acccount properly filling the various positions on a team and the likelihood that a player will be drafted in a specific round.
 
 ## License
 See [LICENSE.md](LICENSE.md) for details.
