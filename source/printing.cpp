@@ -9,17 +9,15 @@
 
 void brown_basketball::printing::print_result(
     std::ostream &out,
-    const std::array<std::pair<const brown_basketball::common::player *,
-                               brown_basketball::analysis::rank_probs>,
-                     brown_basketball::common::g_k_pool_size> &result) {
+    const std::array<std::pair<const common::player *, analysis::rank_probs>,
+                     common::g_k_pool_size> &result) {
   return impl::print_result(out, result);
 }
 
 void brown_basketball::printing::impl::print_result(
     std::ostream &out,
-    const std::array<std::pair<const brown_basketball::common::player *,
-                               brown_basketball::analysis::rank_probs>,
-                     brown_basketball::common::g_k_pool_size> &result) {
+    const std::array<std::pair<const common::player *, analysis::rank_probs>,
+                     common::g_k_pool_size> &result) {
   out << compose_header() << g_k_row_separator;
 
   for (auto p_player{result.begin()}; p_player != result.end(); ++p_player) {
@@ -65,15 +63,13 @@ std::string brown_basketball::printing::impl::compose_header() {
     ret_val
         .append(compose_rank_prob_header(
             compose_rank_prob_header_category(*p_cat_str),
-            compose_rank_prob_header_value(
-                brown_basketball::common::g_k_rank_top)))
+            compose_rank_prob_header_value(common::g_k_rank_top)))
         .push_back(g_k_column_separator);
     ret_val
         .append(compose_rank_prob_header(
             compose_rank_prob_header_category(*p_cat_str),
-            compose_rank_prob_header_value(
-                brown_basketball::common::g_k_rank_top,
-                brown_basketball::common::g_k_rank_cutoff)))
+            compose_rank_prob_header_value(common::g_k_rank_top,
+                                           common::g_k_rank_cutoff)))
         .push_back(g_k_column_separator);
   }
 
