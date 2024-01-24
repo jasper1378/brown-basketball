@@ -56,7 +56,13 @@ std::array<index, common::g_k_pool_size> basic_step1_generation(
 std::array<index, common::g_k_pool_size> draft_aware_step1_generation(
     std::array<index, common::g_k_pool_size> &&indices,
     const std::array<common::player, common::g_k_pool_size> &database,
-    my_rand::random &rand); // TODO
+    my_rand::random &rand);
+
+// superior in theory, non-functional in practice
+std::array<index, common::g_k_pool_size> draft_aware_step1_generation_alt(
+    std::array<index, common::g_k_pool_size> &&indices,
+    const std::array<common::player, common::g_k_pool_size> &database,
+    my_rand::random &rand);
 
 std::array<std::array<index, common::g_k_team_size>, common::g_k_league_size>
 basic_step2_generation(
