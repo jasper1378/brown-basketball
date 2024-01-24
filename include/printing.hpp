@@ -8,6 +8,8 @@
 #include <iostream>
 #include <string>
 
+namespace brown_basketball {
+
 namespace printing {
 void print_result(
     std::ostream &out,
@@ -33,4 +35,5 @@ std::string compose_rank_prob_header_value(const int start, const int end = -1);
 }; // namespace impl
 }; // namespace printing
 
+} // namespace brown_basketball
 #endif

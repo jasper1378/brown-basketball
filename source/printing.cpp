@@ -7,17 +7,19 @@
 #include <iostream>
 #include <string>
 
-void printing::print_result(
+void brown_basketball::printing::print_result(
     std::ostream &out,
-    const std::array<std::pair<const common::player *, analysis::rank_probs>,
-                     common::g_k_pool_size> &result) {
+    const std::array<std::pair<const brown_basketball::common::player *,
+                               brown_basketball::analysis::rank_probs>,
+                     brown_basketball::common::g_k_pool_size> &result) {
   return impl::print_result(out, result);
 }
 
-void printing::impl::print_result(
+void brown_basketball::printing::impl::print_result(
     std::ostream &out,
-    const std::array<std::pair<const common::player *, analysis::rank_probs>,
-                     common::g_k_pool_size> &result) {
+    const std::array<std::pair<const brown_basketball::common::player *,
+                               brown_basketball::analysis::rank_probs>,
+                     brown_basketball::common::g_k_pool_size> &result) {
   out << compose_header() << g_k_row_separator;
 
   for (auto p_player{result.begin()}; p_player != result.end(); ++p_player) {
@@ -51,7 +53,7 @@ void printing::impl::print_result(
   }
 }
 
-std::string printing::impl::compose_header() {
+std::string brown_basketball::printing::impl::compose_header() {
   static constexpr std::string player_header{"Player"};
 
   std::string ret_val{};
@@ -63,37 +65,37 @@ std::string printing::impl::compose_header() {
     ret_val
         .append(compose_rank_prob_header(
             compose_rank_prob_header_category(*p_cat_str),
-            compose_rank_prob_header_value(common::g_k_rank_top)))
+            compose_rank_prob_header_value(
+                brown_basketball::common::g_k_rank_top)))
         .push_back(g_k_column_separator);
     ret_val
         .append(compose_rank_prob_header(
             compose_rank_prob_header_category(*p_cat_str),
-            compose_rank_prob_header_value(common::g_k_rank_top,
-                                           common::g_k_rank_cutoff)))
+            compose_rank_prob_header_value(
+                brown_basketball::common::g_k_rank_top,
+                brown_basketball::common::g_k_rank_cutoff)))
         .push_back(g_k_column_separator);
   }
 
   return ret_val;
 }
 
-std::string
-printing::impl::compose_rank_prob_header(const std::string &category,
-                                         const std::string &value) {
+std::string brown_basketball::printing::impl::compose_rank_prob_header(
+    const std::string &category, const std::string &value) {
   static constexpr std::string start{"P("};
   static constexpr std::string separator{"="};
   static constexpr std::string end{")"};
   return std::string{start + category + separator + value + end};
 }
 
-std::string
-printing::impl::compose_rank_prob_header_category(const std::string &category) {
+std::string brown_basketball::printing::impl::compose_rank_prob_header_category(
+    const std::string &category) {
   static constexpr std::string start{"rank_"};
   return std::string{start + category};
 }
 
-std::string
-printing::impl::compose_rank_prob_header_value(const int start,
-                                               const int end /*= -1*/) {
+std::string brown_basketball::printing::impl::compose_rank_prob_header_value(
+    const int start, const int end /*= -1*/) {
   static constexpr std::string separator{"-"};
   return std::string{
       std::to_string(start) +

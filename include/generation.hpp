@@ -10,6 +10,8 @@
 #include <cstddef>
 #include <random>
 
+namespace brown_basketball {
+
 namespace generation {
 namespace flags {
 using type = unsigned int;
@@ -70,4 +72,5 @@ position_aware_step2_generation(
     my_rand::random &rand);
 } // namespace impl
 } // namespace generation
+} // namespace brown_basketball
 #endif

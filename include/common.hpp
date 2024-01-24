@@ -6,6 +6,8 @@
 #include <string>
 #include <vector>
 
+namespace brown_basketball {
+
 namespace common {
 
 // /*USER SETTING*/ static constexpr unsigned long g_k_trial_count{10'000'000};
@@ -66,4 +68,5 @@ struct team {
 
 } // namespace common
 
+} // namespace brown_basketball
 #endif
