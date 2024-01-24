@@ -7,7 +7,7 @@
 #include <array>
 #include <cstddef>
 #include <iostream> // TODO XXX DEBUG
-#include <random>
+#include <vector>
 
 std::array<brown_basketball::common::team,
            brown_basketball::common::g_k_league_size>
@@ -79,7 +79,82 @@ brown_basketball::generation::impl::draft_aware_step1_generation(
     const std::array<brown_basketball::common::player,
                      brown_basketball::common::g_k_pool_size> &database,
     brown_basketball::my_rand::random &rand) {
-  // TODO
+  const auto draft_range_midpoint{
+      [](const brown_basketball::common::player &player)
+          -> decltype(brown_basketball::common::info::m_draft_range_begin) {
+        return ((player.m_info.m_draft_range_begin +
+                 player.m_info.m_draft_range_end) /
+                2);
+      }};
+  std::sort(indices.begin(), indices.end(),
+            [&database, &draft_range_midpoint](const index &i1,
+                                               const index &i2) -> bool {
+              return ((draft_range_midpoint(database[i1.m_idx])) >
+                      (draft_range_midpoint(database[i2.m_idx])));
+            });
+
+  static constexpr std::size_t bin_size{
+      10}; // TODO what is a good bin_size? smaller means that players are more
+           // likely to be drafted in their range, larger means more randomness
+
+  for (std::size_t i_player{0};
+       i_player < brown_basketball::common::g_k_pool_size;
+       i_player += bin_size) {
+    std::shuffle((indices.begin() + i_player),
+                 (((i_player + bin_size) < indices.size())
+                      ? (indices.begin() + i_player + bin_size)
+                      : (indices.end())),
+                 rand.get_generator());
+  }
+
+  return indices;
+}
+
+std::array<brown_basketball::generation::impl::index,
+           brown_basketball::common::g_k_pool_size>
+brown_basketball::generation::impl::draft_aware_step1_generation_alt(
+    std::array<index, brown_basketball::common::g_k_pool_size> &&indices,
+    const std::array<brown_basketball::common::player,
+                     brown_basketball::common::g_k_pool_size> &database,
+    brown_basketball::my_rand::random &rand) {
+  std::shuffle(indices.begin(), indices.end(), rand.get_generator());
+
+  std::array<index, brown_basketball::common::g_k_pool_size> indices_res;
+
+  const auto find_spot_for_player{[&indices_res, &database,
+                                   &rand](const index &player) -> void {
+    decltype(index::m_idx) cur_index{player.m_idx};
+
+    while (true) {
+      std::vector<std::size_t> valid_pos(
+          (database[cur_index].m_info.m_draft_range_end -
+           database[cur_index].m_info.m_draft_range_begin) +
+          1);
+      std::iota(valid_pos.begin(), valid_pos.end(),
+                database[cur_index].m_info.m_draft_range_begin);
+      std::shuffle(valid_pos.begin(), valid_pos.end(), rand.get_generator());
+
+      for (std::size_t i_valid_pos{0}; i_valid_pos < valid_pos.size();
+           ++i_valid_pos) {
+        if (indices_res[valid_pos[i_valid_pos]].m_used == false) {
+          indices_res[valid_pos[i_valid_pos]].m_used = true;
+          indices_res[valid_pos[i_valid_pos]].m_idx = cur_index;
+          return;
+        }
+      }
+
+      decltype(index::m_idx) temp = indices_res[valid_pos[0]].m_idx;
+      indices_res[valid_pos[0]].m_idx = cur_index;
+      cur_index = temp;
+    }
+  }};
+
+  for (std::size_t i_player{0};
+       i_player < brown_basketball::common::g_k_pool_size; ++i_player) {
+    find_spot_for_player(indices[i_player]);
+  }
+
+  return indices_res;
 }
 
 std::array<std::array<brown_basketball::generation::impl::index,
