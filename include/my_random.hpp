@@ -7,7 +7,7 @@
 
 namespace brown_basketball {
 
-namespace my_rand {
+namespace my_random {
 class random {
 private:
   std::random_device m_rd;
@@ -39,7 +39,7 @@ public:
   random &operator=(const random &other) = delete;
   random &operator==(random &&other) = delete;
 };
-} // namespace my_rand
+} // namespace my_random
 
 } // namespace brown_basketball
 #endif
