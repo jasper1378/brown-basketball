@@ -3,7 +3,9 @@
 ## About
 Fantasy basketball simulations created for my high school stats teacher.
 
+<!---
 Please note that I know nothing about basketball.
+--->
 
 ## Installation
 Acquire the sources
