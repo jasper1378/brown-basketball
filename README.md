@@ -119,4 +119,4 @@ After running the simulation, the program will output statistics for each player
 The simulation involves randomly generating leagues, scoring the teams, and then recording the results. Although I said 'random', the generation is biased in such a way to better reflect reality. For example, it will take into acccount properly filling the various positions on a team and the likelihood that a player will be drafted in a specific round.
 
 ## License
-See [LICENSE.md](LICENSE.md) for details.
+See [LICENSE](LICENSE) for details.
