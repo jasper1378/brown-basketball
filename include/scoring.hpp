@@ -6,6 +6,8 @@
 #include <cstddef>
 #include <variant>
 
+namespace brown_basketball {
+
 namespace scoring {
 
 enum class return_value_type {
@@ -109,4 +111,5 @@ std::array<team_total_rank, common::g_k_league_size> calc_team_total_rank(
 } // namespace impl
 } // namespace scoring
 
+} // namespace brown_basketball
 #endif

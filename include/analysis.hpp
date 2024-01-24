@@ -9,6 +9,8 @@
 #include <type_traits>
 #include <unordered_map>
 
+namespace brown_basketball {
+
 namespace analysis {
 
 namespace impl {
@@ -100,4 +102,5 @@ accum_state_read(
 } // namespace impl
 } // namespace analysis
 
+} // namespace brown_basketball
 #endif

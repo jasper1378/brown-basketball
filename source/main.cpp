@@ -22,13 +22,16 @@ int main(int argc, char *argv[]) {
                  "the configuration file\n";
     std::exit(EXIT_FAILURE);
   }
-  auto d{database::read_database(argv[1])};
-  analysis::accum_state a{d};
-  for (std::size_t i_trial{0}; i_trial < common::g_k_trial_count; ++i_trial) {
-    auto g{generation::generate_league(d, (generation::flags::BASIC))};
-    auto s{scoring::score_league(g, scoring::return_value_type::TEAM_RANKS)};
+  auto d{brown_basketball::database::read_database(argv[1])};
+  brown_basketball::analysis::accum_state a{d};
+  for (std::size_t i_trial{0};
+       i_trial < brown_basketball::common::g_k_trial_count; ++i_trial) {
+    auto g{brown_basketball::generation::generate_league(
+        d, (brown_basketball::generation::flags::BASIC))};
+    auto s{brown_basketball::scoring::score_league(
+        g, brown_basketball::scoring::return_value_type::TEAM_RANKS)};
     a.add(std::get<static_cast<std::size_t>(
-              scoring::return_value_type::TEAM_RANKS)>(s));
+              brown_basketball::scoring::return_value_type::TEAM_RANKS)>(s));
   }
-  printing::print_result(std::cout, a.read());
+  brown_basketball::printing::print_result(std::cout, a.read());
 }

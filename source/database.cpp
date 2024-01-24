@@ -10,13 +10,15 @@
 #include <string>
 #include <string_view>
 
-std::array<common::player, common::g_k_pool_size>
-database::read_database(const std::string_view file_path) {
+std::array<brown_basketball::common::player,
+           brown_basketball::common::g_k_pool_size>
+brown_basketball::database::read_database(const std::string &file_path) {
   return impl::read_database(file_path);
 }
 
-std::array<common::player, common::g_k_pool_size>
-database::impl::read_database(const std::string_view file_path) {
+std::array<brown_basketball::common::player,
+           brown_basketball::common::g_k_pool_size>
+brown_basketball::database::impl::read_database(const std::string &file_path) {
   libconfigfile::node_ptr<libconfigfile::map_node> parsed_database{nullptr};
   try {
     parsed_database = libconfigfile::parse_file(file_path);
@@ -35,8 +37,11 @@ database::impl::read_database(const std::string_view file_path) {
           player_database_as_array{
               libconfigfile::node_ptr_cast<libconfigfile::array_node>(
                   std::move(player_database))};
-      if (player_database_as_array->size() == common::g_k_pool_size) {
-        std::array<common::player, common::g_k_pool_size> ret_val{};
+      if (player_database_as_array->size() ==
+          brown_basketball::common::g_k_pool_size) {
+        std::array<brown_basketball::common::player,
+                   brown_basketball::common::g_k_pool_size>
+            ret_val{};
 
         for (std::size_t i_player{0};
              i_player < player_database_as_array->size(); ++i_player) {
@@ -81,17 +86,18 @@ database::impl::read_database(const std::string_view file_path) {
                                             libconfigfile::node_type::Array))};
             ret_val[i_player].m_info.m_positions = {
                 [](const libconfigfile::node_ptr<libconfigfile::array_node>
-                       &arr) -> common::position::type {
-                  common::position::type ret_val{0};
+                       &arr) -> brown_basketball::common::position::type {
+                  brown_basketball::common::position::type ret_val{0};
                   for (auto p_pos{arr->begin()}; p_pos != arr->end(); ++p_pos) {
                     if ((*p_pos)->get_node_type() ==
                         libconfigfile::node_type::String) {
-                      common::position::type next_pos{
+                      brown_basketball::common::position::type next_pos{
                           position_string_to_enum(libconfigfile::node_to_base(
                               std::move(*libconfigfile::node_ptr_cast<
                                         libconfigfile::string_node>(
                                   std::move(*p_pos)))))};
-                      if (next_pos == common::position::NONE) {
+                      if (next_pos ==
+                          brown_basketball::common::position::NONE) {
                         throw std::runtime_error{
                             "invalid position string in player database"};
                       } else {
@@ -112,7 +118,8 @@ database::impl::read_database(const std::string_view file_path) {
                             g_k_key_str_draft_range_begin,
                             libconfigfile::node_type::Integer))};
             if (!((field_draft_range_begin->get() > 0) &&
-                  (field_draft_range_begin->get() <= common::g_k_pool_size))) {
+                  (field_draft_range_begin->get() <=
+                   brown_basketball::common::g_k_pool_size))) {
               throw std::runtime_error{
                   "invalid draft range in player database"};
             }
@@ -127,7 +134,8 @@ database::impl::read_database(const std::string_view file_path) {
                             g_k_key_str_draft_range_end,
                             libconfigfile::node_type::Integer))};
             if (!((field_draft_range_end->get() > 0) &&
-                  (field_draft_range_end->get() <= common::g_k_pool_size))) {
+                  (field_draft_range_end->get() <=
+                   brown_basketball::common::g_k_pool_size))) {
               throw std::runtime_error{
                   "invalid draft range in player database"};
             }
@@ -237,19 +245,20 @@ database::impl::read_database(const std::string_view file_path) {
   }
 }
 
-common::position::type
-database::impl::position_string_to_enum(const std::string_view str) {
+brown_basketball::common::position::type
+brown_basketball::database::impl::position_string_to_enum(
+    const std::string_view str) {
   if (str == "PG") {
-    return common::position::POINT_GUARD;
+    return brown_basketball::common::position::POINT_GUARD;
   } else if (str == "SG") {
-    return common::position::SHOOTING_GUARD;
+    return brown_basketball::common::position::SHOOTING_GUARD;
   } else if (str == "SF") {
-    return common::position::SMALL_FORWARD;
+    return brown_basketball::common::position::SMALL_FORWARD;
   } else if (str == "PF") {
-    return common::position::POWER_FORWARD;
+    return brown_basketball::common::position::POWER_FORWARD;
   } else if (str == "C") {
-    return common::position::CENTER;
+    return brown_basketball::common::position::CENTER;
   } else {
-    return common::position::NONE;
+    return brown_basketball::common::position::NONE;
   }
 }

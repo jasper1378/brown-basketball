@@ -5,6 +5,8 @@
 #include <concepts>
 #include <random>
 
+namespace brown_basketball {
+
 namespace my_rand {
 class random {
 private:
@@ -39,4 +41,5 @@ public:
 };
 } // namespace my_rand
 
+} // namespace brown_basketball
 #endif

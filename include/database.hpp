@@ -7,10 +7,12 @@
 #include <string>
 #include <string_view>
 
+namespace brown_basketball {
+
 namespace database {
 
 std::array<common::player, common::g_k_pool_size>
-read_database(const std::string_view file_path);
+read_database(const std::string &file_path);
 
 namespace impl {
 static constexpr std::string g_k_key_str_player_database{"player_database"};
@@ -32,10 +34,11 @@ static const std::string g_k_key_str_free_throws_attempted{
     "free_throws_attempted"};
 
 std::array<common::player, common::g_k_pool_size>
-read_database(const std::string_view file_path);
+read_database(const std::string &file_path);
 
 common::position::type position_string_to_enum(const std::string_view str);
 } // namespace impl
 } // namespace database
 
+} // namespace brown_basketball
 #endif
