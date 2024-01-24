@@ -58,7 +58,7 @@ std::array<index, common::g_k_pool_size> draft_aware_step1_generation(
     const std::array<common::player, common::g_k_pool_size> &database,
     my_random::random &rand);
 
-// superior in theory, non-functional in practice
+// this method is superior in theory, but not feasible in practice
 std::array<index, common::g_k_pool_size> draft_aware_step1_generation_alt(
     std::array<index, common::g_k_pool_size> &&indices,
     const std::array<common::player, common::g_k_pool_size> &database,
