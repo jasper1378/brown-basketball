@@ -13,18 +13,17 @@
 namespace brown_basketball {
 
 namespace generation {
-namespace flags {
-using type = unsigned int;
-enum : type {
+
+enum class flags : unsigned int {
   BASIC = 0b00,
   DRAFT_AWARE = 0b01,
   POSITION_AWARE = 0b10,
 };
-} // namespace flags
+DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(flags);
 
 std::array<common::team, common::g_k_league_size> generate_league(
     const std::array<common::player, common::g_k_pool_size> &database,
-    const flags::type flags);
+    const flags flags);
 
 namespace impl {
 struct index {
@@ -45,7 +44,7 @@ using step2_generation_func_t = std::array<
 
 std::array<common::team, common::g_k_league_size> generate_league(
     const std::array<common::player, common::g_k_pool_size> &database,
-    const flags::type flags);
+    const flags flags);
 
 std::array<index, common::g_k_pool_size> basic_step1_generation(
     std::array<index, common::g_k_pool_size> &&indices,

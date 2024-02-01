@@ -36,7 +36,7 @@ static const std::string g_k_key_str_free_throws_attempted{
 std::array<common::player, common::g_k_pool_size>
 read_database(const std::string &file_path);
 
-common::position::type position_string_to_enum(const std::string_view str);
+common::position position_string_to_enum(const std::string_view str);
 } // namespace impl
 } // namespace database
 
