@@ -1,6 +1,8 @@
 #ifndef BROWN_BASKETBALL_COMMON_HPP
 #define BROWN_BASKETBALL_COMMON_HPP
 
+#include "define_enum_flag_operators.hpp"
+
 #include <array>
 #include <cstddef>
 #include <string>
@@ -22,19 +24,17 @@ static_assert(g_k_pool_size >= g_k_player_count);
 static constexpr int g_k_rank_top{1};
 static constexpr int g_k_rank_cutoff{4};
 
-struct position {
-  using type = unsigned int;
-  enum : type {
-    // clang-format off
+enum class position : unsigned int {
+  // clang-format off
   NONE            = 0b00000,
   POINT_GUARD     = 0b00001,
   SHOOTING_GUARD  = 0b00010,
   SMALL_FORWARD   = 0b00100,
   POWER_FORWARD   = 0b01000,
   CENTER          = 0b10000,
-    // clang-format on
-  };
+  // clang-format on
 };
+DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(position);
 
 struct stats {
   double m_points;
@@ -51,7 +51,7 @@ struct stats {
 
 struct info {
   std::string m_name;
-  position::type m_positions;
+  position m_positions;
   unsigned long m_draft_range_begin;
   unsigned long m_draft_range_end;
 };

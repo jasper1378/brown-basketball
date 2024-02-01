@@ -13,7 +13,7 @@ std::array<brown_basketball::common::team,
            brown_basketball::common::g_k_league_size>
 brown_basketball::generation::generate_league(
     const std::array<common::player, common::g_k_pool_size> &database,
-    const flags::type flags) {
+    const flags flags) {
   return impl::generate_league(database, flags);
 }
 
@@ -21,13 +21,15 @@ std::array<brown_basketball::common::team,
            brown_basketball::common::g_k_league_size>
 brown_basketball::generation::impl::generate_league(
     const std::array<common::player, common::g_k_pool_size> &database,
-    const flags::type flags) {
+    const flags flags) {
   step1_generation_func_t step1_generation_func{
-      (flags & flags::DRAFT_AWARE) ? (draft_aware_step1_generation)
-                                   : (basic_step1_generation)};
+      (static_cast<bool>(flags & flags::DRAFT_AWARE))
+          ? (draft_aware_step1_generation)
+          : (basic_step1_generation)};
   step2_generation_func_t step2_generation_func{
-      (flags & flags::POSITION_AWARE) ? (position_aware_step2_generation)
-                                      : (basic_step2_generation)};
+      (static_cast<bool>(flags & flags::POSITION_AWARE))
+          ? (position_aware_step2_generation)
+          : (basic_step2_generation)};
 
   std::array<index, common::g_k_pool_size> indices{};
   for (std::size_t i_index{0}; i_index < indices.size(); ++i_index) {
@@ -223,32 +225,33 @@ brown_basketball::generation::impl::position_aware_step2_generation(
                 common::g_k_team_size);
 
   const auto compatible_player_postion{
-      [](const team_positions pos,
-         const common::position::type player) -> bool {
+      [](const team_positions pos, const common::position player) -> bool {
         switch (pos) {
         case team_positions::POINT_GUARD_1: {
-          return (player & common::position::POINT_GUARD);
+          return static_cast<bool>(player & common::position::POINT_GUARD);
         } break;
         case team_positions::SHOOTING_GUARD_1: {
-          return (player & common::position::SHOOTING_GUARD);
+          return static_cast<bool>(player & common::position::SHOOTING_GUARD);
         } break;
         case team_positions::ANY_GUARD_1: {
-          return ((player & common::position::POINT_GUARD) ||
-                  (player & common::position::SHOOTING_GUARD));
+          return static_cast<bool>(
+              static_cast<bool>(player & common::position::POINT_GUARD) ||
+              static_cast<bool>(player & common::position::SHOOTING_GUARD));
         } break;
         case team_positions::SMALL_FORWARD_1: {
-          return (player & common::position::SMALL_FORWARD);
+          return static_cast<bool>(player & common::position::SMALL_FORWARD);
         } break;
         case team_positions::POWER_FORWARD_1: {
-          return (player & common::position::POWER_FORWARD);
+          return static_cast<bool>(player & common::position::POWER_FORWARD);
         } break;
         case team_positions::ANY_FORWARD_1: {
-          return ((player & common::position::SMALL_FORWARD) ||
-                  (player & common::position::POWER_FORWARD));
+          return static_cast<bool>(
+              static_cast<bool>(player & common::position::SMALL_FORWARD) ||
+              static_cast<bool>(player & common::position::POWER_FORWARD));
         } break;
         case team_positions::CENTER_1:
         case team_positions::CENTER_2: {
-          return (player & common::position::CENTER);
+          return static_cast<bool>(player & common::position::CENTER);
         } break;
         case team_positions::UTILITY_1:
         case team_positions::UTILITY_2: {

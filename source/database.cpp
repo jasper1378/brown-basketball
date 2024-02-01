@@ -83,12 +83,12 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                                             libconfigfile::node_type::Array))};
             ret_val[i_player].m_info.m_positions = {
                 [](const libconfigfile::node_ptr<libconfigfile::array_node>
-                       &arr) -> common::position::type {
-                  common::position::type ret_val{0};
+                       &arr) -> common::position {
+                  common::position ret_val{0};
                   for (auto p_pos{arr->begin()}; p_pos != arr->end(); ++p_pos) {
                     if ((*p_pos)->get_node_type() ==
                         libconfigfile::node_type::String) {
-                      common::position::type next_pos{
+                      common::position next_pos{
                           position_string_to_enum(libconfigfile::node_to_base(
                               std::move(*libconfigfile::node_ptr_cast<
                                         libconfigfile::string_node>(
@@ -239,7 +239,7 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
   }
 }
 
-brown_basketball::common::position::type
+brown_basketball::common::position
 brown_basketball::database::impl::position_string_to_enum(
     const std::string_view str) {
   if (str == "PG") {
