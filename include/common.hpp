@@ -12,8 +12,7 @@ namespace brown_basketball {
 
 namespace common {
 
-// /*USER SETTING*/ static constexpr unsigned long g_k_trial_count{10'000'000};
-/*USER SETTING*/ static constexpr unsigned long g_k_trial_count{100};
+/*USER SETTING*/ static constexpr unsigned long g_k_trial_count{1'000'000};
 /*USER SETTING*/ static constexpr int g_k_team_size{10};
 /*USER SETTING*/ static constexpr int g_k_league_size{12};
 /*USER SETTING*/ static constexpr int g_k_pool_size{184};
