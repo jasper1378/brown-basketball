@@ -3,10 +3,9 @@
 #include "common.hpp"
 #include "scoring.hpp"
 
+#include <array>
 #include <cstdint>
-#include <string>
 #include <type_traits>
-#include <unordered_map>
 #include <utility>
 
 brown_basketball::analysis::accum_state::accum_state(

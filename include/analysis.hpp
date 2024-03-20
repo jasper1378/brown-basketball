@@ -4,10 +4,9 @@
 #include "common.hpp"
 #include "scoring.hpp"
 
-#include <cstdint>
-#include <string>
+#include <array>
 #include <type_traits>
-#include <unordered_map>
+#include <utility>
 
 namespace brown_basketball {
 
