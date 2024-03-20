@@ -15,6 +15,8 @@ t_result mean(t_iterator first, t_iterator last) {
     mean += *i;
   }
   mean /= std::distance(first, last);
+
+  return mean;
 }
 
 template <typename t_result, typename t_iterator>
