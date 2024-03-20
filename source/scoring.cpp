@@ -3,6 +3,7 @@
 #include "common.hpp"
 
 #include <algorithm>
+#include <array>
 #include <exception>
 #include <numeric>
 #include <stdexcept>
@@ -129,64 +130,56 @@ brown_basketball::scoring::impl::calc_team_ranks(
   const auto do_calc_team_ranks{
       [&indices, &league,
        &ret_val]<typename t_struct_member_access_helper_stats,
-                 typename t_struct_member_access_helper_ranks> requires std::
-          is_invocable_r_v<const double &, t_struct_member_access_helper_stats,
-                           const stats &> &&
-      std::is_invocable_r_v<int &, t_struct_member_access_helper_ranks,
-                            ranks &>(
-          t_struct_member_access_helper_stats struct_member_access_helper_stats,
-          t_struct_member_access_helper_ranks struct_member_access_helper_ranks)
-          ->void{std::sort(
-              indices.begin(), indices.end(),
-              [&league, &struct_member_access_helper_stats](
-                  std::size_t i, std::size_t j) -> bool {
-                return (struct_member_access_helper_stats(league[i].m_stats) >
+                 typename t_struct_member_access_helper_ranks>
+        requires std::is_invocable_r_v<const double &,
+                                       t_struct_member_access_helper_stats,
+                                       const stats &> &&
+                     std::is_invocable_r_v<
+                         int &, t_struct_member_access_helper_ranks, ranks &>
+      (t_struct_member_access_helper_stats struct_member_access_helper_stats,
+       t_struct_member_access_helper_ranks struct_member_access_helper_ranks)
+          -> void {
+        std::sort(indices.begin(), indices.end(),
+                  [&league, &struct_member_access_helper_stats](
+                      std::size_t i, std::size_t j) -> bool {
+                    return (
+                        struct_member_access_helper_stats(league[i].m_stats) >
                         struct_member_access_helper_stats(league[j].m_stats));
-              });
+                  });
 
-  int rank{1};
-  for (auto p_index{indices.begin()}; p_index != indices.end();
-       ++p_index, ++rank) {
-    struct_member_access_helper_ranks(ret_val[*p_index].m_ranks) = rank;
-  }
-}
-}
-;
+        int rank{1};
+        for (auto p_index{indices.begin()}; p_index != indices.end();
+             ++p_index, ++rank) {
+          struct_member_access_helper_ranks(ret_val[*p_index].m_ranks) = rank;
+        }
+      }};
 
-do_calc_team_ranks(([](const stats &s) -> const double & {
-                     return s.m_points;
-                   }),
-                   ([](ranks &r) -> int & { return r.m_points; }));
-do_calc_team_ranks(([](const stats &s) -> const double & {
-                     return s.m_rebounds;
-                   }),
-                   ([](ranks &r) -> int & { return r.m_rebounds; }));
-do_calc_team_ranks(([](const stats &s) -> const double & {
-                     return s.m_assists;
-                   }),
-                   ([](ranks &r) -> int & { return r.m_assists; }));
-do_calc_team_ranks(([](const stats &s) -> const double & {
-                     return s.m_steals;
-                   }),
-                   ([](ranks &r) -> int & { return r.m_steals; }));
-do_calc_team_ranks(([](const stats &s) -> const double & {
-                     return s.m_blocks;
-                   }),
-                   ([](ranks &r) -> int & { return r.m_blocks; }));
-do_calc_team_ranks(([](const stats &s) -> const double & {
-                     return s.m_threes;
-                   }),
-                   ([](ranks &r) -> int & { return r.m_threes; }));
-do_calc_team_ranks(([](const stats &s) -> const double & {
-                     return s.m_field_goals;
-                   }),
-                   ([](ranks &r) -> int & { return r.m_field_goals; }));
-do_calc_team_ranks(([](const stats &s) -> const double & {
-                     return s.m_free_throws;
-                   }),
-                   ([](ranks &r) -> int & { return r.m_free_throws; }));
+  do_calc_team_ranks(
+      ([](const stats &s) -> const double & { return s.m_points; }),
+      ([](ranks &r) -> int & { return r.m_points; }));
+  do_calc_team_ranks(
+      ([](const stats &s) -> const double & { return s.m_rebounds; }),
+      ([](ranks &r) -> int & { return r.m_rebounds; }));
+  do_calc_team_ranks(
+      ([](const stats &s) -> const double & { return s.m_assists; }),
+      ([](ranks &r) -> int & { return r.m_assists; }));
+  do_calc_team_ranks(
+      ([](const stats &s) -> const double & { return s.m_steals; }),
+      ([](ranks &r) -> int & { return r.m_steals; }));
+  do_calc_team_ranks(
+      ([](const stats &s) -> const double & { return s.m_blocks; }),
+      ([](ranks &r) -> int & { return r.m_blocks; }));
+  do_calc_team_ranks(
+      ([](const stats &s) -> const double & { return s.m_threes; }),
+      ([](ranks &r) -> int & { return r.m_threes; }));
+  do_calc_team_ranks(
+      ([](const stats &s) -> const double & { return s.m_field_goals; }),
+      ([](ranks &r) -> int & { return r.m_field_goals; }));
+  do_calc_team_ranks(
+      ([](const stats &s) -> const double & { return s.m_free_throws; }),
+      ([](ranks &r) -> int & { return r.m_free_throws; }));
 
-return ret_val;
+  return ret_val;
 }
 
 std::array<brown_basketball::scoring::team_scores,

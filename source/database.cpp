@@ -5,10 +5,12 @@
 #include "libconfigfile/libconfigfile.hpp"
 
 #include <array>
+#include <cstddef>
 #include <exception>
 #include <stdexcept>
 #include <string>
 #include <string_view>
+#include <utility>
 
 std::array<brown_basketball::common::player,
            brown_basketball::common::g_k_pool_size>
