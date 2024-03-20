@@ -3,7 +3,7 @@
 
 #include "common.hpp"
 
-#include <cstddef>
+#include <array>
 #include <variant>
 
 namespace brown_basketball {
