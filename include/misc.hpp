@@ -7,6 +7,7 @@
 #include <iterator>
 
 namespace brown_basketball {
+namespace misc {
 template <typename t_result, typename t_iterator>
   requires std::floating_point<t_result>
 t_result mean(t_iterator first, t_iterator last) {
@@ -39,6 +40,7 @@ t_result standard_deviation(t_iterator first, t_iterator last,
                             bool sample = false) {
   return standard_deviation(first, last, mean(first, last), sample);
 }
+} // namespace misc
 } // namespace brown_basketball
 
 #endif
