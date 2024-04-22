@@ -17,7 +17,7 @@ enum class flags : unsigned int {
   DRAFT_AWARE = 0b01,
   POSITION_AWARE = 0b10,
 };
-DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(flags);
+BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(flags);
 
 std::array<common::team, common::g_k_league_size> generate_league(
     const std::array<common::player, common::g_k_pool_size> &database,
