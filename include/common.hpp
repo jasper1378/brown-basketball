@@ -32,7 +32,7 @@ enum class position : unsigned int {
   CENTER          = 0b10000,
   // clang-format on
 };
-DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(position);
+BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(position);
 
 struct stats {
   double m_points;
