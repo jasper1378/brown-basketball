@@ -100,6 +100,7 @@ The following is a description of the various fields.
 - `free_throws_made`, `float`, average player free throws made per game
 - `free_throws_attempted`, `float`, average player free throws attempted per game
 
+<!---
 If perhaps you are storing player statistics in a spreadsheet, a CSV (or rather tab-separated) file in the format below can be easily converted to the configuration file format using the Vim macro specified in [vim_macro_format_database.txt](vim_macro_format_database.txt).
 ```
 name	positions	draft_range_begin	draft_range_end	points	rebounds	assists	steals	blocks	threes	field_goals_made	field_goals_attempted	free_throws_made	free_throws_attempted
@@ -108,6 +109,7 @@ Al Horford	PF,C	109	144	9.40	6.60	3.00	0.60	1.10	1.70	3.50	7.50	0.60	0.80
 Alex Caruso	PG,SG	157	180	6.30	3.20	3.30	1.60	0.60	0.90	2.20	5.10	1.10	1.40
 ...
 ```
+--->
 
 For optimization reasons, certain settings must be configured in the program before compilation. These settings can be found in [include/common.hpp](common.hpp), and are prefixed with a `/*USER SETTING*/` comment for visibility.
 - \<variable name\>, \<data type\>, \<description\>
