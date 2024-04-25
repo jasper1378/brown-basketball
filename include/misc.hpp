@@ -24,7 +24,7 @@ template <typename t_result, typename t_iterator>
   requires std::floating_point<t_result>
 t_result standard_deviation(t_iterator first, t_iterator last,
                             const t_result mean, bool sample = false) {
-  std::size_t size{std::distance(first, last)};
+  std::size_t size{static_cast<std::size_t>(std::distance(first, last))};
 
   t_result sum_of_square_dists{0};
   for (t_iterator i{first}; i != last; ++i) {
