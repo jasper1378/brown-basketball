@@ -14,9 +14,9 @@ namespace common {
 /*USER SETTING*/ static constexpr unsigned long g_k_trial_count{10'000'000};
 /*USER SETTING*/ static constexpr int g_k_team_size{10};
 /*USER SETTING*/ static constexpr int g_k_league_size{12};
-// /*USER SETTING*/ static constexpr int g_k_pool_size{184};
-/*USER SETTING*/ static constexpr int g_k_pool_size{g_k_team_size *
-                                                    g_k_league_size};
+/*USER SETTING*/ static constexpr int g_k_pool_size{144};
+// /*USER SETTING*/ static constexpr int g_k_pool_size{g_k_team_size *
+// g_k_league_size};
 
 static constexpr int g_k_player_count{g_k_team_size * g_k_league_size};
 static_assert(g_k_pool_size >= g_k_player_count);
