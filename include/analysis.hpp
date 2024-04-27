@@ -19,22 +19,12 @@ struct rank_cats_counts {
   unsigned long m_cutoff;
 };
 
-struct rank_counts {
-  rank_cats_counts m_points;
-  rank_cats_counts m_rebounds;
-  rank_cats_counts m_assists;
-  rank_cats_counts m_steals;
-  rank_cats_counts m_blocks;
-  rank_cats_counts m_threes;
-  rank_cats_counts m_field_goals;
-  rank_cats_counts m_free_throws;
-};
+using rank_counts = common::categories<rank_cats_counts>;
 
 struct trial_rank_counts {
   unsigned long m_trial_count;
   rank_counts m_rank_counts;
 };
-
 } // namespace impl
 
 struct rank_cats_probs {
@@ -42,16 +32,8 @@ struct rank_cats_probs {
   double m_cutoff;
 };
 
-struct rank_probs {
-  rank_cats_probs m_points;
-  rank_cats_probs m_rebounds;
-  rank_cats_probs m_assists;
-  rank_cats_probs m_steals;
-  rank_cats_probs m_blocks;
-  rank_cats_probs m_threes;
-  rank_cats_probs m_field_goals;
-  rank_cats_probs m_free_throws;
-};
+using rank_probs = common::categories<rank_cats_probs>;
+
 
 class accum_state {
 private:

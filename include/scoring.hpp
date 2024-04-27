@@ -18,48 +18,21 @@ enum class return_value_type {
   TEAM_TOTAL_RANK = 4,
 };
 
-struct stats {
-  double m_points;
-  double m_rebounds;
-  double m_assists;
-  double m_steals;
-  double m_blocks;
-  double m_threes;
-  double m_field_goals;
-  double m_free_throws;
-};
+using stats = common::categories<double>;
 
 struct team_stats {
   const common::team *m_team;
   stats m_stats;
 };
 
-struct ranks {
-  int m_points;
-  int m_rebounds;
-  int m_assists;
-  int m_steals;
-  int m_blocks;
-  int m_threes;
-  int m_field_goals;
-  int m_free_throws;
-};
+using ranks = common::categories<int>;
 
 struct team_ranks {
   const common::team *m_team;
   ranks m_ranks;
 };
 
-struct scores {
-  int m_points;
-  int m_rebounds;
-  int m_assists;
-  int m_steals;
-  int m_blocks;
-  int m_threes;
-  int m_field_goals;
-  int m_free_throws;
-};
+using scores = common::categories<int>;
 
 struct team_scores {
   const common::team *m_team;

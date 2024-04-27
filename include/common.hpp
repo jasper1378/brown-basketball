@@ -24,6 +24,31 @@ static_assert(g_k_pool_size >= g_k_player_count);
 static constexpr int g_k_rank_top{1};
 static constexpr int g_k_rank_cutoff{4};
 
+
+template <typename T> struct categories {
+  T m_points;
+  T m_rebounds;
+  T m_assists;
+  T m_steals;
+  T m_blocks;
+  T m_threes;
+  T m_field_goals;
+  T m_free_throws;
+};
+
+template <typename T> struct categories_split {
+  T m_points;
+  T m_rebounds;
+  T m_assists;
+  T m_steals;
+  T m_blocks;
+  T m_threes;
+  T m_field_goals_made;
+  T m_field_goals_attempted;
+  T m_free_throws_made;
+  T m_free_throws_attempted;
+};
+
 enum class position : unsigned int {
   // clang-format off
   NONE            = 0b00000,
@@ -36,18 +61,7 @@ enum class position : unsigned int {
 };
 BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(position);
 
-struct stats {
-  double m_points;
-  double m_rebounds;
-  double m_assists;
-  double m_steals;
-  double m_blocks;
-  double m_threes;
-  double m_field_goals_made;
-  double m_field_goals_attempted;
-  double m_free_throws_made;
-  double m_free_throws_attempted;
-};
+using stats = categories_split<double>;
 
 struct info {
   std::string m_name;
