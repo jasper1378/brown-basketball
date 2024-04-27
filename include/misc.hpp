@@ -1,6 +1,7 @@
 #ifndef BROWN_BASKETBALL_MISC_HPP
 #define BROWN_BASKETBALL_MISC_HPP
 
+#include <algorithm>
 #include <cmath>
 #include <concepts>
 #include <cstddef>
@@ -22,8 +23,20 @@ t_result mean(t_iterator first, t_iterator last) {
 
 template <typename t_result, typename t_iterator>
   requires std::floating_point<t_result>
-t_result standard_deviation(t_iterator first, t_iterator last,
-                            const t_result mean, bool sample = false) {
+t_result min(t_iterator first, t_iterator last) {
+  return *std::min_element(first, last);
+}
+
+template <typename t_result, typename t_iterator>
+  requires std::floating_point<t_result>
+t_result max(t_iterator first, t_iterator last) {
+  return *std::max_element(first, last);
+}
+
+template <typename t_result, typename t_iterator>
+  requires std::floating_point<t_result>
+t_result stdev(t_iterator first, t_iterator last, const t_result mean,
+               bool sample = false) {
   std::size_t size{static_cast<std::size_t>(std::distance(first, last))};
 
   t_result sum_of_square_dists{0};
@@ -36,9 +49,8 @@ t_result standard_deviation(t_iterator first, t_iterator last,
 
 template <typename t_result, typename t_iterator>
   requires std::floating_point<t_result>
-t_result standard_deviation(t_iterator first, t_iterator last,
-                            bool sample = false) {
-  return standard_deviation(first, last, mean(first, last), sample);
+t_result stdev(t_iterator first, t_iterator last, bool sample = false) {
+  return stdev(first, last, mean(first, last), sample);
 }
 } // namespace misc
 } // namespace brown_basketball
