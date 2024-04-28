@@ -1,13 +1,15 @@
 # brown-basketball
 
 ## About
-Fantasy basketball simulations created for my high school stats teacher.
+
+Fantasy basketball simulations created for my high school stats teacher, Mr. Brown.
 
 <!---
 Please note that I know nothing about basketball.
 --->
 
 ## Installation
+
 Acquire the sources
 ```
 $ git clone https://github.com/jasper1378/brown-basketball.git
@@ -25,7 +27,10 @@ $ make install
 ```
 
 ## Usage
-This program simulates fantasy basketball games based on a provided database of players and reports various statistical results. 
+
+This program simulates fantasy basketball games based on a provided database of players and reports various statistical results.
+
+### Database
 
 The player database takes the form of a configuration file passed to the program via a command-line argument. The configuration file must possess a specific format; an example is provided below.
 ```
@@ -111,16 +116,29 @@ Alex Caruso	PG,SG	157	180	6.30	3.20	3.30	1.60	0.60	0.90	2.20	5.10	1.10	1.40
 ```
 --->
 
-For optimization reasons, certain settings must be configured in the program before compilation. These settings can be found in [include/common.hpp](common.hpp), and are prefixed with a `/*USER SETTING*/` comment for visibility.
+### Configuration
+
+For optimization reasons, certain settings must be configured in the program before compilation. These settings can be found in [include/user_settings.hpp](user_settings.hpp).
 - \<variable name\>, \<data type\>, \<description\>
 - `g_k_trial_count`, `unsigned long int`, number of trials preformed
 - `g_k_team_size`, `int`, number of players on a team
 - `g_k_league_size`, `int`, number of teams in a league
 - `g_k_pool_size`, `int`, number of players in database
 
-After running the simulation, the program will output statistics for each player in CSV (actually comma-separated this time) format. These statistics consist of the probability that each player will be drafted in a team whose rank is 1 or 1-4 (my teacher tells me that the number 4 is important for some reason...) in each of the player statistics categories (points, rebounds, assists, steals, blocks, 3's, field goals, free throws).
+### Simulation
 
 The simulation involves randomly generating leagues, scoring the teams, and then recording the results. Although I said 'random', the generation is biased in such a way to better reflect reality. For example, it will take into acccount properly filling the various positions on a team and the likelihood that a player will be drafted in a specific round.
 
+### Results
+
+After running the simulation, the program will print two sets of statistics in CSV format to standard output.
+
+Note that the "player statistics categories" as mentioned below are: points, rebounds, assists, steals, blocks, 3's, field goals, free throws.
+
+The first consists of the probabilities that each player will be drafted in a team whose rank is 1 or 1-4 (Mr. Brown tells me that the number 4 is important for some reason...) in each of the player statistics categories.
+
+The second consists of mean, minimum, maximum, and standard standard deviation of each of the player statistics categories for each team ranked 1-... in each of the player statistics categories.
+
 ## License
+
 See [LICENSE](LICENSE) for details.

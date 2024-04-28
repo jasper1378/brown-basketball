@@ -1,12 +1,12 @@
-#include "printing.hpp"
+#include "printing1.hpp"
 
-#include "analysis.hpp"
+#include "analysis1.hpp"
 #include "common.hpp"
 
 #include <iostream>
 #include <string>
 
-void brown_basketball::printing::print_result(
+void brown_basketball::printing1::print_result(
     std::ostream &out, const analysis1::read_t &result) {
   const auto print_header{[&out]() {
     const auto print_rank_prob_header{[&out](const std::string &category,
