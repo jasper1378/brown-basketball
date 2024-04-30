@@ -33,7 +33,7 @@ enum class category {
   threes = 5,
   field_goals = 6,
   free_throws = 7,
-  size = 8,
+  N = 8,
 };
 
 enum class category_split {
@@ -47,17 +47,16 @@ enum class category_split {
   field_goals_attempted = 7,
   free_throws_made = 8,
   free_throws_attempted = 9,
-  size = 10,
+  N = 10,
 };
 
-static constexpr std::array<std::string,
-                            static_cast<std::size_t>(category::size)>
+static constexpr std::array<std::string, static_cast<std::size_t>(category::N)>
     g_k_category_strs{"points", "rebounds", "assists",      "steals",
                       "blocks", "threes",   "fields_goals", "free_throws"};
 
 /*
 static constexpr std::array<std::string,
-                            static_cast<std::size_t>(category_split::size)>
+                            static_cast<std::size_t>(category_split::N)>
     g_k_category_split_strs{"points",
                             "rebounds",
                             "assists",
