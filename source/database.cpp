@@ -95,7 +95,7 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                               std::move(*libconfigfile::node_ptr_cast<
                                         libconfigfile::string_node>(
                                   std::move(*p_pos)))))};
-                      if (next_pos == common::position::NONE) {
+                      if (next_pos == common::position::none) {
                         throw std::runtime_error{
                             "invalid position string in player database"};
                       } else {
@@ -245,16 +245,16 @@ brown_basketball::common::position
 brown_basketball::database::impl::position_string_to_enum(
     const std::string_view str) {
   if (str == "PG") {
-    return common::position::POINT_GUARD;
+    return common::position::point_guard;
   } else if (str == "SG") {
-    return common::position::SHOOTING_GUARD;
+    return common::position::shooting_guard;
   } else if (str == "SF") {
-    return common::position::SMALL_FORWARD;
+    return common::position::small_forward;
   } else if (str == "PF") {
-    return common::position::POWER_FORWARD;
+    return common::position::power_forward;
   } else if (str == "C") {
-    return common::position::CENTER;
+    return common::position::center;
   } else {
-    return common::position::NONE;
+    return common::position::none;
   }
 }

@@ -11,11 +11,11 @@ namespace brown_basketball {
 namespace scoring {
 
 enum class return_value_type {
-  TEAM_STATS = 0,
-  TEAM_RANKS = 1,
-  TEAM_SCORES = 2,
-  TEAM_TOTAL_SCORE = 3,
-  TEAM_TOTAL_RANK = 4,
+  team_stats = 0,
+  team_ranks = 1,
+  team_scores = 2,
+  team_total_score = 3,
+  team_total_rank = 4,
 };
 
 using stats = common::categories<double>;
