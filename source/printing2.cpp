@@ -15,12 +15,12 @@ void brown_basketball::printing2::print_result(
 
     out << "team" << common::g_k_column_separator_char;
 
-    for (auto p_cat_str{common::g_k_category_strs.begin()};
-         p_cat_str != common::g_k_category_strs.end(); ++p_cat_str) {
-      for (auto p_stat_str{stat_strs.begin()}; p_stat_str != stat_strs.end();
-           ++p_stat_str) {
-        out << *p_cat_str << '_' << *p_stat_str
-            << common::g_k_column_separator_char;
+    for (std::size_t i_cat_str{0}; i_cat_str < common::g_k_category_strs.size();
+         ++i_cat_str) {
+      for (std::size_t i_stat_str{0}; i_stat_str < stat_strs.size();
+           ++i_stat_str) {
+        out << common::g_k_category_strs[i_cat_str] << '_'
+            << stat_strs[i_stat_str] << common::g_k_column_separator_char;
       }
     }
   }};

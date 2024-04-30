@@ -148,9 +148,10 @@ brown_basketball::scoring::impl::calc_team_ranks(
                   });
 
         int rank{1};
-        for (auto p_index{indices.begin()}; p_index != indices.end();
-             ++p_index, ++rank) {
-          struct_member_access_helper_ranks(ret_val[*p_index].m_ranks) = rank;
+        for (std::size_t i_index{0}; i_index < indices.size();
+             ++i_index, ++rank) {
+          struct_member_access_helper_ranks(ret_val[indices[i_index]].m_ranks) =
+              rank;
         }
       }};
 
@@ -254,9 +255,8 @@ brown_basketball::scoring::impl::calc_team_total_rank(
             });
 
   int rank{1};
-  for (auto p_index{indices.begin()}; p_index != indices.end();
-       ++p_index, ++rank) {
-    ret_val[*p_index].m_total_rank = rank;
+  for (std::size_t i_index{0}; i_index < indices.size(); ++i_index, ++rank) {
+    ret_val[indices[i_index]].m_total_rank = rank;
   }
 
   return ret_val;
