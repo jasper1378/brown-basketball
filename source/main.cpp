@@ -22,19 +22,19 @@ int main(int argc, char *argv[]) {
   analysis1::accum_state a1{d};
   analysis2::accum_state a2{};
   for (std::size_t i_trial{0}; i_trial < common::g_k_trial_count; ++i_trial) {
-    // auto g{generation::generate_league(d, (generation::flags::DRAFT_AWARE |
-    //                                        generation::flags::POSITION_AWARE))};
-    auto g{generation::generate_league(d, generation::flags::BASIC)};
+    // auto g{generation::generate_league(d, (generation::flags::draft_aware |
+    //                                        generation::flags::position_aware))};
+    auto g{generation::generate_league(d, generation::flags::basic)};
     auto s_team_ranks{
-        scoring::score_league(g, scoring::return_value_type::TEAM_RANKS)};
+        scoring::score_league(g, scoring::return_value_type::team_ranks)};
     a1.add(std::get<static_cast<std::size_t>(
-               scoring::return_value_type::TEAM_RANKS)>(s_team_ranks));
+               scoring::return_value_type::team_ranks)>(s_team_ranks));
     auto s_stats{std::get<static_cast<std::size_t>(
-        scoring::return_value_type::TEAM_STATS)>(
-        scoring::score_league(g, scoring::return_value_type::TEAM_STATS))};
+        scoring::return_value_type::team_stats)>(
+        scoring::score_league(g, scoring::return_value_type::team_stats))};
     auto s_ranks{std::get<static_cast<std::size_t>(
-        scoring::return_value_type::TEAM_RANKS)>(
-        scoring::score_league(g, scoring::return_value_type::TEAM_RANKS))};
+        scoring::return_value_type::team_ranks)>(
+        scoring::score_league(g, scoring::return_value_type::team_ranks))};
     a2.add(std::make_pair(s_stats, s_ranks));
   }
   printing1::print_result(std::cout, a1.read());

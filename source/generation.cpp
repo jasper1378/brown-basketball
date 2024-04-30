@@ -23,11 +23,11 @@ brown_basketball::generation::impl::generate_league(
     const std::array<common::player, common::g_k_pool_size> &database,
     const flags flags) {
   step1_generation_func_t step1_generation_func{
-      (static_cast<bool>(flags & flags::DRAFT_AWARE))
+      (static_cast<bool>(flags & flags::draft_aware))
           ? (draft_aware_step1_generation)
           : (basic_step1_generation)};
   step2_generation_func_t step2_generation_func{
-      (static_cast<bool>(flags & flags::POSITION_AWARE))
+      (static_cast<bool>(flags & flags::position_aware))
           ? (position_aware_step2_generation)
           : (basic_step2_generation)};
 
@@ -176,48 +176,48 @@ brown_basketball::generation::impl::position_aware_step2_generation(
     const std::array<common::player, common::g_k_pool_size> &database,
     my_random::random &rand) {
   enum class team_positions_specificity_1 : unsigned int {
-    POINT_GUARD_1 = 0,
-    SHOOTING_GUARD_1,
-    SMALL_FORWARD_1,
-    POWER_FORWARD_1,
-    CENTER_1,
-    CENTER_2,
+    point_guard_1 = 0,
+    shooting_guard_1,
+    small_forward_1,
+    power_forward_1,
+    center_1,
+    center_2,
     N,
   };
 
   enum class team_positions_specificity_2 : unsigned int {
-    ANY_GUARD_1 = static_cast<unsigned int>(team_positions_specificity_1::N),
-    ANY_FORWARD_1,
+    any_guard_1 = static_cast<unsigned int>(team_positions_specificity_1::N),
+    any_forward_1,
     N
   };
 
   enum class team_positions_specificity_3 : unsigned int {
-    UTILITY_1 = static_cast<unsigned int>(team_positions_specificity_2::N),
-    UTILITY_2,
+    utility_1 = static_cast<unsigned int>(team_positions_specificity_2::N),
+    utility_2,
     N
   };
 
   enum class team_positions : unsigned int {
-    POINT_GUARD_1 =
-        static_cast<unsigned int>(team_positions_specificity_1::POINT_GUARD_1),
-    SHOOTING_GUARD_1 = static_cast<unsigned int>(
-        team_positions_specificity_1::SHOOTING_GUARD_1),
-    SMALL_FORWARD_1 = static_cast<unsigned int>(
-        team_positions_specificity_1::SMALL_FORWARD_1),
-    POWER_FORWARD_1 = static_cast<unsigned int>(
-        team_positions_specificity_1::POWER_FORWARD_1),
-    CENTER_1 =
-        static_cast<unsigned int>(team_positions_specificity_1::CENTER_1),
-    CENTER_2 =
-        static_cast<unsigned int>(team_positions_specificity_1::CENTER_2),
-    ANY_GUARD_1 =
-        static_cast<unsigned int>(team_positions_specificity_2::ANY_GUARD_1),
-    ANY_FORWARD_1 =
-        static_cast<unsigned int>(team_positions_specificity_2::ANY_FORWARD_1),
-    UTILITY_1 =
-        static_cast<unsigned int>(team_positions_specificity_3::UTILITY_1),
-    UTILITY_2 =
-        static_cast<unsigned int>(team_positions_specificity_3::UTILITY_2),
+    point_guard_1 =
+        static_cast<unsigned int>(team_positions_specificity_1::point_guard_1),
+    shooting_guard_1 = static_cast<unsigned int>(
+        team_positions_specificity_1::shooting_guard_1),
+    small_forward_1 = static_cast<unsigned int>(
+        team_positions_specificity_1::small_forward_1),
+    power_forward_1 = static_cast<unsigned int>(
+        team_positions_specificity_1::power_forward_1),
+    center_1 =
+        static_cast<unsigned int>(team_positions_specificity_1::center_1),
+    center_2 =
+        static_cast<unsigned int>(team_positions_specificity_1::center_2),
+    any_guard_1 =
+        static_cast<unsigned int>(team_positions_specificity_2::any_guard_1),
+    any_forward_1 =
+        static_cast<unsigned int>(team_positions_specificity_2::any_forward_1),
+    utility_1 =
+        static_cast<unsigned int>(team_positions_specificity_3::utility_1),
+    utility_2 =
+        static_cast<unsigned int>(team_positions_specificity_3::utility_2),
     N
   };
 
@@ -227,34 +227,34 @@ brown_basketball::generation::impl::position_aware_step2_generation(
   const auto compatible_player_postion{
       [](const team_positions pos, const common::position player) -> bool {
         switch (pos) {
-        case team_positions::POINT_GUARD_1: {
-          return static_cast<bool>(player & common::position::POINT_GUARD);
+        case team_positions::point_guard_1: {
+          return static_cast<bool>(player & common::position::point_guard);
         } break;
-        case team_positions::SHOOTING_GUARD_1: {
-          return static_cast<bool>(player & common::position::SHOOTING_GUARD);
+        case team_positions::shooting_guard_1: {
+          return static_cast<bool>(player & common::position::shooting_guard);
         } break;
-        case team_positions::ANY_GUARD_1: {
+        case team_positions::any_guard_1: {
           return static_cast<bool>(
-              static_cast<bool>(player & common::position::POINT_GUARD) ||
-              static_cast<bool>(player & common::position::SHOOTING_GUARD));
+              static_cast<bool>(player & common::position::point_guard) ||
+              static_cast<bool>(player & common::position::shooting_guard));
         } break;
-        case team_positions::SMALL_FORWARD_1: {
-          return static_cast<bool>(player & common::position::SMALL_FORWARD);
+        case team_positions::small_forward_1: {
+          return static_cast<bool>(player & common::position::small_forward);
         } break;
-        case team_positions::POWER_FORWARD_1: {
-          return static_cast<bool>(player & common::position::POWER_FORWARD);
+        case team_positions::power_forward_1: {
+          return static_cast<bool>(player & common::position::power_forward);
         } break;
-        case team_positions::ANY_FORWARD_1: {
+        case team_positions::any_forward_1: {
           return static_cast<bool>(
-              static_cast<bool>(player & common::position::SMALL_FORWARD) ||
-              static_cast<bool>(player & common::position::POWER_FORWARD));
+              static_cast<bool>(player & common::position::small_forward) ||
+              static_cast<bool>(player & common::position::power_forward));
         } break;
-        case team_positions::CENTER_1:
-        case team_positions::CENTER_2: {
-          return static_cast<bool>(player & common::position::CENTER);
+        case team_positions::center_1:
+        case team_positions::center_2: {
+          return static_cast<bool>(player & common::position::center);
         } break;
-        case team_positions::UTILITY_1:
-        case team_positions::UTILITY_2: {
+        case team_positions::utility_1:
+        case team_positions::utility_2: {
           return true;
         } break;
         default: {
@@ -268,11 +268,11 @@ brown_basketball::generation::impl::position_aware_step2_generation(
       team_pos_slots{};
   for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
     team_pos_slots[i_team] = {
-        team_positions::POINT_GUARD_1,   team_positions::SHOOTING_GUARD_1,
-        team_positions::SMALL_FORWARD_1, team_positions::POWER_FORWARD_1,
-        team_positions::CENTER_1,        team_positions::CENTER_2,
-        team_positions::ANY_GUARD_1,     team_positions::ANY_FORWARD_1,
-        team_positions::UTILITY_1,       team_positions::UTILITY_2};
+        team_positions::point_guard_1,   team_positions::shooting_guard_1,
+        team_positions::small_forward_1, team_positions::power_forward_1,
+        team_positions::center_1,        team_positions::center_2,
+        team_positions::any_guard_1,     team_positions::any_forward_1,
+        team_positions::utility_1,       team_positions::utility_2};
 
     const auto iter_team_position_specificity_1_begin{
         team_pos_slots[i_team].begin()};

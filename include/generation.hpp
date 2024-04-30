@@ -13,9 +13,9 @@ namespace brown_basketball {
 namespace generation {
 
 enum class flags : unsigned int {
-  BASIC = 0b00,
-  DRAFT_AWARE = 0b01,
-  POSITION_AWARE = 0b10,
+  basic = 0b00,
+  draft_aware = 0b01,
+  position_aware = 0b10,
 };
 BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(flags);
 

@@ -42,31 +42,31 @@ brown_basketball::scoring::impl::score_league(
 
   std::array<team_stats, common::g_k_league_size> step1_team_stats{
       calc_team_stats(league)};
-  if (ret_val == return_value_type::TEAM_STATS) {
+  if (ret_val == return_value_type::team_stats) {
     return step1_team_stats;
   }
 
   std::array<team_ranks, common::g_k_league_size> step2_team_ranks{
       calc_team_ranks(step1_team_stats)};
-  if (ret_val == return_value_type::TEAM_RANKS) {
+  if (ret_val == return_value_type::team_ranks) {
     return step2_team_ranks;
   }
 
   std::array<team_scores, common::g_k_league_size> step3_team_scores{
       calc_team_scores(step2_team_ranks)};
-  if (ret_val == return_value_type::TEAM_SCORES) {
+  if (ret_val == return_value_type::team_scores) {
     return step3_team_scores;
   }
 
   std::array<team_total_score, common::g_k_league_size> step4_team_total_score{
       calc_team_total_score(step3_team_scores)};
-  if (ret_val == return_value_type::TEAM_TOTAL_SCORE) {
+  if (ret_val == return_value_type::team_total_score) {
     return step4_team_total_score;
   }
 
   std::array<team_total_rank, common::g_k_league_size> step5_team_total_rank{
       calc_team_total_rank(step4_team_total_score)};
-  if (ret_val == return_value_type::TEAM_TOTAL_RANK) {
+  if (ret_val == return_value_type::team_total_rank) {
     return step5_team_total_rank;
   }
 

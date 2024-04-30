@@ -96,12 +96,12 @@ template <typename T> struct categories_split {
 
 enum class position : unsigned int {
   // clang-format off
-  NONE            = 0b00000,
-  POINT_GUARD     = 0b00001,
-  SHOOTING_GUARD  = 0b00010,
-  SMALL_FORWARD   = 0b00100,
-  POWER_FORWARD   = 0b01000,
-  CENTER          = 0b10000,
+  none            = 0b00000,
+  point_guard     = 0b00001,
+  shooting_guard  = 0b00010,
+  small_forward   = 0b00100,
+  power_forward   = 0b01000,
+  center          = 0b10000,
   // clang-format on
 };
 BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(position);
