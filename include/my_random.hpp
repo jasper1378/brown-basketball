@@ -2,7 +2,6 @@
 #define BROWN_BASKETBALL_RANDOM_HPP
 
 #include <cassert>
-#include <concepts>
 #include <random>
 
 namespace brown_basketball {
@@ -22,13 +21,13 @@ public:
   random(random &&other) = delete;
 
 public:
-  template <std::integral T = int> T get_int(const T min, const T max) const {
+  template <std::integral T = int> T get_int(const T min, const T max) {
     assert(!(min > max));
     return (std::uniform_int_distribution<T>{min, max}(m_mt));
   }
 
   template <std::floating_point T = double>
-  T get_float(const T min, const T max) const {
+  T get_float(const T min, const T max) {
     assert(!(min > max));
     return (std::uniform_real_distribution<T>{min, max}(m_mt));
   }
