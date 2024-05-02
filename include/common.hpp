@@ -26,28 +26,28 @@ static constexpr int g_k_rank_cutoff{4};
 
 enum class category {
   points = 0,
-  rebounds = 1,
-  assists = 2,
-  steals = 3,
-  blocks = 4,
-  threes = 5,
-  field_goals = 6,
-  free_throws = 7,
-  N = 8,
+  rebounds,
+  assists,
+  steals,
+  blocks,
+  threes,
+  field_goals,
+  free_throws,
+  N,
 };
 
 enum class category_split {
   points = 0,
-  rebounds = 1,
-  assists = 2,
-  steals = 3,
-  blocks = 4,
-  threes = 5,
-  field_goals_made = 6,
-  field_goals_attempted = 7,
-  free_throws_made = 8,
-  free_throws_attempted = 9,
-  N = 10,
+  rebounds,
+  assists,
+  steals,
+  blocks,
+  threes,
+  field_goals_made,
+  field_goals_attempted,
+  free_throws_made,
+  free_throws_attempted,
+  N,
 };
 
 static constexpr std::array<std::string, static_cast<std::size_t>(category::N)>
