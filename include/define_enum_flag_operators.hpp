@@ -3,7 +3,7 @@
 
 #include <type_traits>
 
-#define BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(T)                                 \
+#define BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_TYPE(T)                  \
                                                                                \
   static_assert(std::is_enum_v<T>);                                            \
                                                                                \
@@ -32,7 +32,7 @@
                                                                                \
   constexpr inline T &operator^=(T &a, const T b) { return (a = (a ^ b)); }
 
-#define BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_ALL()                                   \
+#define BITS_AND_BYTES_DEFINE_ENUM_FLAG_OPERATORS_FOR_ALL()                    \
                                                                                \
   template <typename T>                                                        \
     requires std::is_enum_v<T>                                                 \
