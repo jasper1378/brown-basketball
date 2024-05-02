@@ -5,6 +5,7 @@
 #include "libconfigfile/libconfigfile.hpp"
 
 #include <array>
+#include <cassert>
 #include <cstddef>
 #include <exception>
 #include <stdexcept>
@@ -65,8 +66,8 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                           "incorrect data type in player database"};
                     }
                   } else {
-                    throw std::runtime_error{
-                        "missing field in player database"};
+                    throw std::runtime_error{"missing field (" + key +
+                                             ") in player database"};
                   }
                 }};
 
@@ -87,14 +88,14 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                 [](const libconfigfile::node_ptr<libconfigfile::array_node>
                        &arr) -> common::position {
                   common::position ret_val{0};
-                  for (auto p_pos{arr->begin()}; p_pos != arr->end(); ++p_pos) {
-                    if ((*p_pos)->get_node_type() ==
+                  for (std::size_t i_pos{0}; i_pos < arr->size(); ++i_pos) {
+                    if (arr->operator[](i_pos)->get_node_type() ==
                         libconfigfile::node_type::String) {
                       common::position next_pos{
                           position_string_to_enum(libconfigfile::node_to_base(
                               std::move(*libconfigfile::node_ptr_cast<
                                         libconfigfile::string_node>(
-                                  std::move(*p_pos)))))};
+                                  std::move(arr->operator[](i_pos))))))};
                       if (next_pos == common::position::none) {
                         throw std::runtime_error{
                             "invalid position string in player database"};
@@ -144,85 +145,19 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                   "invalid draft range in player database"};
             }
 
-            libconfigfile::node_ptr<libconfigfile::float_node> field_points{
-                libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                    check_contains_and_type(g_k_key_str_points,
-                                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_points =
-                libconfigfile::node_to_base(std::move(*field_points));
-
-            libconfigfile::node_ptr<libconfigfile::float_node> field_rebounds{
-                libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                    check_contains_and_type(g_k_key_str_rebounds,
-                                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_rebounds =
-                libconfigfile::node_to_base(std::move(*field_rebounds));
-
-            libconfigfile::node_ptr<libconfigfile::float_node> field_assists{
-                libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                    check_contains_and_type(g_k_key_str_assists,
-                                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_assists =
-                libconfigfile::node_to_base(std::move(*field_assists));
-
-            libconfigfile::node_ptr<libconfigfile::float_node> field_steals{
-                libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                    check_contains_and_type(g_k_key_str_steals,
-                                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_steals =
-                libconfigfile::node_to_base(std::move(*field_steals));
-
-            libconfigfile::node_ptr<libconfigfile::float_node> field_blocks{
-                libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                    check_contains_and_type(g_k_key_str_blocks,
-                                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_blocks =
-                libconfigfile::node_to_base(std::move(*field_blocks));
-
-            libconfigfile::node_ptr<libconfigfile::float_node> field_threes{
-                libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                    check_contains_and_type(g_k_key_str_threes,
-                                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_threes =
-                libconfigfile::node_to_base(std::move(*field_threes));
-
-            libconfigfile::node_ptr<libconfigfile::float_node>
-                field_field_goals_made{
-                    libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                        check_contains_and_type(
-                            g_k_key_str_field_goals_made,
-                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_field_goals_made =
-                libconfigfile::node_to_base(std::move(*field_field_goals_made));
-
-            libconfigfile::node_ptr<libconfigfile::float_node>
-                field_field_goals_attempted{
-                    libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                        check_contains_and_type(
-                            g_k_key_str_field_goals_attempted,
-                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_field_goals_attempted =
-                libconfigfile::node_to_base(
-                    std::move(*field_field_goals_attempted));
-
-            libconfigfile::node_ptr<libconfigfile::float_node>
-                field_free_throws_made{
-                    libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                        check_contains_and_type(
-                            g_k_key_str_free_throws_made,
-                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_free_throws_made =
-                libconfigfile::node_to_base(std::move(*field_free_throws_made));
-
-            libconfigfile::node_ptr<libconfigfile::float_node>
-                field_free_throws_attempted{
-                    libconfigfile::node_ptr_cast<libconfigfile::float_node>(
-                        check_contains_and_type(
-                            g_k_key_str_free_throws_attempted,
-                            libconfigfile::node_type::Float))};
-            ret_val[i_player].m_stats.m_free_throws_attempted =
-                libconfigfile::node_to_base(
-                    std::move(*field_free_throws_attempted));
+            assert(static_cast<std::size_t>(common::category_split::N) ==
+                   ret_val[i_player].m_stats.size());
+            for (std::size_t i_cat{0};
+                 i_cat < static_cast<std::size_t>(common::category_split::N);
+                 ++i_cat) {
+              libconfigfile::node_ptr<libconfigfile::float_node> field{
+                  libconfigfile::node_ptr_cast<libconfigfile::float_node>(
+                      check_contains_and_type(
+                          g_k_key_str_categories[i_cat],
+                          libconfigfile::node_type::Float))};
+              ret_val[i_player].m_stats[i_cat] =
+                  libconfigfile::node_to_base(std::move(*field));
+            }
 
           } else {
             throw std::runtime_error{"incorrect data type in player database"};

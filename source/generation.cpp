@@ -5,8 +5,8 @@
 
 #include <algorithm>
 #include <array>
+#include <cassert>
 #include <cstddef>
-#include <iostream> // TODO XXX DEBUG
 #include <vector>
 
 std::array<brown_basketball::common::team,
@@ -45,7 +45,9 @@ brown_basketball::generation::impl::generate_league(
 
   std::array<common::team, common::g_k_league_size> ret_val{};
 
+  assert(common::g_k_league_size == ret_val.size());
   for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
+    assert(common::g_k_team_size == ret_val[i_team].m_players.size());
     for (std::size_t i_player{0}; i_player < common::g_k_team_size;
          ++i_player) {
       ret_val[i_team].m_players[i_player] =
@@ -91,6 +93,7 @@ brown_basketball::generation::impl::draft_aware_step1_generation(
       10}; // TODO what is a good bin_size? smaller means that players are more
            // likely to be drafted in their range, larger means more randomness
 
+  assert(common::g_k_pool_size == indices.size());
   for (std::size_t i_player{0}; i_player < common::g_k_pool_size;
        i_player += bin_size) {
     std::shuffle((indices.begin() + i_player),
@@ -141,6 +144,7 @@ brown_basketball::generation::impl::draft_aware_step1_generation_alt(
     }
   }};
 
+  assert(common::g_k_pool_size == indices.size());
   for (std::size_t i_player{0}; i_player < common::g_k_pool_size; ++i_player) {
     find_spot_for_player(indices[i_player]);
   }
@@ -158,7 +162,9 @@ brown_basketball::generation::impl::basic_step2_generation(
     [[maybe_unused]] my_random::random &rand) {
   std::array<std::array<index, common::g_k_team_size>, common::g_k_league_size>
       ret_val{};
+  assert(common::g_k_league_size == ret_val.size());
   for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
+    assert(common::g_k_team_size == ret_val[i_team].size());
     for (std::size_t i_player{0}; i_player < common::g_k_team_size;
          ++i_player) {
       ret_val[i_team][i_player] =
@@ -266,7 +272,7 @@ brown_basketball::generation::impl::position_aware_step2_generation(
   std::array<std::array<team_positions, common::g_k_team_size>,
              common::g_k_league_size>
       team_pos_slots{};
-  for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
+  for (std::size_t i_team{0}; i_team < team_pos_slots.size(); ++i_team) {
     team_pos_slots[i_team] = {
         team_positions::point_guard_1,   team_positions::shooting_guard_1,
         team_positions::small_forward_1, team_positions::power_forward_1,
@@ -303,16 +309,15 @@ brown_basketball::generation::impl::position_aware_step2_generation(
   std::array<std::array<index, common::g_k_team_size>, common::g_k_league_size>
       ret_val{};
 
-  for (std::size_t i_pos{0}; i_pos < common::g_k_team_size; ++i_pos) {
-    for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
+  assert((common::g_k_league_size == ret_val.size()) &&
+         (common::g_k_league_size == team_pos_slots.size()));
+  for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
+    assert((common::g_k_team_size == team_pos_slots[i_team].size()) &&
+           (common::g_k_team_size == ret_val[i_team].size()));
+    for (std::size_t i_pos{0}; i_pos < common::g_k_team_size; ++i_pos) {
+      assert(common::g_k_pool_size == indices.size());
       for (std::size_t i_player{0}; i_player < common::g_k_pool_size;
            ++i_player) {
-        // TODO XXX DEBUG vvv
-        if (indices[i_player].m_used == true) {
-          std::cerr << "NO SUITABLE PLAYERS\n";
-          std::exit(1);
-        }
-        // TODO XXX DEBUG ^^^
         if (compatible_player_postion(
                 team_pos_slots[i_team][i_pos],
                 database[indices[i_player].m_idx].m_info.m_positions)) {
