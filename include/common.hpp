@@ -51,47 +51,22 @@ enum class category_split {
 };
 
 static constexpr std::array<std::string, static_cast<std::size_t>(category::N)>
-    g_k_category_strs{"points", "rebounds", "assists",      "steals",
-                      "blocks", "threes",   "fields_goals", "free_throws"};
+    g_k_category_strs{"points", "rebounds", "assists",     "steals",
+                      "blocks", "threes",   "field_goals", "free_throws"};
 
-/*
-static constexpr std::array<std::string,
-                            static_cast<std::size_t>(category_split::N)>
-    g_k_category_split_strs{"points",
-                            "rebounds",
-                            "assists",
-                            "steals",
-                            "blocks",
-                            "threes",
-                            "fields_goals_made",
-                            "field_goals_attempted",
-                            "free_throws_made",
-                            "free_throws_attempted"};
-*/
+static const std::array<std::string,
+                        static_cast<std::size_t>(category_split::N)>
+    g_k_category_split_strs{"points",           "rebounds",
+                            "assists",          "steals",
+                            "blocks",           "threes",
+                            "field_goals_made", "field_goals_attempted",
+                            "free_throws_made", "free_throws_attempted"};
 
-template <typename T> struct categories {
-  T m_points;
-  T m_rebounds;
-  T m_assists;
-  T m_steals;
-  T m_blocks;
-  T m_threes;
-  T m_field_goals;
-  T m_free_throws;
-};
-
-template <typename T> struct categories_split {
-  T m_points;
-  T m_rebounds;
-  T m_assists;
-  T m_steals;
-  T m_blocks;
-  T m_threes;
-  T m_field_goals_made;
-  T m_field_goals_attempted;
-  T m_free_throws_made;
-  T m_free_throws_attempted;
-};
+template <typename T>
+using categories = std::array<T, static_cast<std::size_t>(category::N)>;
+template <typename T>
+using categories_split =
+    std::array<T, static_cast<std::size_t>(category_split::N)>;
 
 enum class position : unsigned int {
   // clang-format off
