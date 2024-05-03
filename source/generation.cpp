@@ -7,6 +7,8 @@
 #include <array>
 #include <cassert>
 #include <cstddef>
+#include <exception>
+#include <stdexcept>
 #include <vector>
 
 std::array<brown_basketball::common::team,
@@ -227,9 +229,6 @@ brown_basketball::generation::impl::position_aware_step2_generation(
     N
   };
 
-  static_assert(static_cast<unsigned int>(team_positions::N) ==
-                common::g_k_team_size);
-
   const auto compatible_player_postion{
       [](const team_positions pos, const common::position player) -> bool {
         switch (pos) {
@@ -268,6 +267,12 @@ brown_basketball::generation::impl::position_aware_step2_generation(
         } break;
         }
       }};
+
+  if constexpr (static_cast<unsigned int>(team_positions::N) !=
+                common::g_k_team_size) {
+    throw std::runtime_error{"position-aware league generation unvailable if "
+                             "team size does not equal position count"};
+  }
 
   std::array<std::array<team_positions, common::g_k_team_size>,
              common::g_k_league_size>
