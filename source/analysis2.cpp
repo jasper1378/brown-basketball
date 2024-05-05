@@ -1,7 +1,7 @@
 #include "analysis2.hpp"
 
+#include "bits-and-bytes/stats/stats.hpp"
 #include "common.hpp"
-#include "misc.hpp"
 #include "scoring.hpp"
 
 #include <array>
@@ -98,18 +98,22 @@ brown_basketball::analysis2::impl::accum_state_read(
       for (std::size_t i_cat_2{0};
            i_cat_2 < static_cast<std::size_t>(common::category::N); ++i_cat_2) {
         ret_val[i_cat_1][i_team][i_cat_2].m_mean =
-            misc::mean<double>(accum_state[i_cat_1][i_team][i_cat_2].begin(),
-                               accum_state[i_cat_1][i_team][i_cat_2].end());
+            bits_and_bytes::stats::mean<double>(
+                accum_state[i_cat_1][i_team][i_cat_2].begin(),
+                accum_state[i_cat_1][i_team][i_cat_2].end());
         ret_val[i_cat_1][i_team][i_cat_2].m_min =
-            misc::min<double>(accum_state[i_cat_1][i_team][i_cat_2].begin(),
-                              accum_state[i_cat_1][i_team][i_cat_2].end());
+            bits_and_bytes::stats::min<double>(
+                accum_state[i_cat_1][i_team][i_cat_2].begin(),
+                accum_state[i_cat_1][i_team][i_cat_2].end());
         ret_val[i_cat_1][i_team][i_cat_2].m_max =
-            misc::max<double>(accum_state[i_cat_1][i_team][i_cat_2].begin(),
-                              accum_state[i_cat_1][i_team][i_cat_2].end());
+            bits_and_bytes::stats::max<double>(
+                accum_state[i_cat_1][i_team][i_cat_2].begin(),
+                accum_state[i_cat_1][i_team][i_cat_2].end());
         ret_val[i_cat_1][i_team][i_cat_2].m_stdev =
-            misc::stdev<double>(accum_state[i_cat_1][i_team][i_cat_2].begin(),
-                                accum_state[i_cat_1][i_team][i_cat_2].end(),
-                                ret_val[i_cat_1][i_team][i_cat_2].m_mean);
+            bits_and_bytes::stats::stdev<double>(
+                accum_state[i_cat_1][i_team][i_cat_2].begin(),
+                accum_state[i_cat_1][i_team][i_cat_2].end(),
+                ret_val[i_cat_1][i_team][i_cat_2].m_mean);
       }
     }
   }
