@@ -91,16 +91,16 @@ brown_basketball::generation::impl::draft_aware_step1_generation(
                       (draft_range_midpoint(database[i2.m_idx])));
             });
 
-  static constexpr std::size_t bin_size{
+  static constexpr std::size_t k_bin_size{
       10}; // TODO what is a good bin_size? smaller means that players are more
            // likely to be drafted in their range, larger means more randomness
 
   assert(common::g_k_pool_size == indices.size());
   for (std::size_t i_player{0}; i_player < common::g_k_pool_size;
-       i_player += bin_size) {
+       i_player += k_bin_size) {
     std::shuffle((indices.begin() + i_player),
-                 (((i_player + bin_size) < indices.size())
-                      ? (indices.begin() + i_player + bin_size)
+                 (((i_player + k_bin_size) < indices.size())
+                      ? (indices.begin() + i_player + k_bin_size)
                       : (indices.end())),
                  rand.get_generator());
   }
