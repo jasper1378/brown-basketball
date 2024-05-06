@@ -11,8 +11,8 @@
 void brown_basketball::printing2::print_result(
     std::ostream &out, const analysis2::read_t &result) {
   const auto print_header{[&out]() {
-    static constexpr std::array<std::string, 4> stat_strs{"mean", "min", "max",
-                                                          "stdev"};
+    static constexpr std::array<std::string, 4> k_stat_strs{"mean", "min",
+                                                            "max", "stdev"};
 
     out << "team" << common::g_k_column_separator_char;
 
@@ -21,10 +21,10 @@ void brown_basketball::printing2::print_result(
     for (std::size_t i_cat_str{0};
          i_cat_str < static_cast<std::size_t>(common::category::N);
          ++i_cat_str) {
-      for (std::size_t i_stat_str{0}; i_stat_str < stat_strs.size();
+      for (std::size_t i_stat_str{0}; i_stat_str < k_stat_strs.size();
            ++i_stat_str) {
         out << common::g_k_category_strs[i_cat_str] << '_'
-            << stat_strs[i_stat_str] << common::g_k_column_separator_char;
+            << k_stat_strs[i_stat_str] << common::g_k_column_separator_char;
       }
     }
   }};
