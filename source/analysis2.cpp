@@ -1,6 +1,6 @@
 #include "analysis2.hpp"
 
-#include "bits-and-bytes/stats/stats.hpp"
+#include "bits-and-bytes/statistics/statistics.hpp"
 #include "common.hpp"
 #include "scoring.hpp"
 
@@ -98,19 +98,19 @@ brown_basketball::analysis2::impl::accum_state_read(
       for (std::size_t i_cat_2{0};
            i_cat_2 < static_cast<std::size_t>(common::category::N); ++i_cat_2) {
         ret_val[i_cat_1][i_team][i_cat_2].m_mean =
-            bits_and_bytes::stats::mean<double>(
+            bits_and_bytes::statistics::mean<double>(
                 accum_state[i_cat_1][i_team][i_cat_2].begin(),
                 accum_state[i_cat_1][i_team][i_cat_2].end());
         ret_val[i_cat_1][i_team][i_cat_2].m_min =
-            bits_and_bytes::stats::min<double>(
+            bits_and_bytes::statistics::min<double>(
                 accum_state[i_cat_1][i_team][i_cat_2].begin(),
                 accum_state[i_cat_1][i_team][i_cat_2].end());
         ret_val[i_cat_1][i_team][i_cat_2].m_max =
-            bits_and_bytes::stats::max<double>(
+            bits_and_bytes::statistics::max<double>(
                 accum_state[i_cat_1][i_team][i_cat_2].begin(),
                 accum_state[i_cat_1][i_team][i_cat_2].end());
         ret_val[i_cat_1][i_team][i_cat_2].m_stdev =
-            bits_and_bytes::stats::stdev<double>(
+            bits_and_bytes::statistics::stdev<double>(
                 accum_state[i_cat_1][i_team][i_cat_2].begin(),
                 accum_state[i_cat_1][i_team][i_cat_2].end(),
                 ret_val[i_cat_1][i_team][i_cat_2].m_mean);
