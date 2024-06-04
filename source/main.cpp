@@ -8,6 +8,7 @@
 #include "scoring.hpp"
 
 #include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <utility>
 
@@ -36,7 +37,14 @@ int main(int argc, char *argv[]) {
         scoring::return_value_type::team_ranks)>(
         scoring::score_league(g, scoring::return_value_type::team_ranks))};
     a2.add(std::make_pair(s_stats, s_ranks));
+    if ((i_trial % (common::g_k_trial_count / 100)) == 0) {
+      std::cerr << '\r'
+                << static_cast<int>(
+                       std::round(i_trial * 100.0 / common::g_k_trial_count))
+                << '%' << std::flush;
+    }
   }
+  std::cerr << '\r';
   printing1::print_result(std::cout, a1.read());
   std::cout << '\n';
   printing2::print_result(std::cout, a2.read());
