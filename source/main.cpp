@@ -20,10 +20,17 @@ int main(int argc, char *argv[]) {
                  "the configuration file\n";
     std::exit(EXIT_FAILURE);
   }
+  std::array<decltype(std::declval<bits_and_bytes::timer<
+                          std::chrono::duration<double, std::milli>>>()
+                          .elapsed()),
+             3>
+      timings{};
   bits_and_bytes::timer<std::chrono::duration<double, std::milli>> timer{};
   auto d{database::read_database(argv[1])};
   analysis1::accum_state a1{d};
   analysis2::accum_state a2{};
+  timings[0] = timer.elapsed();
+  timer.reset();
   for (std::size_t i_trial{0}; i_trial < common::g_k_trial_count; ++i_trial) {
     // auto g{generation::generate_league(d, (generation::flags::draft_aware |
     //                                        generation::flags::position_aware))};
@@ -53,9 +60,19 @@ int main(int argc, char *argv[]) {
       }
     }
   }
-  std::cerr << '\r';
+  timings[1] = timer.elapsed();
+  timer.reset();
   printing1::print_result(std::cout, a1.read());
   std::cout << '\n';
   printing2::print_result(std::cout, a2.read());
+  timings[2] = timer.elapsed();
+  timer.reset();
+  std::cerr << "\rcompleted in " << std::chrono::hh_mm_ss{([&timings]() {
+    decltype(timings)::value_type sum{};
+    for (const auto &i : timings) {
+      sum += i;
+    }
+    return sum;
+  }())} << '\n';
   return 0;
 }
