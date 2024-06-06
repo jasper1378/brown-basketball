@@ -20,10 +20,10 @@ int main(int argc, char *argv[]) {
                  "the configuration file\n";
     std::exit(EXIT_FAILURE);
   }
+  bits_and_bytes::timer<std::chrono::duration<double, std::milli>> timer{};
   auto d{database::read_database(argv[1])};
   analysis1::accum_state a1{d};
   analysis2::accum_state a2{};
-  bits_and_bytes::timer timer{};
   for (std::size_t i_trial{0}; i_trial < common::g_k_trial_count; ++i_trial) {
     // auto g{generation::generate_league(d, (generation::flags::draft_aware |
     //                                        generation::flags::position_aware))};
