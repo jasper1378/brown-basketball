@@ -129,6 +129,10 @@ For optimization reasons, certain settings must be configured in the program bef
 
 The simulation involves randomly generating leagues, scoring the teams, and then recording the results. Although I said 'random', the generation is biased in such a way to better reflect reality. For example, it will take into acccount properly filling the various positions on a team and the likelihood that a player will be drafted in a specific round.
 
+### Progress
+
+During the simulation, the program will print the percent completed and the estimated time remaining. When the simulation is finished, the program will print the total time taken. All of this is printed to stderr so as not to interfere with the printing of the main results.
+
 ### Results
 
 After running the simulation, the program will print two sets of statistics in CSV format to standard output.
