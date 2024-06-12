@@ -35,10 +35,10 @@ using rank_probs = common::categories<rank_cats_probs>;
 
 using accum_state_t =
     std::array<std::pair<const common::player *, impl::trial_rank_counts>,
-               common::g_k_pool_size>;
-using add_t = std::array<scoring::team_ranks, common::g_k_league_size>;
+               common::k_pool_size>;
+using add_t = std::array<scoring::team_ranks, common::k_league_size>;
 using read_t = std::array<std::pair<const common::player *, rank_probs>,
-                          common::g_k_pool_size>;
+                          common::k_pool_size>;
 
 class accum_state {
 private:
@@ -47,7 +47,7 @@ private:
 
 public:
   accum_state(
-      const std::array<common::player, common::g_k_pool_size> &database);
+      const std::array<common::player, common::k_pool_size> &database);
   accum_state(const accum_state &other) = default;
   accum_state(accum_state &&other) noexcept(
       std::is_nothrow_move_constructible_v<decltype(m_accum_state)>) = default;
@@ -65,7 +65,7 @@ public:
 
 namespace impl {
 accum_state_t accum_state_init_accum_state(
-    const std::array<common::player, common::g_k_pool_size> &database);
+    const std::array<common::player, common::k_pool_size> &database);
 unsigned long accum_state_init_trial_count();
 void accum_state_add(accum_state_t &accum_state, unsigned long &trial_count,
                      const add_t &league);

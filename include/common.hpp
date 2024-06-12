@@ -13,16 +13,16 @@ namespace brown_basketball {
 
 namespace common {
 
-static constexpr unsigned long g_k_trial_count{user_settings::g_k_trial_count};
-static constexpr int g_k_team_size{user_settings::g_k_team_size};
-static constexpr int g_k_league_size{user_settings::g_k_league_size};
-static constexpr int g_k_pool_size{user_settings::g_k_pool_size};
+static constexpr unsigned long k_trial_count{user_settings::k_trial_count};
+static constexpr int k_team_size{user_settings::k_team_size};
+static constexpr int k_league_size{user_settings::k_league_size};
+static constexpr int k_pool_size{user_settings::k_pool_size};
 
-static constexpr int g_k_player_count{g_k_team_size * g_k_league_size};
-static_assert(g_k_pool_size >= g_k_player_count);
+static constexpr int k_player_count{k_team_size * k_league_size};
+static_assert(k_pool_size >= k_player_count);
 
-static constexpr int g_k_rank_top{1};
-static constexpr int g_k_rank_cutoff{4};
+static constexpr int k_rank_top{1};
+static constexpr int k_rank_cutoff{4};
 
 enum class category {
   points = 0,
@@ -51,12 +51,12 @@ enum class category_split {
 };
 
 static constexpr std::array<std::string, static_cast<std::size_t>(category::N)>
-    g_k_category_strs{"points", "rebounds", "assists",     "steals",
+    k_category_strs{"points", "rebounds", "assists",     "steals",
                       "blocks", "threes",   "field_goals", "free_throws"};
 
 static const std::array<std::string,
                         static_cast<std::size_t>(category_split::N)>
-    g_k_category_split_strs{"points",           "rebounds",
+    k_category_split_strs{"points",           "rebounds",
                             "assists",          "steals",
                             "blocks",           "threes",
                             "field_goals_made", "field_goals_attempted",
@@ -96,11 +96,11 @@ struct player {
 };
 
 struct team {
-  std::array<const player *, g_k_team_size> m_players;
+  std::array<const player *, k_team_size> m_players;
 };
 
-static constexpr char g_k_column_separator_char{','};
-static constexpr char g_k_row_separator_char{'\n'};
+static constexpr char k_column_separator_char{','};
+static constexpr char k_row_separator_char{'\n'};
 
 } // namespace common
 
