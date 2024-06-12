@@ -12,17 +12,17 @@
 #include <vector>
 
 std::array<brown_basketball::common::team,
-           brown_basketball::common::g_k_league_size>
+           brown_basketball::common::k_league_size>
 brown_basketball::generation::generate_league(
-    const std::array<common::player, common::g_k_pool_size> &database,
+    const std::array<common::player, common::k_pool_size> &database,
     const flags flags) {
   return impl::generate_league(database, flags);
 }
 
 std::array<brown_basketball::common::team,
-           brown_basketball::common::g_k_league_size>
+           brown_basketball::common::k_league_size>
 brown_basketball::generation::impl::generate_league(
-    const std::array<common::player, common::g_k_pool_size> &database,
+    const std::array<common::player, common::k_pool_size> &database,
     const flags flags) {
   step1_generation_func_t step1_generation_func{
       (static_cast<bool>(flags & flags::draft_aware))
@@ -33,24 +33,24 @@ brown_basketball::generation::impl::generate_league(
           ? (position_aware_step2_generation)
           : (basic_step2_generation)};
 
-  std::array<index, common::g_k_pool_size> indices{};
+  std::array<index, common::k_pool_size> indices{};
   for (std::size_t i_index{0}; i_index < indices.size(); ++i_index) {
     indices[i_index] = {i_index, false};
   }
 
   my_random::random rand{};
 
-  std::array<std::array<index, common::g_k_team_size>, common::g_k_league_size>
+  std::array<std::array<index, common::k_team_size>, common::k_league_size>
       gen_ret_val{step2_generation_func(
           step1_generation_func(std::move(indices), database, rand), database,
           rand)};
 
-  std::array<common::team, common::g_k_league_size> ret_val{};
+  std::array<common::team, common::k_league_size> ret_val{};
 
-  assert(common::g_k_league_size == ret_val.size());
-  for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
-    assert(common::g_k_team_size == ret_val[i_team].m_players.size());
-    for (std::size_t i_player{0}; i_player < common::g_k_team_size;
+  assert(common::k_league_size == ret_val.size());
+  for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
+    assert(common::k_team_size == ret_val[i_team].m_players.size());
+    for (std::size_t i_player{0}; i_player < common::k_team_size;
          ++i_player) {
       ret_val[i_team].m_players[i_player] =
           &(database[gen_ret_val[i_team][i_player].m_idx]);
@@ -61,10 +61,10 @@ brown_basketball::generation::impl::generate_league(
 }
 
 std::array<brown_basketball::generation::impl::index,
-           brown_basketball::common::g_k_pool_size>
+           brown_basketball::common::k_pool_size>
 brown_basketball::generation::impl::basic_step1_generation(
-    std::array<index, common::g_k_pool_size> &&indices,
-    [[maybe_unused]] const std::array<common::player, common::g_k_pool_size>
+    std::array<index, common::k_pool_size> &&indices,
+    [[maybe_unused]] const std::array<common::player, common::k_pool_size>
         &database,
     my_random::random &rand) {
   std::shuffle(indices.begin(), indices.end(), rand.get_generator());
@@ -72,10 +72,10 @@ brown_basketball::generation::impl::basic_step1_generation(
 }
 
 std::array<brown_basketball::generation::impl::index,
-           brown_basketball::common::g_k_pool_size>
+           brown_basketball::common::k_pool_size>
 brown_basketball::generation::impl::draft_aware_step1_generation(
-    std::array<index, common::g_k_pool_size> &&indices,
-    const std::array<common::player, common::g_k_pool_size> &database,
+    std::array<index, common::k_pool_size> &&indices,
+    const std::array<common::player, common::k_pool_size> &database,
     my_random::random &rand) {
   const auto draft_range_midpoint{
       [](const common::player &player)
@@ -95,8 +95,8 @@ brown_basketball::generation::impl::draft_aware_step1_generation(
       10}; // TODO what is a good bin_size? smaller means that players are more
            // likely to be drafted in their range, larger means more randomness
 
-  assert(common::g_k_pool_size == indices.size());
-  for (std::size_t i_player{0}; i_player < common::g_k_pool_size;
+  assert(common::k_pool_size == indices.size());
+  for (std::size_t i_player{0}; i_player < common::k_pool_size;
        i_player += k_bin_size) {
     std::shuffle((indices.begin() + i_player),
                  (((i_player + k_bin_size) < indices.size())
@@ -109,14 +109,14 @@ brown_basketball::generation::impl::draft_aware_step1_generation(
 }
 
 std::array<brown_basketball::generation::impl::index,
-           brown_basketball::common::g_k_pool_size>
+           brown_basketball::common::k_pool_size>
 brown_basketball::generation::impl::draft_aware_step1_generation_alt(
-    std::array<index, common::g_k_pool_size> &&indices,
-    const std::array<common::player, common::g_k_pool_size> &database,
+    std::array<index, common::k_pool_size> &&indices,
+    const std::array<common::player, common::k_pool_size> &database,
     my_random::random &rand) {
   std::shuffle(indices.begin(), indices.end(), rand.get_generator());
 
-  std::array<index, common::g_k_pool_size> indices_res;
+  std::array<index, common::k_pool_size> indices_res;
 
   const auto find_spot_for_player{[&indices_res, &database,
                                    &rand](const index &player) -> void {
@@ -146,8 +146,8 @@ brown_basketball::generation::impl::draft_aware_step1_generation_alt(
     }
   }};
 
-  assert(common::g_k_pool_size == indices.size());
-  for (std::size_t i_player{0}; i_player < common::g_k_pool_size; ++i_player) {
+  assert(common::k_pool_size == indices.size());
+  for (std::size_t i_player{0}; i_player < common::k_pool_size; ++i_player) {
     find_spot_for_player(indices[i_player]);
   }
 
@@ -155,33 +155,33 @@ brown_basketball::generation::impl::draft_aware_step1_generation_alt(
 }
 
 std::array<std::array<brown_basketball::generation::impl::index,
-                      brown_basketball::common::g_k_team_size>,
-           brown_basketball::common::g_k_league_size>
+                      brown_basketball::common::k_team_size>,
+           brown_basketball::common::k_league_size>
 brown_basketball::generation::impl::basic_step2_generation(
-    std::array<index, common::g_k_pool_size> &&indices,
-    [[maybe_unused]] const std::array<common::player, common::g_k_pool_size>
+    std::array<index, common::k_pool_size> &&indices,
+    [[maybe_unused]] const std::array<common::player, common::k_pool_size>
         &database,
     [[maybe_unused]] my_random::random &rand) {
-  std::array<std::array<index, common::g_k_team_size>, common::g_k_league_size>
+  std::array<std::array<index, common::k_team_size>, common::k_league_size>
       ret_val{};
-  assert(common::g_k_league_size == ret_val.size());
-  for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
-    assert(common::g_k_team_size == ret_val[i_team].size());
-    for (std::size_t i_player{0}; i_player < common::g_k_team_size;
+  assert(common::k_league_size == ret_val.size());
+  for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
+    assert(common::k_team_size == ret_val[i_team].size());
+    for (std::size_t i_player{0}; i_player < common::k_team_size;
          ++i_player) {
       ret_val[i_team][i_player] =
-          indices[(i_team * common::g_k_team_size) + i_player];
+          indices[(i_team * common::k_team_size) + i_player];
     }
   }
   return ret_val;
 }
 
 std::array<std::array<brown_basketball::generation::impl::index,
-                      brown_basketball::common::g_k_team_size>,
-           brown_basketball::common::g_k_league_size>
+                      brown_basketball::common::k_team_size>,
+           brown_basketball::common::k_league_size>
 brown_basketball::generation::impl::position_aware_step2_generation(
-    std::array<index, common::g_k_pool_size> &&indices,
-    const std::array<common::player, common::g_k_pool_size> &database,
+    std::array<index, common::k_pool_size> &&indices,
+    const std::array<common::player, common::k_pool_size> &database,
     my_random::random &rand) {
   enum class team_positions_specificity_1 : unsigned int {
     point_guard_1 = 0,
@@ -269,13 +269,13 @@ brown_basketball::generation::impl::position_aware_step2_generation(
       }};
 
   if constexpr (static_cast<unsigned int>(team_positions::N) !=
-                common::g_k_team_size) {
+                common::k_team_size) {
     throw std::runtime_error{"position-aware league generation unvailable if "
                              "team size does not equal position count"};
   }
 
-  std::array<std::array<team_positions, common::g_k_team_size>,
-             common::g_k_league_size>
+  std::array<std::array<team_positions, common::k_team_size>,
+             common::k_league_size>
       team_pos_slots{};
   for (std::size_t i_team{0}; i_team < team_pos_slots.size(); ++i_team) {
     team_pos_slots[i_team] = {
@@ -311,17 +311,17 @@ brown_basketball::generation::impl::position_aware_step2_generation(
                  iter_team_position_specificity_3_end, rand.get_generator());
   }
 
-  std::array<std::array<index, common::g_k_team_size>, common::g_k_league_size>
+  std::array<std::array<index, common::k_team_size>, common::k_league_size>
       ret_val{};
 
-  assert((common::g_k_league_size == ret_val.size()) &&
-         (common::g_k_league_size == team_pos_slots.size()));
-  for (std::size_t i_team{0}; i_team < common::g_k_league_size; ++i_team) {
-    assert((common::g_k_team_size == team_pos_slots[i_team].size()) &&
-           (common::g_k_team_size == ret_val[i_team].size()));
-    for (std::size_t i_pos{0}; i_pos < common::g_k_team_size; ++i_pos) {
-      assert(common::g_k_pool_size == indices.size());
-      for (std::size_t i_player{0}; i_player < common::g_k_pool_size;
+  assert((common::k_league_size == ret_val.size()) &&
+         (common::k_league_size == team_pos_slots.size()));
+  for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
+    assert((common::k_team_size == team_pos_slots[i_team].size()) &&
+           (common::k_team_size == ret_val[i_team].size()));
+    for (std::size_t i_pos{0}; i_pos < common::k_team_size; ++i_pos) {
+      assert(common::k_pool_size == indices.size());
+      for (std::size_t i_player{0}; i_player < common::k_pool_size;
            ++i_player) {
         if (compatible_player_postion(
                 team_pos_slots[i_team][i_pos],

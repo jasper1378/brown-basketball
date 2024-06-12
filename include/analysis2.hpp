@@ -28,17 +28,17 @@ struct stats_states {
   bits_and_bytes::statistics::online::stdev::state<double> m_stdev;
 };
 
-static constexpr auto g_k_bessel_correction{true};
+static constexpr auto k_bessel_correction{true};
 } // namespace impl
 
 using accum_state_t =
     common::categories<std::array<common::categories<impl::stats_states>,
-                                  common::g_k_league_size>>;
+                                  common::k_league_size>>;
 using add_t =
-    std::pair<std::array<scoring::team_stats, common::g_k_league_size>,
-              std::array<scoring::team_ranks, common::g_k_league_size>>;
+    std::pair<std::array<scoring::team_stats, common::k_league_size>,
+              std::array<scoring::team_ranks, common::k_league_size>>;
 using read_t = common::categories<
-    std::array<common::categories<stats>, common::g_k_league_size>>;
+    std::array<common::categories<stats>, common::k_league_size>>;
 
 class accum_state {
 private:

@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
   analysis2::accum_state a2{};
   timings[0] = timer.elapsed();
   timer.reset();
-  for (std::size_t i_trial{0}; i_trial < common::g_k_trial_count; ++i_trial) {
+  for (std::size_t i_trial{0}; i_trial < common::k_trial_count; ++i_trial) {
     // auto g{generation::generate_league(d, (generation::flags::draft_aware |
     //                                        generation::flags::position_aware))};
     auto g{generation::generate_league(d, generation::flags::basic)};
@@ -48,8 +48,8 @@ int main(int argc, char *argv[]) {
     a2.add(std::make_pair(s_stats, s_ranks));
     {
       double percent_completed{static_cast<double>(i_trial) /
-                               common::g_k_trial_count};
-      if ((i_trial % (common::g_k_trial_count / 100)) == 0) {
+                               common::k_trial_count};
+      if ((i_trial % (common::k_trial_count / 100)) == 0) {
         std::cerr << "\33[2K\r"
                   << static_cast<int>(std::round(percent_completed * 100))
                   << "% completed, "

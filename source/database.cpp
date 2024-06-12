@@ -14,13 +14,13 @@
 #include <utility>
 
 std::array<brown_basketball::common::player,
-           brown_basketball::common::g_k_pool_size>
+           brown_basketball::common::k_pool_size>
 brown_basketball::database::read_database(const std::string &file_path) {
   return impl::read_database(file_path);
 }
 
 std::array<brown_basketball::common::player,
-           brown_basketball::common::g_k_pool_size>
+           brown_basketball::common::k_pool_size>
 brown_basketball::database::impl::read_database(const std::string &file_path) {
   libconfigfile::node_ptr<libconfigfile::map_node> parsed_database{nullptr};
   try {
@@ -31,7 +31,7 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
   }
 
   if (auto p_player_database{
-          parsed_database->find(g_k_key_str_player_database)};
+          parsed_database->find(k_key_str_player_database)};
       p_player_database != parsed_database->end()) {
     libconfigfile::node_ptr<libconfigfile::node> player_database{
         std::move(p_player_database->second)};
@@ -40,8 +40,8 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
           player_database_as_array{
               libconfigfile::node_ptr_cast<libconfigfile::array_node>(
                   std::move(player_database))};
-      if (player_database_as_array->size() == common::g_k_pool_size) {
-        std::array<common::player, common::g_k_pool_size> ret_val{};
+      if (player_database_as_array->size() == common::k_pool_size) {
+        std::array<common::player, common::k_pool_size> ret_val{};
 
         for (std::size_t i_player{0};
              i_player < player_database_as_array->size(); ++i_player) {
@@ -75,14 +75,14 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
 
             libconfigfile::node_ptr<libconfigfile::string_node> field_name{
                 libconfigfile::node_ptr_cast<libconfigfile::string_node>(
-                    check_contains_and_type(g_k_key_str_name,
+                    check_contains_and_type(k_key_str_name,
                                             libconfigfile::node_type::String))};
             ret_val[i_player].m_info.m_name =
                 libconfigfile::node_to_base(std::move(*field_name));
 
             libconfigfile::node_ptr<libconfigfile::array_node> field_position{
                 libconfigfile::node_ptr_cast<libconfigfile::array_node>(
-                    check_contains_and_type(g_k_key_str_position,
+                    check_contains_and_type(k_key_str_position,
                                             libconfigfile::node_type::Array))};
             ret_val[i_player].m_info.m_positions = {
                 [](const libconfigfile::node_ptr<libconfigfile::array_node>
@@ -114,10 +114,10 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                 field_draft_range_begin{
                     libconfigfile::node_ptr_cast<libconfigfile::integer_node>(
                         check_contains_and_type(
-                            g_k_key_str_draft_range_begin,
+                            k_key_str_draft_range_begin,
                             libconfigfile::node_type::Integer))};
             if (!((field_draft_range_begin->get() > 0) &&
-                  (field_draft_range_begin->get() <= common::g_k_pool_size))) {
+                  (field_draft_range_begin->get() <= common::k_pool_size))) {
               throw std::runtime_error{
                   "invalid draft range in player database"};
             }
@@ -129,10 +129,10 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                 field_draft_range_end{
                     libconfigfile::node_ptr_cast<libconfigfile::integer_node>(
                         check_contains_and_type(
-                            g_k_key_str_draft_range_end,
+                            k_key_str_draft_range_end,
                             libconfigfile::node_type::Integer))};
             if (!((field_draft_range_end->get() > 0) &&
-                  (field_draft_range_end->get() <= common::g_k_pool_size))) {
+                  (field_draft_range_end->get() <= common::k_pool_size))) {
               throw std::runtime_error{
                   "invalid draft range in player database"};
             }
@@ -153,7 +153,7 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
               libconfigfile::node_ptr<libconfigfile::float_node> field{
                   libconfigfile::node_ptr_cast<libconfigfile::float_node>(
                       check_contains_and_type(
-                          g_k_key_str_categories[i_cat],
+                          k_key_str_categories[i_cat],
                           libconfigfile::node_type::Float))};
               ret_val[i_player].m_stats[i_cat] =
                   libconfigfile::node_to_base(std::move(*field));
