@@ -2,6 +2,7 @@ player_database = [
 
   {
     name = "Joel Embiid";
+    rank = 1;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -19,6 +20,7 @@ player_database = [
 
   {
     name = "Nikola Jokic";
+    rank = 2;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -36,6 +38,7 @@ player_database = [
 
   {
     name = "Shai Gilgeous-Alexander";
+    rank = 3;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -53,6 +56,7 @@ player_database = [
 
   {
     name = "Luka Doncic";
+    rank = 4;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -70,6 +74,7 @@ player_database = [
 
   {
     name = "Anthony Davis";
+    rank = 5;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -87,6 +92,7 @@ player_database = [
 
   {
     name = "Victor Wembanyama";
+    rank = 6;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -104,6 +110,7 @@ player_database = [
 
   {
     name = "Kevin Durant";
+    rank = 7;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -121,6 +128,7 @@ player_database = [
 
   {
     name = "Donovan Mitchell";
+    rank = 8;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -138,6 +146,7 @@ player_database = [
 
   {
     name = "Kawhi Leonard";
+    rank = 9;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -155,6 +164,7 @@ player_database = [
 
   {
     name = "LeBron James";
+    rank = 10;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -172,6 +182,7 @@ player_database = [
 
   {
     name = "Kyrie Irving";
+    rank = 11;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -189,6 +200,7 @@ player_database = [
 
   {
     name = "Tyrese Haliburton";
+    rank = 12;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -206,6 +218,7 @@ player_database = [
 
   {
     name = "Devin Booker";
+    rank = 13;
     positions = ["PG","SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -223,6 +236,7 @@ player_database = [
 
   {
     name = "Jayson Tatum";
+    rank = 14;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -240,6 +254,7 @@ player_database = [
 
   {
     name = "LaMelo Ball";
+    rank = 15;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -257,6 +272,7 @@ player_database = [
 
   {
     name = "Trae Young";
+    rank = 16;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -274,6 +290,7 @@ player_database = [
 
   {
     name = "Stephen Curry";
+    rank = 17;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -291,6 +308,7 @@ player_database = [
 
   {
     name = "Kristaps Porzingis";
+    rank = 18;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -308,6 +326,7 @@ player_database = [
 
   {
     name = "Damian Lillard";
+    rank = 19;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -325,6 +344,7 @@ player_database = [
 
   {
     name = "Scottie Barnes";
+    rank = 20;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -342,6 +362,7 @@ player_database = [
 
   {
     name = "Paul George";
+    rank = 21;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -359,6 +380,7 @@ player_database = [
 
   {
     name = "Domantas Sabonis";
+    rank = 22;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -376,6 +398,7 @@ player_database = [
 
   {
     name = "Lauri Markkanen";
+    rank = 23;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -393,6 +416,7 @@ player_database = [
 
   {
     name = "Giannis Antetokounmpo";
+    rank = 24;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -410,6 +434,7 @@ player_database = [
 
   {
     name = "James Harden";
+    rank = 25;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -427,6 +452,7 @@ player_database = [
 
   {
     name = "Jalen Brunson";
+    rank = 26;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -444,6 +470,7 @@ player_database = [
 
   {
     name = "Chet Holmgren";
+    rank = 27;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -461,6 +488,7 @@ player_database = [
 
   {
     name = "Karl-Anthony Towns";
+    rank = 28;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -478,6 +506,7 @@ player_database = [
 
   {
     name = "Anthony Edwards";
+    rank = 29;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -495,6 +524,7 @@ player_database = [
 
   {
     name = "Tyrese Maxey";
+    rank = 30;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -512,6 +542,7 @@ player_database = [
 
   {
     name = "Fred VanVleet";
+    rank = 31;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -529,6 +560,7 @@ player_database = [
 
   {
     name = "Desmond Bane";
+    rank = 32;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -546,6 +578,7 @@ player_database = [
 
   {
     name = "De'Aaron Fox";
+    rank = 33;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -563,6 +596,7 @@ player_database = [
 
   {
     name = "Jimmy Butler";
+    rank = 34;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -580,6 +614,7 @@ player_database = [
 
   {
     name = "Jamal Murray";
+    rank = 35;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -597,6 +632,7 @@ player_database = [
 
   {
     name = "Ja Morant";
+    rank = 36;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -614,6 +650,7 @@ player_database = [
 
   {
     name = "DeMar DeRozan";
+    rank = 37;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -631,6 +668,7 @@ player_database = [
 
   {
     name = "Derrick White";
+    rank = 38;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -648,6 +686,7 @@ player_database = [
 
   {
     name = "Dejounte Murray";
+    rank = 39;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -665,6 +704,7 @@ player_database = [
 
   {
     name = "Jaren Jackson Jr.";
+    rank = 40;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -682,6 +722,7 @@ player_database = [
 
   {
     name = "Cade Cunningham";
+    rank = 41;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -699,6 +740,7 @@ player_database = [
 
   {
     name = "Evan Mobley";
+    rank = 42;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -716,6 +758,7 @@ player_database = [
 
   {
     name = "Jarrett Allen";
+    rank = 43;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -733,6 +776,7 @@ player_database = [
 
   {
     name = "Deandre Ayton";
+    rank = 44;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -750,6 +794,7 @@ player_database = [
 
   {
     name = "Jalen Williams";
+    rank = 45;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -767,6 +812,7 @@ player_database = [
 
   {
     name = "Bam Adebayo";
+    rank = 46;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -784,6 +830,7 @@ player_database = [
 
   {
     name = "Daniel Gafford";
+    rank = 47;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -801,6 +848,7 @@ player_database = [
 
   {
     name = "CJ McCollum";
+    rank = 48;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -818,6 +866,7 @@ player_database = [
 
   {
     name = "Alperen Sengün";
+    rank = 49;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -835,6 +884,7 @@ player_database = [
 
   {
     name = "Myles Turner";
+    rank = 50;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -852,6 +902,7 @@ player_database = [
 
   {
     name = "Bradley Beal";
+    rank = 51;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -869,6 +920,7 @@ player_database = [
 
   {
     name = "Jalen Johnson";
+    rank = 52;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -886,6 +938,7 @@ player_database = [
 
   {
     name = "Rudy Gobert";
+    rank = 53;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -903,6 +956,7 @@ player_database = [
 
   {
     name = "Nikola Vucevic";
+    rank = 54;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -920,6 +974,7 @@ player_database = [
 
   {
     name = "Brook Lopez";
+    rank = 55;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -937,6 +992,7 @@ player_database = [
 
   {
     name = "Tobias Harris";
+    rank = 56;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -954,6 +1010,7 @@ player_database = [
 
   {
     name = "Brandon Ingram";
+    rank = 57;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -971,6 +1028,7 @@ player_database = [
 
   {
     name = "Miles Bridges";
+    rank = 58;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -988,6 +1046,7 @@ player_database = [
 
   {
     name = "D'Angelo Russell";
+    rank = 59;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1005,6 +1064,7 @@ player_database = [
 
   {
     name = "Jalen Duren";
+    rank = 60;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1022,6 +1082,7 @@ player_database = [
 
   {
     name = "Franz Wagner";
+    rank = 61;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1039,6 +1100,7 @@ player_database = [
 
   {
     name = "Anfernee Simons";
+    rank = 62;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1056,6 +1118,7 @@ player_database = [
 
   {
     name = "Terry Rozier";
+    rank = 63;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1073,6 +1136,7 @@ player_database = [
 
   {
     name = "Julius Randle";
+    rank = 64;
     positions = ["PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1090,6 +1154,7 @@ player_database = [
 
   {
     name = "Alex Caruso";
+    rank = 65;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1107,6 +1172,7 @@ player_database = [
 
   {
     name = "Jaylen Brown";
+    rank = 66;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1124,6 +1190,7 @@ player_database = [
 
   {
     name = "Zion Williamson";
+    rank = 67;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1141,6 +1208,7 @@ player_database = [
 
   {
     name = "Jrue Holiday";
+    rank = 68;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1158,6 +1226,7 @@ player_database = [
 
   {
     name = "Darius Garland";
+    rank = 69;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1175,6 +1244,7 @@ player_database = [
 
   {
     name = "Grayson Allen";
+    rank = 70;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1192,6 +1262,7 @@ player_database = [
 
   {
     name = "Austin Reaves";
+    rank = 71;
     positions = ["PG","SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1209,6 +1280,7 @@ player_database = [
 
   {
     name = "Zach LaVine";
+    rank = 72;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1226,6 +1298,7 @@ player_database = [
 
   {
     name = "Pascal Siakam";
+    rank = 73;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1243,6 +1316,7 @@ player_database = [
 
   {
     name = "Kyle Kuzma";
+    rank = 74;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1260,6 +1334,7 @@ player_database = [
 
   {
     name = "Devin Vassell";
+    rank = 75;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1277,6 +1352,7 @@ player_database = [
 
   {
     name = "Draymond Green";
+    rank = 76;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1294,6 +1370,7 @@ player_database = [
 
   {
     name = "Nicolas Claxton";
+    rank = 77;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1311,6 +1388,7 @@ player_database = [
 
   {
     name = "Mark Williams";
+    rank = 78;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1328,6 +1406,7 @@ player_database = [
 
   {
     name = "Tyler Herro";
+    rank = 79;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1345,6 +1424,7 @@ player_database = [
 
   {
     name = "Collin Sexton";
+    rank = 80;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1362,6 +1442,7 @@ player_database = [
 
   {
     name = "Khris Middleton";
+    rank = 81;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1379,6 +1460,7 @@ player_database = [
 
   {
     name = "John Collins";
+    rank = 82;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1396,6 +1478,7 @@ player_database = [
 
   {
     name = "Herbert Jones";
+    rank = 83;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1413,6 +1496,7 @@ player_database = [
 
   {
     name = "Bogdan Bogdanovic";
+    rank = 84;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1430,6 +1514,7 @@ player_database = [
 
   {
     name = "Michael Porter Jr.";
+    rank = 85;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1447,6 +1532,7 @@ player_database = [
 
   {
     name = "Marcus Smart";
+    rank = 86;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1464,6 +1550,7 @@ player_database = [
 
   {
     name = "Scotty Pippen Jr.";
+    rank = 87;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1481,6 +1568,7 @@ player_database = [
 
   {
     name = "Coby White";
+    rank = 88;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1498,6 +1586,7 @@ player_database = [
 
   {
     name = "OG Anunoby";
+    rank = 89;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1515,6 +1604,7 @@ player_database = [
 
   {
     name = "Walker Kessler";
+    rank = 90;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1532,6 +1622,7 @@ player_database = [
 
   {
     name = "Mikal Bridges";
+    rank = 91;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1549,6 +1640,7 @@ player_database = [
 
   {
     name = "Mike Conley";
+    rank = 92;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1566,6 +1658,7 @@ player_database = [
 
   {
     name = "Isaiah Hartenstein";
+    rank = 93;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1583,6 +1676,7 @@ player_database = [
 
   {
     name = "Donte DiVincenzo";
+    rank = 94;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1600,6 +1694,7 @@ player_database = [
 
   {
     name = "Keegan Murray";
+    rank = 95;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1617,6 +1712,7 @@ player_database = [
 
   {
     name = "Tyus Jones";
+    rank = 96;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1634,6 +1730,7 @@ player_database = [
 
   {
     name = "Jusuf Nurkic";
+    rank = 97;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1651,6 +1748,7 @@ player_database = [
 
   {
     name = "Jakob Poeltl";
+    rank = 98;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1668,6 +1766,7 @@ player_database = [
 
   {
     name = "Jerami Grant";
+    rank = 99;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1685,6 +1784,7 @@ player_database = [
 
   {
     name = "Trey Murphy III";
+    rank = 100;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1702,6 +1802,7 @@ player_database = [
 
   {
     name = "Paolo Banchero";
+    rank = 101;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1719,6 +1820,7 @@ player_database = [
 
   {
     name = "Ivica Zubac";
+    rank = 102;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1736,6 +1838,7 @@ player_database = [
 
   {
     name = "Klay Thompson";
+    rank = 103;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1753,6 +1856,7 @@ player_database = [
 
   {
     name = "Jabari Smith Jr.";
+    rank = 104;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1770,6 +1874,7 @@ player_database = [
 
   {
     name = "Al Horford";
+    rank = 105;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1787,6 +1892,7 @@ player_database = [
 
   {
     name = "Immanuel Quickley";
+    rank = 106;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1804,6 +1910,7 @@ player_database = [
 
   {
     name = "Kelly Olynyk";
+    rank = 107;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1821,6 +1928,7 @@ player_database = [
 
   {
     name = "Deni Avdija";
+    rank = 108;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1838,6 +1946,7 @@ player_database = [
 
   {
     name = "Brandon Miller";
+    rank = 109;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1855,6 +1964,7 @@ player_database = [
 
   {
     name = "Jordan Poole";
+    rank = 110;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1872,6 +1982,7 @@ player_database = [
 
   {
     name = "Cam Thomas";
+    rank = 111;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1889,6 +2000,7 @@ player_database = [
 
   {
     name = "Jalen Suggs";
+    rank = 112;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1906,6 +2018,7 @@ player_database = [
 
   {
     name = "Jonas Valanciunas";
+    rank = 113;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1923,6 +2036,7 @@ player_database = [
 
   {
     name = "Robert Williams III";
+    rank = 114;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1940,6 +2054,7 @@ player_database = [
 
   {
     name = "Clint Capela";
+    rank = 115;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1957,6 +2072,7 @@ player_database = [
 
   {
     name = "Josh Giddey";
+    rank = 116;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1974,6 +2090,7 @@ player_database = [
 
   {
     name = "Onyeka Okongwu";
+    rank = 117;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -1991,6 +2108,7 @@ player_database = [
 
   {
     name = "Jalen Green";
+    rank = 118;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2008,6 +2126,7 @@ player_database = [
 
   {
     name = "Malik Monk";
+    rank = 119;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2025,6 +2144,7 @@ player_database = [
 
   {
     name = "Malcolm Brogdon";
+    rank = 120;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2042,6 +2162,7 @@ player_database = [
 
   {
     name = "Tre Jones";
+    rank = 121;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2059,6 +2180,7 @@ player_database = [
 
   {
     name = "Vince Williams Jr.";
+    rank = 122;
     positions = ["PG","SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2076,6 +2198,7 @@ player_database = [
 
   {
     name = "Naz Reid";
+    rank = 123;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2093,6 +2216,7 @@ player_database = [
 
   {
     name = "Bobby Portis";
+    rank = 124;
     positions = ["PF","C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2110,6 +2234,7 @@ player_database = [
 
   {
     name = "Chris Paul";
+    rank = 125;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2127,6 +2252,7 @@ player_database = [
 
   {
     name = "De'Anthony Melton";
+    rank = 126;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2144,6 +2270,7 @@ player_database = [
 
   {
     name = "Dereck Lively II";
+    rank = 127;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2161,6 +2288,7 @@ player_database = [
 
   {
     name = "Kentavious Caldwell-Pope";
+    rank = 128;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2178,6 +2306,7 @@ player_database = [
 
   {
     name = "Dennis Schröder";
+    rank = 129;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2195,6 +2324,7 @@ player_database = [
 
   {
     name = "Max Strus";
+    rank = 130;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2212,6 +2342,7 @@ player_database = [
 
   {
     name = "Nick Richards";
+    rank = 131;
     positions = ["C"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2229,6 +2360,7 @@ player_database = [
 
   {
     name = "Caris LeVert";
+    rank = 132;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2246,6 +2378,7 @@ player_database = [
 
   {
     name = "Ayo Dosunmu";
+    rank = 133;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2263,6 +2396,7 @@ player_database = [
 
   {
     name = "Josh Hart";
+    rank = 134;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2280,6 +2414,7 @@ player_database = [
 
   {
     name = "Tari Eason";
+    rank = 135;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2297,6 +2432,7 @@ player_database = [
 
   {
     name = "Keldon Johnson";
+    rank = 136;
     positions = ["SG","SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2314,6 +2450,7 @@ player_database = [
 
   {
     name = "Buddy Hield";
+    rank = 137;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2331,6 +2468,7 @@ player_database = [
 
   {
     name = "De'Andre Hunter";
+    rank = 138;
     positions = ["SF","PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2348,6 +2486,7 @@ player_database = [
 
   {
     name = "Shaedon Sharpe";
+    rank = 139;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2365,6 +2504,7 @@ player_database = [
 
   {
     name = "Jordan Clarkson";
+    rank = 140;
     positions = ["PG","SG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2382,6 +2522,7 @@ player_database = [
 
   {
     name = "Aaron Gordon";
+    rank = 141;
     positions = ["PF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2399,6 +2540,7 @@ player_database = [
 
   {
     name = "Amen Thompson";
+    rank = 142;
     positions = ["PG","SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2416,6 +2558,7 @@ player_database = [
 
   {
     name = "T.J. McConnell";
+    rank = 143;
     positions = ["PG"];
     draft_range_begin = 1;
     draft_range_end = 144;
@@ -2433,6 +2576,7 @@ player_database = [
 
   {
     name = "RJ Barrett";
+    rank = 144;
     positions = ["SG","SF"];
     draft_range_begin = 1;
     draft_range_end = 144;
