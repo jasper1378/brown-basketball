@@ -3,7 +3,7 @@
 
 #include "user_settings.hpp"
 
-#include "bits-and-bytes/define_enum_flag_operators/define_enum_flag_operators.hpp"
+#include "bits-and-bytes/enum_flag_operators.hpp"
 
 #include <array>
 #include <cstddef>
@@ -52,15 +52,15 @@ enum class category_split {
 
 static constexpr std::array<std::string, static_cast<std::size_t>(category::N)>
     k_category_strs{"points", "rebounds", "assists",     "steals",
-                      "blocks", "threes",   "field_goals", "free_throws"};
+                    "blocks", "threes",   "field_goals", "free_throws"};
 
 static const std::array<std::string,
                         static_cast<std::size_t>(category_split::N)>
     k_category_split_strs{"points",           "rebounds",
-                            "assists",          "steals",
-                            "blocks",           "threes",
-                            "field_goals_made", "field_goals_attempted",
-                            "free_throws_made", "free_throws_attempted"};
+                          "assists",          "steals",
+                          "blocks",           "threes",
+                          "field_goals_made", "field_goals_attempted",
+                          "free_throws_made", "free_throws_attempted"};
 
 template <typename T>
 using categories = std::array<T, static_cast<std::size_t>(category::N)>;
