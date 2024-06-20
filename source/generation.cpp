@@ -314,12 +314,12 @@ brown_basketball::generation::impl::position_aware_step2_generation(
   std::array<std::array<index, common::k_team_size>, common::k_league_size>
       ret_val{};
 
-  assert((common::k_league_size == ret_val.size()) &&
-         (common::k_league_size == team_pos_slots.size()));
-  for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
-    assert((common::k_team_size == team_pos_slots[i_team].size()) &&
-           (common::k_team_size == ret_val[i_team].size()));
-    for (std::size_t i_pos{0}; i_pos < common::k_team_size; ++i_pos) {
+  assert((common::k_team_size == team_pos_slots.front().size()) &&
+         (common::k_team_size == ret_val.front().size()));
+  for (std::size_t i_pos{0}; i_pos < common::k_team_size; ++i_pos) {
+    assert((common::k_league_size == ret_val.size()) &&
+           (common::k_league_size == team_pos_slots.size()));
+    for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
       assert(common::k_pool_size == indices.size());
       for (std::size_t i_player{0}; i_player < common::k_pool_size;
            ++i_player) {
