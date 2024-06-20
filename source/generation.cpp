@@ -3,11 +3,12 @@
 #include "common.hpp"
 #include "my_random.hpp"
 
+#include "bits-and-bytes/move_elem_to.hpp"
+
 #include <algorithm>
 #include <array>
 #include <cassert>
 #include <cstddef>
-#include <exception>
 #include <stdexcept>
 #include <vector>
 
@@ -24,14 +25,38 @@ std::array<brown_basketball::common::team,
 brown_basketball::generation::impl::generate_league(
     const std::array<common::player, common::k_pool_size> &database,
     const flags flags) {
-  step1_generation_func_t step1_generation_func{
-      (static_cast<bool>(flags & flags::draft_aware))
-          ? (draft_aware_step1_generation)
-          : (basic_step1_generation)};
-  step2_generation_func_t step2_generation_func{
-      (static_cast<bool>(flags & flags::position_aware))
-          ? (position_aware_step2_generation)
-          : (basic_step2_generation)};
+
+  step1_generation_func_t step1_generation_func{[flags]()
+                                                    -> step1_generation_func_t {
+    if (static_cast<bool>(flags & flags::draft_aware) &&
+        static_cast<bool>(flags & flags::random_epiphany_thingy)) {
+      throw std::runtime_error{
+          "generation::flags::draft_aware and "
+          "generation::flags::random_epiphany_thingy are mutually exclusive"};
+    } else if (static_cast<bool>(flags & flags::draft_aware)) {
+      return step1_generation_draft_aware;
+    } else if (static_cast<bool>(flags & flags::random_epiphany_thingy)) {
+      return step1_generation_random_epiphany_thingy;
+    } else {
+      return step1_generation_basic;
+    }
+  }()};
+
+  step2_generation_func_t step2_generation_func{[flags]()
+                                                    -> step2_generation_func_t {
+    if (static_cast<bool>(flags & flags::position_aware) &&
+        static_cast<bool>(flags & flags::random_epiphany_thingy)) {
+      throw std::runtime_error{
+          "generation::flags::position_aware and "
+          "generation::flags::random_epiphany_thingy are mutually exclusive"};
+    } else if (static_cast<bool>(flags & flags::position_aware)) {
+      return step2_generation_position_aware;
+    } else if (static_cast<bool>(flags & flags::random_epiphany_thingy)) {
+      return step2_generation_random_epiphany_thingy;
+    } else {
+      return step2_generation_basic;
+    }
+  }()};
 
   std::array<index, common::k_pool_size> indices{};
   for (std::size_t i_index{0}; i_index < indices.size(); ++i_index) {
@@ -50,8 +75,7 @@ brown_basketball::generation::impl::generate_league(
   assert(common::k_league_size == ret_val.size());
   for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
     assert(common::k_team_size == ret_val[i_team].m_players.size());
-    for (std::size_t i_player{0}; i_player < common::k_team_size;
-         ++i_player) {
+    for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
       ret_val[i_team].m_players[i_player] =
           &(database[gen_ret_val[i_team][i_player].m_idx]);
     }
@@ -62,7 +86,7 @@ brown_basketball::generation::impl::generate_league(
 
 std::array<brown_basketball::generation::impl::index,
            brown_basketball::common::k_pool_size>
-brown_basketball::generation::impl::basic_step1_generation(
+brown_basketball::generation::impl::step1_generation_basic(
     std::array<index, common::k_pool_size> &&indices,
     [[maybe_unused]] const std::array<common::player, common::k_pool_size>
         &database,
@@ -73,7 +97,7 @@ brown_basketball::generation::impl::basic_step1_generation(
 
 std::array<brown_basketball::generation::impl::index,
            brown_basketball::common::k_pool_size>
-brown_basketball::generation::impl::draft_aware_step1_generation(
+brown_basketball::generation::impl::step1_generation_draft_aware(
     std::array<index, common::k_pool_size> &&indices,
     const std::array<common::player, common::k_pool_size> &database,
     my_random::random &rand) {
@@ -110,7 +134,7 @@ brown_basketball::generation::impl::draft_aware_step1_generation(
 
 std::array<brown_basketball::generation::impl::index,
            brown_basketball::common::k_pool_size>
-brown_basketball::generation::impl::draft_aware_step1_generation_alt(
+brown_basketball::generation::impl::step1_generation_draft_aware_alt(
     std::array<index, common::k_pool_size> &&indices,
     const std::array<common::player, common::k_pool_size> &database,
     my_random::random &rand) {
@@ -154,10 +178,45 @@ brown_basketball::generation::impl::draft_aware_step1_generation_alt(
   return indices_res;
 }
 
+std::array<brown_basketball::generation::impl::index,
+           brown_basketball::common::k_pool_size>
+brown_basketball::generation::impl::step1_generation_random_epiphany_thingy(
+    std::array<index, common::k_pool_size> &&indices,
+    const std::array<common::player, common::k_pool_size> &database,
+    my_random::random &rand) {
+  assert(common::k_pool_size == 144);
+
+  std::sort(indices.begin(), indices.end(),
+            [&database](const index &i1, const index &i2) -> bool {
+              return ((database[i1.m_idx].m_info.m_rank) <
+                      (database[i2.m_idx].m_info.m_rank));
+            });
+
+  std::shuffle(indices.begin(), (indices.begin() + 6), rand.get_generator());
+  bits_and_bytes::move_elem_to::move_elem_to((indices.data() + 11),
+                                             (indices.data() + 6));
+  bits_and_bytes::move_elem_to::move_elem_to((indices.data() + 13),
+                                             (indices.data() + 7));
+  bits_and_bytes::move_elem_to::move_elem_to((indices.data() + 23),
+                                             (indices.data() + 8));
+  std::shuffle((indices.begin() + 6), (indices.begin() + 9),
+               rand.get_generator());
+  std::shuffle((indices.begin() + 9), (indices.begin() + 36),
+               rand.get_generator());
+  std::shuffle((indices.begin() + 6), (indices.begin() + 12),
+               rand.get_generator());
+  std::shuffle((indices.begin() + 23), (indices.begin() + 120),
+               rand.get_generator());
+  std::shuffle((indices.begin() + 120), (indices.begin() + 144),
+               rand.get_generator());
+
+  return indices;
+}
+
 std::array<std::array<brown_basketball::generation::impl::index,
                       brown_basketball::common::k_team_size>,
            brown_basketball::common::k_league_size>
-brown_basketball::generation::impl::basic_step2_generation(
+brown_basketball::generation::impl::step2_generation_basic(
     std::array<index, common::k_pool_size> &&indices,
     [[maybe_unused]] const std::array<common::player, common::k_pool_size>
         &database,
@@ -167,8 +226,7 @@ brown_basketball::generation::impl::basic_step2_generation(
   assert(common::k_league_size == ret_val.size());
   for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
     assert(common::k_team_size == ret_val[i_team].size());
-    for (std::size_t i_player{0}; i_player < common::k_team_size;
-         ++i_player) {
+    for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
       ret_val[i_team][i_player] =
           indices[(i_team * common::k_team_size) + i_player];
     }
@@ -179,7 +237,7 @@ brown_basketball::generation::impl::basic_step2_generation(
 std::array<std::array<brown_basketball::generation::impl::index,
                       brown_basketball::common::k_team_size>,
            brown_basketball::common::k_league_size>
-brown_basketball::generation::impl::position_aware_step2_generation(
+brown_basketball::generation::impl::step2_generation_position_aware(
     std::array<index, common::k_pool_size> &&indices,
     const std::array<common::player, common::k_pool_size> &database,
     my_random::random &rand) {
@@ -331,6 +389,98 @@ brown_basketball::generation::impl::position_aware_step2_generation(
           std::rotate((indices.begin() + i_player),
                       (indices.begin() + i_player + 1), (indices.end()));
           break;
+        }
+      }
+    }
+  }
+
+  return ret_val;
+}
+
+std::array<std::array<brown_basketball::generation::impl::index,
+                      brown_basketball::common::k_team_size>,
+           brown_basketball::common::k_league_size>
+brown_basketball::generation::impl::step2_generation_random_epiphany_thingy(
+    std::array<index, common::k_pool_size> &&indices,
+    const std::array<common::player, common::k_pool_size> &database,
+    my_random::random &rand) {
+  std::size_t center_pos_count_total{[&database]() -> std::size_t {
+    std::size_t sum{0};
+    assert(common::k_pool_size == database.size());
+    for (std::size_t i{0}; i < common::k_pool_size; ++i) {
+      if (static_cast<bool>(database[i].m_info.m_positions &
+                            common::position::center)) {
+        ++sum;
+      }
+    }
+    return sum;
+  }()};
+  static constexpr std::size_t center_pos_count_min{3};
+  static constexpr std::size_t center_pos_count_max{5};
+  std::size_t center_pos_count_required{common::k_league_size *
+                                        center_pos_count_min};
+
+  std::array<std::size_t, common::k_league_size> team_order{};
+  std::iota(team_order.begin(), team_order.end(), 0);
+  std::shuffle(team_order.begin(), team_order.end(), rand.get_generator());
+
+  std::array<std::size_t, common::k_team_size> center_pos_count_teams{};
+
+  std::array<std::array<index, common::k_team_size>, common::k_league_size>
+      ret_val{};
+
+  std::size_t first_unused_index{0};
+
+  assert(common::k_team_size == ret_val.front().size());
+  for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
+    assert((common::k_league_size == ret_val.size()) &&
+           (common::k_league_size == center_pos_count_teams.size()));
+    for (std::size_t i_team_idx{0}; i_team_idx < common::k_league_size;
+         ++i_team_idx) {
+      std::size_t i_team{team_order[i_team_idx]};
+      bool skipped_indices{false};
+      assert(common::k_pool_size == indices.size());
+      for (std::size_t i_index{first_unused_index};
+           i_index < common::k_pool_size; ++i_index) {
+        if (bool is_center_pos{static_cast<bool>(
+                database[indices[i_index].m_idx].m_info.m_positions &
+                common::position::center)};
+            (indices[i_index].m_used == false) &&
+            (
+
+                ((is_center_pos) &&
+                 (center_pos_count_teams[i_team] < center_pos_count_min))
+
+                ||
+
+                ((!is_center_pos) &&
+                 (center_pos_count_teams[i_team] >= center_pos_count_min))
+
+                ||
+
+                ((is_center_pos) &&
+                 (center_pos_count_teams[i_team] < center_pos_count_max) &&
+                 ((center_pos_count_total - 1) >= (center_pos_count_required)))
+
+                    )) {
+          indices[i_index].m_used = true;
+          ret_val[i_team][i_player] = indices[i_index];
+          if (static_cast<bool>(
+                  database[ret_val[i_team][i_player].m_idx].m_info.m_positions &
+                  common::position::center)) {
+            ++center_pos_count_teams[i_team];
+            --center_pos_count_total;
+            if (center_pos_count_teams[i_team] <= center_pos_count_min) {
+              --center_pos_count_required;
+            }
+          }
+          if (!skipped_indices) {
+            first_unused_index = i_index + 1;
+          }
+          break;
+        } else {
+          skipped_indices = true;
+          continue;
         }
       }
     }
