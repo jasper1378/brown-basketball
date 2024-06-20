@@ -4,7 +4,7 @@
 #include "common.hpp"
 #include "scoring.hpp"
 
-#include "bits-and-bytes/statistics/statistics.hpp"
+#include "bits-and-bytes/statistics.hpp"
 
 #include <array>
 #include <type_traits>
@@ -31,12 +31,10 @@ struct stats_states {
 static constexpr auto k_bessel_correction{true};
 } // namespace impl
 
-using accum_state_t =
-    common::categories<std::array<common::categories<impl::stats_states>,
-                                  common::k_league_size>>;
-using add_t =
-    std::pair<std::array<scoring::team_stats, common::k_league_size>,
-              std::array<scoring::team_ranks, common::k_league_size>>;
+using accum_state_t = common::categories<
+    std::array<common::categories<impl::stats_states>, common::k_league_size>>;
+using add_t = std::pair<std::array<scoring::team_stats, common::k_league_size>,
+                        std::array<scoring::team_ranks, common::k_league_size>>;
 using read_t = common::categories<
     std::array<common::categories<stats>, common::k_league_size>>;
 

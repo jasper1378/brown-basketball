@@ -3,7 +3,7 @@
 #include "common.hpp"
 #include "scoring.hpp"
 
-#include "bits-and-bytes/statistics/statistics.hpp"
+#include "bits-and-bytes/statistics.hpp"
 
 #include <array>
 #include <cassert>

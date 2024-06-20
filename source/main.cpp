@@ -7,7 +7,7 @@
 #include "printing2.hpp"
 #include "scoring.hpp"
 
-#include "bits-and-bytes/timer/timer.hpp"
+#include "bits-and-bytes/timer.hpp"
 
 #include <cstdlib>
 #include <iostream>
