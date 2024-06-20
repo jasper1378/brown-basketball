@@ -403,7 +403,7 @@ std::array<std::array<brown_basketball::generation::impl::index,
 brown_basketball::generation::impl::step2_generation_random_epiphany_thingy(
     std::array<index, common::k_pool_size> &&indices,
     const std::array<common::player, common::k_pool_size> &database,
-    my_random::random &rand) {
+    [[maybe_unused]] my_random::random &rand) {
   std::size_t center_pos_count_total{[&database]() -> std::size_t {
     std::size_t sum{0};
     assert(common::k_pool_size == database.size());
@@ -420,10 +420,6 @@ brown_basketball::generation::impl::step2_generation_random_epiphany_thingy(
   std::size_t center_pos_count_required{common::k_league_size *
                                         center_pos_count_min};
 
-  std::array<std::size_t, common::k_league_size> team_order{};
-  std::iota(team_order.begin(), team_order.end(), 0);
-  std::shuffle(team_order.begin(), team_order.end(), rand.get_generator());
-
   std::array<std::size_t, common::k_team_size> center_pos_count_teams{};
 
   std::array<std::array<index, common::k_team_size>, common::k_league_size>
@@ -435,9 +431,7 @@ brown_basketball::generation::impl::step2_generation_random_epiphany_thingy(
   for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
     assert((common::k_league_size == ret_val.size()) &&
            (common::k_league_size == center_pos_count_teams.size()));
-    for (std::size_t i_team_idx{0}; i_team_idx < common::k_league_size;
-         ++i_team_idx) {
-      std::size_t i_team{team_order[i_team_idx]};
+    for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
       bool skipped_indices{false};
       assert(common::k_pool_size == indices.size());
       for (std::size_t i_index{first_unused_index};

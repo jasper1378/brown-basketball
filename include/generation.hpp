@@ -84,7 +84,7 @@ std::array<std::array<index, common::k_team_size>, common::k_league_size>
 step2_generation_random_epiphany_thingy(
     std::array<index, common::k_pool_size> &&indices,
     const std::array<common::player, common::k_pool_size> &database,
-    my_random::random &rand);
+    [[maybe_unused]] my_random::random &rand);
 } // namespace impl
 } // namespace generation
 } // namespace brown_basketball
