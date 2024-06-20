@@ -84,6 +84,7 @@ using stats = categories_split<double>;
 
 struct info {
   std::string m_name;
+  unsigned long m_rank;
   position m_positions;
   unsigned long m_draft_range_begin;
   unsigned long m_draft_range_end;

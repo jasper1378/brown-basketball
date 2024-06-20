@@ -30,8 +30,7 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                              file_path + "\": " + e.what()};
   }
 
-  if (auto p_player_database{
-          parsed_database->find(k_key_str_player_database)};
+  if (auto p_player_database{parsed_database->find(k_key_str_player_database)};
       p_player_database != parsed_database->end()) {
     libconfigfile::node_ptr<libconfigfile::node> player_database{
         std::move(p_player_database->second)};
@@ -79,6 +78,13 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
                                             libconfigfile::node_type::String))};
             ret_val[i_player].m_info.m_name =
                 libconfigfile::node_to_base(std::move(*field_name));
+
+            libconfigfile::node_ptr<libconfigfile::integer_node> field_rank{
+                libconfigfile::node_ptr_cast<libconfigfile::integer_node>(
+                    check_contains_and_type(
+                        k_key_str_rank, libconfigfile::node_type::Integer))};
+            ret_val[i_player].m_info.m_rank =
+                libconfigfile::node_to_base(std::move(*field_rank));
 
             libconfigfile::node_ptr<libconfigfile::array_node> field_position{
                 libconfigfile::node_ptr_cast<libconfigfile::array_node>(
