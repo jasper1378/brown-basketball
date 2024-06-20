@@ -87,7 +87,7 @@ brown_basketball::generation::impl::draft_aware_step1_generation(
   std::sort(indices.begin(), indices.end(),
             [&database, &draft_range_midpoint](const index &i1,
                                                const index &i2) -> bool {
-              return ((draft_range_midpoint(database[i1.m_idx])) >
+              return ((draft_range_midpoint(database[i1.m_idx])) <
                       (draft_range_midpoint(database[i2.m_idx])));
             });
 
