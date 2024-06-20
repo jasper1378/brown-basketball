@@ -17,6 +17,7 @@ read_database(const std::string &file_path);
 namespace impl {
 static constexpr std::string k_key_str_player_database{"player_database"};
 static constexpr std::string k_key_str_name{"name"};
+static constexpr std::string k_key_str_rank{"rank"};
 static constexpr std::string k_key_str_position{"positions"};
 static const std::string k_key_str_draft_range_begin{"draft_range_begin"};
 static constexpr std::string k_key_str_draft_range_end{"draft_range_end"};
