@@ -207,20 +207,20 @@ brown_basketball::generation::impl::step1_generation_random_epiphany_thingy(
                rand.get_generator());
 
   // OLD vvv
-  std::shuffle((indices.begin() + 23), (indices.begin() + 120),
-               rand.get_generator());
+  // std::shuffle((indices.begin() + 23), (indices.begin() + 120),
+  //              rand.get_generator());
   // OLD ^^^
   // NEW vvv
   std::shuffle((indices.begin() + 23), (indices.begin() + 75),
-               rand.get_generator()),
-      std::shuffle((indices.begin() + 60), (indices.begin() + 120),
-                   rand.get_generator()),
-      std::shuffle((indices.begin() + 96), (indices.begin() + 120),
-                   rand.get_generator()),
-      // NEW ^^^
+               rand.get_generator());
+  std::shuffle((indices.begin() + 60), (indices.begin() + 120),
+               rand.get_generator());
+  std::shuffle((indices.begin() + 96), (indices.begin() + 120),
+               rand.get_generator());
+  // NEW ^^^
 
-      std::shuffle((indices.begin() + 120), (indices.begin() + 144),
-                   rand.get_generator());
+  std::shuffle((indices.begin() + 120), (indices.begin() + 144),
+               rand.get_generator());
 
   return indices;
 }
@@ -417,83 +417,84 @@ brown_basketball::generation::impl::step2_generation_random_epiphany_thingy(
     const std::array<common::player, common::k_pool_size> &database,
     [[maybe_unused]] my_random::random &rand) {
   // OLD vvv
-  std::size_t center_pos_count_total{[&database]() -> std::size_t {
-    std::size_t sum{0};
-    assert(common::k_pool_size == database.size());
-    for (std::size_t i{0}; i < common::k_pool_size; ++i) {
-      if (static_cast<bool>(database[i].m_info.m_positions &
-                            common::position::center)) {
-        ++sum;
-      }
-    }
-    return sum;
-  }()};
-  static constexpr std::size_t center_pos_count_min{3};
-  static constexpr std::size_t center_pos_count_max{5};
-  std::size_t center_pos_count_required{common::k_league_size *
-                                        center_pos_count_min};
-
-  std::array<std::size_t, common::k_team_size> center_pos_count_teams{};
-
-  std::array<std::array<index, common::k_team_size>, common::k_league_size>
-      ret_val{};
-
-  std::size_t first_unused_index{0};
-
-  assert(common::k_team_size == ret_val.front().size());
-  for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
-    assert((common::k_league_size == ret_val.size()) &&
-           (common::k_league_size == center_pos_count_teams.size()));
-    for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
-      bool skipped_indices{false};
-      assert(common::k_pool_size == indices.size());
-      for (std::size_t i_index{first_unused_index};
-           i_index < common::k_pool_size; ++i_index) {
-        if (bool is_center_pos{static_cast<bool>(
-                database[indices[i_index].m_idx].m_info.m_positions &
-                common::position::center)};
-            (indices[i_index].m_used == false) &&
-            (
-
-                ((is_center_pos) &&
-                 (center_pos_count_teams[i_team] < center_pos_count_min))
-
-                ||
-
-                ((!is_center_pos) &&
-                 (center_pos_count_teams[i_team] >= center_pos_count_min))
-
-                ||
-
-                ((is_center_pos) &&
-                 (center_pos_count_teams[i_team] < center_pos_count_max) &&
-                 ((center_pos_count_total - 1) >= (center_pos_count_required)))
-
-                    )) {
-          indices[i_index].m_used = true;
-          ret_val[i_team][i_player] = indices[i_index];
-          if (static_cast<bool>(
-                  database[ret_val[i_team][i_player].m_idx].m_info.m_positions &
-                  common::position::center)) {
-            ++center_pos_count_teams[i_team];
-            --center_pos_count_total;
-            if (center_pos_count_teams[i_team] <= center_pos_count_min) {
-              --center_pos_count_required;
-            }
-          }
-          if (!skipped_indices) {
-            first_unused_index = i_index + 1;
-          }
-          break;
-        } else {
-          skipped_indices = true;
-          continue;
-        }
-      }
-    }
-  }
-
-  return ret_val;
+  // std::size_t center_pos_count_total{[&database]() -> std::size_t {
+  //   std::size_t sum{0};
+  //   assert(common::k_pool_size == database.size());
+  //   for (std::size_t i{0}; i < common::k_pool_size; ++i) {
+  //     if (static_cast<bool>(database[i].m_info.m_positions &
+  //                           common::position::center)) {
+  //       ++sum;
+  //     }
+  //   }
+  //   return sum;
+  // }()};
+  // static constexpr std::size_t center_pos_count_min{3};
+  // static constexpr std::size_t center_pos_count_max{5};
+  // std::size_t center_pos_count_required{common::k_league_size *
+  //                                       center_pos_count_min};
+  //
+  // std::array<std::size_t, common::k_team_size> center_pos_count_teams{};
+  //
+  // std::array<std::array<index, common::k_team_size>, common::k_league_size>
+  //     ret_val{};
+  //
+  // std::size_t first_unused_index{0};
+  //
+  // assert(common::k_team_size == ret_val.front().size());
+  // for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
+  //   assert((common::k_league_size == ret_val.size()) &&
+  //          (common::k_league_size == center_pos_count_teams.size()));
+  //   for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
+  //     bool skipped_indices{false};
+  //     assert(common::k_pool_size == indices.size());
+  //     for (std::size_t i_index{first_unused_index};
+  //          i_index < common::k_pool_size; ++i_index) {
+  //       if (bool is_center_pos{static_cast<bool>(
+  //               database[indices[i_index].m_idx].m_info.m_positions &
+  //               common::position::center)};
+  //           (indices[i_index].m_used == false) &&
+  //           (
+  //
+  //               ((is_center_pos) &&
+  //                (center_pos_count_teams[i_team] < center_pos_count_min))
+  //
+  //               ||
+  //
+  //               ((!is_center_pos) &&
+  //                (center_pos_count_teams[i_team] >= center_pos_count_min))
+  //
+  //               ||
+  //
+  //               ((is_center_pos) &&
+  //                (center_pos_count_teams[i_team] < center_pos_count_max) &&
+  //                ((center_pos_count_total - 1) >=
+  //                (center_pos_count_required)))
+  //
+  //                   )) {
+  //         indices[i_index].m_used = true;
+  //         ret_val[i_team][i_player] = indices[i_index];
+  //         if (static_cast<bool>(
+  //                 database[ret_val[i_team][i_player].m_idx].m_info.m_positions
+  //                 & common::position::center)) {
+  //           ++center_pos_count_teams[i_team];
+  //           --center_pos_count_total;
+  //           if (center_pos_count_teams[i_team] <= center_pos_count_min) {
+  //             --center_pos_count_required;
+  //           }
+  //         }
+  //         if (!skipped_indices) {
+  //           first_unused_index = i_index + 1;
+  //         }
+  //         break;
+  //       } else {
+  //         skipped_indices = true;
+  //         continue;
+  //       }
+  //     }
+  //   }
+  // }
+  //
+  // return ret_val;
   // OLD ^^^
   // NEW vvv
   return step2_generation_basic(std::move(indices), database, rand);
