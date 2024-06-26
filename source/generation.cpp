@@ -205,10 +205,22 @@ brown_basketball::generation::impl::step1_generation_random_epiphany_thingy(
                rand.get_generator());
   std::shuffle((indices.begin() + 6), (indices.begin() + 12),
                rand.get_generator());
+
+  // OLD vvv
   std::shuffle((indices.begin() + 23), (indices.begin() + 120),
                rand.get_generator());
-  std::shuffle((indices.begin() + 120), (indices.begin() + 144),
-               rand.get_generator());
+  // OLD ^^^
+  // NEW vvv
+  std::shuffle((indices.begin() + 23), (indices.begin() + 75),
+               rand.get_generator()),
+      std::shuffle((indices.begin() + 60), (indices.begin() + 120),
+                   rand.get_generator()),
+      std::shuffle((indices.begin() + 96), (indices.begin() + 120),
+                   rand.get_generator()),
+      // NEW ^^^
+
+      std::shuffle((indices.begin() + 120), (indices.begin() + 144),
+                   rand.get_generator());
 
   return indices;
 }
@@ -404,6 +416,7 @@ brown_basketball::generation::impl::step2_generation_random_epiphany_thingy(
     std::array<index, common::k_pool_size> &&indices,
     const std::array<common::player, common::k_pool_size> &database,
     [[maybe_unused]] my_random::random &rand) {
+  // OLD vvv
   std::size_t center_pos_count_total{[&database]() -> std::size_t {
     std::size_t sum{0};
     assert(common::k_pool_size == database.size());
@@ -481,4 +494,8 @@ brown_basketball::generation::impl::step2_generation_random_epiphany_thingy(
   }
 
   return ret_val;
+  // OLD ^^^
+  // NEW vvv
+  return step2_generation_basic(std::move(indices), database, rand);
+  // NEW ^^^
 }
