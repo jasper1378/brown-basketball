@@ -223,10 +223,10 @@ brown_basketball::generation::impl::step2_generation_basic(
     [[maybe_unused]] my_random::random &rand) {
   std::array<std::array<index, common::k_team_size>, common::k_league_size>
       ret_val{};
-  assert(common::k_league_size == ret_val.size());
-  for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
-    assert(common::k_team_size == ret_val[i_team].size());
-    for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
+  assert(common::k_team_size == ret_val.front().size());
+  for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
+    assert(common::k_league_size == ret_val.size());
+    for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
       ret_val[i_team][i_player] =
           indices[(i_team * common::k_team_size) + i_player];
     }
