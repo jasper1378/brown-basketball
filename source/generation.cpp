@@ -240,7 +240,7 @@ brown_basketball::generation::impl::step2_generation_basic(
     assert(common::k_league_size == ret_val.size());
     for (std::size_t i_team{0}; i_team < common::k_league_size; ++i_team) {
       ret_val[i_team][i_player] =
-          indices[(i_team * common::k_team_size) + i_player];
+          indices[(i_player * common::k_league_size) + i_team];
     }
   }
   return ret_val;
