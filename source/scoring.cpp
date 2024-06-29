@@ -2,6 +2,8 @@
 
 #include "common.hpp"
 
+#include "bits-and-bytes/unreachable_error.hpp"
+
 #include <algorithm>
 #include <array>
 #include <cassert>
@@ -71,7 +73,7 @@ brown_basketball::scoring::impl::score_league(
     return step5_team_total_rank;
   }
 
-  throw std::runtime_error{"impossible!"};
+  throw bits_and_bytes::unreachable_error{};
 }
 
 std::array<brown_basketball::scoring::team_stats,
@@ -91,8 +93,7 @@ brown_basketball::scoring::impl::calc_team_stats(
     double free_throws_attempted_temp{};
 
     assert(common::k_team_size == league[i_team].m_players.size());
-    for (std::size_t i_player{0}; i_player < common::k_team_size;
-         ++i_player) {
+    for (std::size_t i_player{0}; i_player < common::k_team_size; ++i_player) {
       ret_val[i_team]
           .m_stats[static_cast<std::size_t>(common::category::points)] +=
           league[i_team].m_players[i_player]->m_stats[static_cast<std::size_t>(
