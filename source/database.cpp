@@ -2,6 +2,7 @@
 
 #include "common.hpp"
 
+#include "bits-and-bytes/constexpr_hash_string.hpp"
 #include "libconfigfile/libconfigfile.hpp"
 
 #include <array>
@@ -185,17 +186,24 @@ brown_basketball::database::impl::read_database(const std::string &file_path) {
 brown_basketball::common::position
 brown_basketball::database::impl::position_string_to_enum(
     const std::string_view str) {
-  if (str == "PG") {
+  switch (bits_and_bytes::constexpr_hash_string::hash(str)) {
+  case bits_and_bytes::constexpr_hash_string::hash("PG"): {
     return common::position::point_guard;
-  } else if (str == "SG") {
+  } break;
+  case bits_and_bytes::constexpr_hash_string::hash("SG"): {
     return common::position::shooting_guard;
-  } else if (str == "SF") {
+  } break;
+  case bits_and_bytes::constexpr_hash_string::hash("SF"): {
     return common::position::small_forward;
-  } else if (str == "PF") {
+  } break;
+  case bits_and_bytes::constexpr_hash_string::hash("PF"): {
     return common::position::power_forward;
-  } else if (str == "C") {
+  } break;
+  case bits_and_bytes::constexpr_hash_string::hash("C"): {
     return common::position::center;
-  } else {
+  } break;
+  default: {
     return common::position::none;
+  } break;
   }
 }
