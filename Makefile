@@ -13,7 +13,7 @@ SOURCE_FILE_EXT := .cpp
 HEADER_FILE_EXT := .hpp
 SOURCE_DIRS := ./source
 INCLUDE_DIRS := ./include
-SUBMODULE_DIR := ./submods
+SUBMODULE_DIR := ./deps
 INSTALL_PATH := /usr/local
 
 ##########
