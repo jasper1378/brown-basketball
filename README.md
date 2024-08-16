@@ -37,54 +37,57 @@ The player database takes the form of a configuration file passed to the program
 player_database = [
 
   {
-    name = "Aaron Gordon";
-    positions = ["PF"];
-    draft_range_begin = 109;
-    draft_range_end = 144;
-    points = 16.00;
-    rebounds = 6.30;
-    assists = 2.80;
-    steals = 0.70;
-    blocks = 0.70;
+    name = "Joel Embiid";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 1;
+    draft_range_begin = 1;
+    draft_range_end = 6;
+    points = 34.70;
+    rebounds = 11.00;
+    assists = 5.60;
+    steals = 1.20;
+    blocks = 1.70;
+    threes = 1.40;
+    field_goals_made = 11.50;
+    field_goals_attempted = 21.80;
+    free_throws_made = 10.20;
+    free_throws_attempted = 11.60;
+  },
+
+  {
+    name = "Nikola Jokic";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 2;
+    draft_range_begin = 1;
+    draft_range_end = 6;
+    points = 26.40;
+    rebounds = 12.40;
+    assists = 9.00;
+    steals = 1.40;
+    blocks = 0.90;
     threes = 1.10;
-    field_goals_made = 6.20;
-    field_goals_attempted = 11.40;
-    free_throws_made = 2.60;
-    free_throws_attempted = 3.90;
+    field_goals_made = 10.40;
+    field_goals_attempted = 17.90;
+    free_throws_made = 4.50;
+    free_throws_attempted = 5.50;
   },
 
   {
-    name = "Al Horford";
-    positions = ["PF","C"];
-    draft_range_begin = 109;
-    draft_range_end = 144;
-    points = 9.40;
-    rebounds = 6.60;
-    assists = 3.00;
-    steals = 0.60;
-    blocks = 1.10;
-    threes = 1.70;
-    field_goals_made = 3.50;
-    field_goals_attempted = 7.50;
-    free_throws_made = 0.60;
-    free_throws_attempted = 0.80;
-  },
-
-  {
-    name = "Alex Caruso";
-    positions = ["PG","SG"];
-    draft_range_begin = 157;
-    draft_range_end = 180;
-    points = 6.30;
-    rebounds = 3.20;
-    assists = 3.30;
-    steals = 1.60;
-    blocks = 0.60;
-    threes = 0.90;
-    field_goals_made = 2.20;
-    field_goals_attempted = 5.10;
-    free_throws_made = 1.10;
-    free_throws_attempted = 1.40;
+    name = "Shai Gilgeous-Alexander";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 3;
+    draft_range_begin = 1;
+    draft_range_end = 6;
+    points = 30.10;
+    rebounds = 5.50;
+    assists = 6.20;
+    steals = 2.00;
+    blocks = 0.90;
+    threes = 1.30;
+    field_goals_made = 10.60;
+    field_goals_attempted = 19.80;
+    free_throws_made = 7.60;
+    free_throws_attempted = 8.70;
   },
 
   ...
@@ -92,9 +95,10 @@ player_database = [
 ```
 The following is a description of the various fields.
 - `name`, `string`, player name
+- `positions`, `array<string>`, possible player game positions (one or more of `PG, SG, SF, PF, C`)
+- `rank`, `integer`, the rank of the player, currently meaningless (I think)
 - `draft_range_begin`, `integer`, the first draft pick where the player is likely to be chosen
 - `draft_range_end`, `integer`, the last draft pick where the player is likely to be chosen
-- `positions`, `array<string>`, possible player game positions (one or more of `PG, SG, SF, PF, C`)
 - `points`. `float`, average player points per game
 - `rebounds`, `float`, average player rebounds per game
 - `assists`, `float`, average player assists per game
@@ -104,17 +108,6 @@ The following is a description of the various fields.
 - `field_goals_attempted`, `float`, average player field goals attempted per game
 - `free_throws_made`, `float`, average player free throws made per game
 - `free_throws_attempted`, `float`, average player free throws attempted per game
-
-<!---
-If perhaps you are storing player statistics in a spreadsheet, a CSV (or rather tab-separated) file in the format below can be easily converted to the configuration file format using the Vim macro specified in [vim_macro_format_database.txt](vim_macro_format_database.txt).
-```
-name	positions	draft_range_begin	draft_range_end	points	rebounds	assists	steals	blocks	threes	field_goals_made	field_goals_attempted	free_throws_made	free_throws_attempted
-Aaron Gordon	PF	109	144	16.00	6.30	2.80	0.70	0.70	1.10	6.20	11.40	2.60	3.90
-Al Horford	PF,C	109	144	9.40	6.60	3.00	0.60	1.10	1.70	3.50	7.50	0.60	0.80
-Alex Caruso	PG,SG	157	180	6.30	3.20	3.30	1.60	0.60	0.90	2.20	5.10	1.10	1.40
-...
-```
---->
 
 ### Configuration
 
