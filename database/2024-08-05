@@ -1,0 +1,3243 @@
+player_database = [
+
+  {
+    name = "Victor Wembanyama";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 1;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 25.70;
+    rebounds = 11.90;
+    assists = 5.00;
+    steals = 1.30;
+    blocks = 4.20;
+    threes = 2.40;
+    field_goals_made = 9.00;
+    field_goals_attempted = 18.90;
+    free_throws_made = 5.30;
+    free_throws_attempted = 6.50;
+  },
+
+  {
+    name = "Joel Embiid";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 2;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 32.60;
+    rebounds = 10.50;
+    assists = 5.10;
+    steals = 1.20;
+    blocks = 1.70;
+    threes = 1.30;
+    field_goals_made = 10.90;
+    field_goals_attempted = 20.70;
+    free_throws_made = 9.50;
+    free_throws_attempted = 11.00;
+  },
+
+  {
+    name = "Nikola Jokic";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 3;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 26.30;
+    rebounds = 12.20;
+    assists = 9.50;
+    steals = 1.30;
+    blocks = 0.80;
+    threes = 1.10;
+    field_goals_made = 10.20;
+    field_goals_attempted = 17.00;
+    free_throws_made = 4.70;
+    free_throws_attempted = 5.70;
+  },
+
+  {
+    name = "Shai Gilgeous-Alexander";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 4;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 29.90;
+    rebounds = 5.20;
+    assists = 6.00;
+    steals = 1.70;
+    blocks = 0.80;
+    threes = 1.30;
+    field_goals_made = 10.30;
+    field_goals_attempted = 19.70;
+    free_throws_made = 8.10;
+    free_throws_attempted = 9.10;
+  },
+
+  {
+    name = "Anthony Davis";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 5;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 25.10;
+    rebounds = 12.50;
+    assists = 3.30;
+    steals = 1.20;
+    blocks = 2.40;
+    threes = 0.40;
+    field_goals_made = 9.80;
+    field_goals_attempted = 17.70;
+    free_throws_made = 5.20;
+    free_throws_attempted = 6.40;
+  },
+
+  {
+    name = "Luka Doncic";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 6;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 32.10;
+    rebounds = 9.20;
+    assists = 8.40;
+    steals = 1.20;
+    blocks = 0.60;
+    threes = 3.70;
+    field_goals_made = 11.00;
+    field_goals_attempted = 23.00;
+    free_throws_made = 6.30;
+    free_throws_attempted = 8.30;
+  },
+
+  {
+    name = "Kawhi Leonard";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 7;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 26.30;
+    rebounds = 6.60;
+    assists = 5.00;
+    steals = 1.40;
+    blocks = 0.40;
+    threes = 2.50;
+    field_goals_made = 9.10;
+    field_goals_attempted = 18.10;
+    free_throws_made = 5.50;
+    free_throws_attempted = 6.30;
+  },
+
+  {
+    name = "Tyrese Haliburton";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 8;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.90;
+    rebounds = 3.90;
+    assists = 10.50;
+    steals = 1.40;
+    blocks = 0.60;
+    threes = 2.90;
+    field_goals_made = 7.00;
+    field_goals_attempted = 14.90;
+    free_throws_made = 3.10;
+    free_throws_attempted = 3.50;
+  },
+
+  {
+    name = "James Harden";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 9;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.40;
+    rebounds = 6.10;
+    assists = 10.00;
+    steals = 1.20;
+    blocks = 0.70;
+    threes = 2.50;
+    field_goals_made = 6.40;
+    field_goals_attempted = 14.80;
+    free_throws_made = 5.00;
+    free_throws_attempted = 5.70;
+  },
+
+  {
+    name = "Donovan Mitchell";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 10;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 26.30;
+    rebounds = 4.40;
+    assists = 5.60;
+    steals = 1.50;
+    blocks = 0.40;
+    threes = 3.40;
+    field_goals_made = 9.10;
+    field_goals_attempted = 19.60;
+    free_throws_made = 4.60;
+    free_throws_attempted = 5.30;
+  },
+
+  {
+    name = "Trae Young";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 11;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 27.70;
+    rebounds = 3.20;
+    assists = 10.30;
+    steals = 1.20;
+    blocks = 0.10;
+    threes = 3.30;
+    field_goals_made = 8.90;
+    field_goals_attempted = 21.00;
+    free_throws_made = 6.60;
+    free_throws_attempted = 7.50;
+  },
+
+  {
+    name = "Scottie Barnes";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 12;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 21.50;
+    rebounds = 8.30;
+    assists = 6.30;
+    steals = 1.30;
+    blocks = 1.40;
+    threes = 1.90;
+    field_goals_made = 8.10;
+    field_goals_attempted = 16.80;
+    free_throws_made = 3.50;
+    free_throws_attempted = 4.40;
+  },
+
+  {
+    name = "Stephen Curry";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 13;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 27.20;
+    rebounds = 4.80;
+    assists = 5.50;
+    steals = 0.90;
+    blocks = 0.30;
+    threes = 4.90;
+    field_goals_made = 9.10;
+    field_goals_attempted = 19.90;
+    free_throws_made = 4.10;
+    free_throws_attempted = 4.50;
+  },
+
+  {
+    name = "Kyrie Irving";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 14;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 25.30;
+    rebounds = 4.70;
+    assists = 5.40;
+    steals = 1.30;
+    blocks = 0.50;
+    threes = 3.00;
+    field_goals_made = 9.30;
+    field_goals_attempted = 19.00;
+    free_throws_made = 3.70;
+    free_throws_attempted = 4.20;
+  },
+
+  {
+    name = "LaMelo Ball";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 15;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 22.90;
+    rebounds = 5.20;
+    assists = 8.20;
+    steals = 1.60;
+    blocks = 0.40;
+    threes = 3.30;
+    field_goals_made = 7.80;
+    field_goals_attempted = 18.90;
+    free_throws_made = 3.80;
+    free_throws_attempted = 4.50;
+  },
+
+  {
+    name = "Anthony Edwards";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 16;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 27.50;
+    rebounds = 5.50;
+    assists = 5.40;
+    steals = 1.30;
+    blocks = 0.70;
+    threes = 2.60;
+    field_goals_made = 9.70;
+    field_goals_attempted = 20.80;
+    free_throws_made = 5.60;
+    free_throws_attempted = 6.70;
+  },
+
+  {
+    name = "Damian Lillard";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 17;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 25.80;
+    rebounds = 4.40;
+    assists = 7.10;
+    steals = 0.90;
+    blocks = 0.30;
+    threes = 3.30;
+    field_goals_made = 8.00;
+    field_goals_attempted = 18.00;
+    free_throws_made = 6.50;
+    free_throws_attempted = 7.20;
+  },
+
+  {
+    name = "Karl-Anthony Towns";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 18;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 21.40;
+    rebounds = 8.10;
+    assists = 4.30;
+    steals = 0.90;
+    blocks = 1.10;
+    threes = 2.10;
+    field_goals_made = 7.60;
+    field_goals_attempted = 15.10;
+    free_throws_made = 4.20;
+    free_throws_attempted = 4.70;
+  },
+
+  {
+    name = "Kevin Durant";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 19;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 26.10;
+    rebounds = 6.50;
+    assists = 4.80;
+    steals = 0.80;
+    blocks = 1.00;
+    threes = 2.20;
+    field_goals_made = 9.70;
+    field_goals_attempted = 18.70;
+    free_throws_made = 4.50;
+    free_throws_attempted = 5.30;
+  },
+
+  {
+    name = "Chet Holmgren";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 20;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.50;
+    rebounds = 8.50;
+    assists = 2.40;
+    steals = 0.70;
+    blocks = 2.70;
+    threes = 1.80;
+    field_goals_made = 7.30;
+    field_goals_attempted = 13.50;
+    free_throws_made = 3.10;
+    free_throws_attempted = 3.90;
+  },
+
+  {
+    name = "Giannis Antetokounmpo";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 21;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 30.10;
+    rebounds = 11.70;
+    assists = 6.20;
+    steals = 1.20;
+    blocks = 1.20;
+    threes = 0.50;
+    field_goals_made = 11.30;
+    field_goals_attempted = 19.10;
+    free_throws_made = 7.10;
+    free_throws_attempted = 10.60;
+  },
+
+  {
+    name = "LeBron James";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 22;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 24.90;
+    rebounds = 7.00;
+    assists = 7.70;
+    steals = 1.00;
+    blocks = 0.50;
+    threes = 2.10;
+    field_goals_made = 9.30;
+    field_goals_attempted = 17.90;
+    free_throws_made = 4.30;
+    free_throws_attempted = 5.60;
+  },
+
+  {
+    name = "Jayson Tatum";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 23;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 26.70;
+    rebounds = 7.60;
+    assists = 4.20;
+    steals = 0.90;
+    blocks = 0.60;
+    threes = 3.10;
+    field_goals_made = 9.20;
+    field_goals_attempted = 19.60;
+    free_throws_made = 5.20;
+    free_throws_attempted = 6.20;
+  },
+
+  {
+    name = "Fred VanVleet";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 24;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 18.10;
+    rebounds = 4.00;
+    assists = 7.90;
+    steals = 1.50;
+    blocks = 0.40;
+    threes = 3.40;
+    field_goals_made = 6.00;
+    field_goals_attempted = 14.90;
+    free_throws_made = 2.70;
+    free_throws_attempted = 3.00;
+  },
+
+  {
+    name = "De'Aaron Fox";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 25;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 24.00;
+    rebounds = 4.20;
+    assists = 5.80;
+    steals = 1.80;
+    blocks = 0.40;
+    threes = 2.60;
+    field_goals_made = 8.60;
+    field_goals_attempted = 18.40;
+    free_throws_made = 4.10;
+    free_throws_attempted = 5.40;
+  },
+
+  {
+    name = "Cade Cunningham";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 26;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 23.90;
+    rebounds = 4.30;
+    assists = 8.20;
+    steals = 1.10;
+    blocks = 0.70;
+    threes = 2.10;
+    field_goals_made = 8.90;
+    field_goals_attempted = 19.90;
+    free_throws_made = 3.90;
+    free_throws_attempted = 4.50;
+  },
+
+  {
+    name = "Devin Booker";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 27;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 25.00;
+    rebounds = 4.60;
+    assists = 6.60;
+    steals = 1.00;
+    blocks = 0.40;
+    threes = 2.10;
+    field_goals_made = 9.00;
+    field_goals_attempted = 18.60;
+    free_throws_made = 4.90;
+    free_throws_attempted = 5.70;
+  },
+
+  {
+    name = "Paul George";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 28;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.20;
+    rebounds = 5.00;
+    assists = 4.10;
+    steals = 1.50;
+    blocks = 0.40;
+    threes = 2.80;
+    field_goals_made = 7.10;
+    field_goals_attempted = 15.50;
+    free_throws_made = 3.10;
+    free_throws_attempted = 3.50;
+  },
+
+  {
+    name = "Domantas Sabonis";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 29;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.70;
+    rebounds = 12.30;
+    assists = 5.60;
+    steals = 1.00;
+    blocks = 0.40;
+    threes = 0.60;
+    field_goals_made = 7.60;
+    field_goals_attempted = 13.10;
+    free_throws_made = 4.00;
+    free_throws_attempted = 5.40;
+  },
+
+  {
+    name = "Lauri Markkanen";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 30;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 22.90;
+    rebounds = 8.40;
+    assists = 1.90;
+    steals = 0.80;
+    blocks = 0.50;
+    threes = 3.10;
+    field_goals_made = 7.80;
+    field_goals_attempted = 16.20;
+    free_throws_made = 4.30;
+    free_throws_attempted = 4.80;
+  },
+
+  {
+    name = "Dejounte Murray";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 31;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 21.30;
+    rebounds = 5.50;
+    assists = 6.30;
+    steals = 1.50;
+    blocks = 0.40;
+    threes = 2.40;
+    field_goals_made = 8.30;
+    field_goals_attempted = 18.10;
+    free_throws_made = 2.40;
+    free_throws_attempted = 3.00;
+  },
+
+  {
+    name = "Jaren Jackson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 32;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 21.00;
+    rebounds = 6.50;
+    assists = 1.80;
+    steals = 1.20;
+    blocks = 2.00;
+    threes = 1.80;
+    field_goals_made = 7.40;
+    field_goals_attempted = 15.20;
+    free_throws_made = 4.30;
+    free_throws_attempted = 5.40;
+  },
+
+  {
+    name = "Alperen Sengun";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 33;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 22.30;
+    rebounds = 9.60;
+    assists = 5.30;
+    steals = 1.10;
+    blocks = 1.00;
+    threes = 0.60;
+    field_goals_made = 8.70;
+    field_goals_attempted = 16.00;
+    free_throws_made = 4.20;
+    free_throws_attempted = 5.80;
+  },
+
+  {
+    name = "Jimmy Butler";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 34;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 21.10;
+    rebounds = 5.40;
+    assists = 5.10;
+    steals = 1.30;
+    blocks = 0.50;
+    threes = 0.80;
+    field_goals_made = 7.00;
+    field_goals_attempted = 14.10;
+    free_throws_made = 6.40;
+    free_throws_attempted = 7.50;
+  },
+
+  {
+    name = "Jalen Johnson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 35;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 17.60;
+    rebounds = 8.90;
+    assists = 3.80;
+    steals = 1.20;
+    blocks = 0.90;
+    threes = 1.50;
+    field_goals_made = 7.00;
+    field_goals_attempted = 13.40;
+    free_throws_made = 2.20;
+    free_throws_attempted = 2.90;
+  },
+
+  {
+    name = "Jamal Murray";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 36;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 22.00;
+    rebounds = 4.10;
+    assists = 6.60;
+    steals = 1.00;
+    blocks = 0.60;
+    threes = 2.60;
+    field_goals_made = 8.20;
+    field_goals_attempted = 17.50;
+    free_throws_made = 2.90;
+    free_throws_attempted = 3.40;
+  },
+
+  {
+    name = "Desmond Bane";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 37;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 22.10;
+    rebounds = 4.90;
+    assists = 4.40;
+    steals = 1.00;
+    blocks = 0.40;
+    threes = 3.10;
+    field_goals_made = 8.00;
+    field_goals_attempted = 17.00;
+    free_throws_made = 3.10;
+    free_throws_attempted = 3.50;
+  },
+
+  {
+    name = "Ja Morant";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 38;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 26.10;
+    rebounds = 5.30;
+    assists = 8.00;
+    steals = 1.00;
+    blocks = 0.40;
+    threes = 1.80;
+    field_goals_made = 9.20;
+    field_goals_attempted = 19.40;
+    free_throws_made = 5.90;
+    free_throws_attempted = 7.50;
+  },
+
+  {
+    name = "Bam Adebayo";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 39;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.40;
+    rebounds = 9.60;
+    assists = 3.40;
+    steals = 1.10;
+    blocks = 0.90;
+    threes = 0.00;
+    field_goals_made = 7.90;
+    field_goals_attempted = 14.30;
+    free_throws_made = 4.60;
+    free_throws_attempted = 5.80;
+  },
+
+  {
+    name = "Deandre Ayton";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 40;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.30;
+    rebounds = 10.70;
+    assists = 1.60;
+    steals = 1.00;
+    blocks = 1.00;
+    threes = 0.10;
+    field_goals_made = 7.40;
+    field_goals_attempted = 11.90;
+    free_throws_made = 1.30;
+    free_throws_attempted = 1.60;
+  },
+
+  {
+    name = "Evan Mobley";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 41;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.70;
+    rebounds = 9.30;
+    assists = 3.30;
+    steals = 1.00;
+    blocks = 1.60;
+    threes = 0.40;
+    field_goals_made = 6.90;
+    field_goals_attempted = 11.80;
+    free_throws_made = 2.40;
+    free_throws_attempted = 3.40;
+  },
+
+  {
+    name = "Jalen Brunson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 42;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 25.40;
+    rebounds = 3.60;
+    assists = 6.80;
+    steals = 0.90;
+    blocks = 0.00;
+    threes = 2.40;
+    field_goals_made = 8.70;
+    field_goals_attempted = 18.30;
+    free_throws_made = 5.50;
+    free_throws_attempted = 6.50;
+  },
+
+  {
+    name = "Jalen Williams";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 43;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.00;
+    rebounds = 4.30;
+    assists = 4.60;
+    steals = 1.20;
+    blocks = 0.60;
+    threes = 1.70;
+    field_goals_made = 7.80;
+    field_goals_attempted = 14.80;
+    free_throws_made = 2.70;
+    free_throws_attempted = 3.30;
+  },
+
+  {
+    name = "Kristaps Porzingis";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 44;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.30;
+    rebounds = 7.40;
+    assists = 1.80;
+    steals = 0.70;
+    blocks = 1.30;
+    threes = 2.00;
+    field_goals_made = 6.70;
+    field_goals_attempted = 13.30;
+    free_throws_made = 4.00;
+    free_throws_attempted = 4.70;
+  },
+
+  {
+    name = "Tyrese Maxey";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 45;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 23.30;
+    rebounds = 3.20;
+    assists = 4.90;
+    steals = 1.00;
+    blocks = 0.40;
+    threes = 2.80;
+    field_goals_made = 8.20;
+    field_goals_attempted = 18.00;
+    free_throws_made = 4.10;
+    free_throws_attempted = 4.70;
+  },
+
+  {
+    name = "Franz Wagner";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 46;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.30;
+    rebounds = 5.50;
+    assists = 4.00;
+    steals = 1.10;
+    blocks = 0.40;
+    threes = 1.60;
+    field_goals_made = 7.50;
+    field_goals_attempted = 15.20;
+    free_throws_made = 3.80;
+    free_throws_attempted = 4.40;
+  },
+
+  {
+    name = "Zion Williamson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 47;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 24.50;
+    rebounds = 6.40;
+    assists = 5.20;
+    steals = 1.10;
+    blocks = 0.80;
+    threes = 0.10;
+    field_goals_made = 9.50;
+    field_goals_attempted = 16.30;
+    free_throws_made = 5.30;
+    free_throws_attempted = 7.40;
+  },
+
+  {
+    name = "Jaylen Brown";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 48;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 24.20;
+    rebounds = 6.20;
+    assists = 3.60;
+    steals = 1.10;
+    blocks = 0.30;
+    threes = 2.60;
+    field_goals_made = 8.90;
+    field_goals_attempted = 18.70;
+    free_throws_made = 3.80;
+    free_throws_attempted = 4.90;
+  },
+
+  {
+    name = "OG Anunoby";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 49;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.60;
+    rebounds = 5.10;
+    assists = 2.00;
+    steals = 1.70;
+    blocks = 0.90;
+    threes = 1.80;
+    field_goals_made = 5.10;
+    field_goals_attempted = 10.50;
+    free_throws_made = 1.60;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Mikal Bridges";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 50;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.80;
+    rebounds = 4.60;
+    assists = 3.40;
+    steals = 1.20;
+    blocks = 0.60;
+    threes = 2.60;
+    field_goals_made = 6.80;
+    field_goals_attempted = 15.40;
+    free_throws_made = 3.60;
+    free_throws_attempted = 4.20;
+  },
+
+  {
+    name = "Nikola Vucevic";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 51;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 17.90;
+    rebounds = 10.20;
+    assists = 3.30;
+    steals = 0.80;
+    blocks = 0.80;
+    threes = 1.30;
+    field_goals_made = 7.60;
+    field_goals_attempted = 15.50;
+    free_throws_made = 1.40;
+    free_throws_attempted = 1.70;
+  },
+
+  {
+    name = "Jalen Duren";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 52;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.90;
+    rebounds = 12.10;
+    assists = 2.50;
+    steals = 0.60;
+    blocks = 1.00;
+    threes = 0.00;
+    field_goals_made = 6.30;
+    field_goals_attempted = 9.70;
+    free_throws_made = 2.40;
+    free_throws_attempted = 3.10;
+  },
+
+  {
+    name = "Miles Bridges";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 53;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.70;
+    rebounds = 6.90;
+    assists = 3.20;
+    steals = 1.00;
+    blocks = 0.70;
+    threes = 2.10;
+    field_goals_made = 7.40;
+    field_goals_attempted = 15.70;
+    free_throws_made = 2.80;
+    free_throws_attempted = 3.40;
+  },
+
+  {
+    name = "Derrick White";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 54;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.60;
+    rebounds = 3.80;
+    assists = 4.90;
+    steals = 1.00;
+    blocks = 1.10;
+    threes = 2.50;
+    field_goals_made = 5.10;
+    field_goals_attempted = 11.30;
+    free_throws_made = 1.90;
+    free_throws_attempted = 2.10;
+  },
+
+  {
+    name = "Jarrett Allen";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 55;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.20;
+    rebounds = 10.20;
+    assists = 1.70;
+    steals = 0.80;
+    blocks = 1.40;
+    threes = 0.10;
+    field_goals_made = 6.60;
+    field_goals_attempted = 9.90;
+    free_throws_made = 3.00;
+    free_throws_attempted = 4.20;
+  },
+
+  {
+    name = "Devin Vassell";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 56;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.50;
+    rebounds = 4.10;
+    assists = 4.40;
+    steals = 1.20;
+    blocks = 0.30;
+    threes = 2.70;
+    field_goals_made = 7.60;
+    field_goals_attempted = 16.40;
+    free_throws_made = 2.50;
+    free_throws_attempted = 3.10;
+  },
+
+  {
+    name = "Josh Giddey";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 57;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 15.60;
+    rebounds = 6.90;
+    assists = 6.60;
+    steals = 1.10;
+    blocks = 0.40;
+    threes = 1.20;
+    field_goals_made = 6.40;
+    field_goals_attempted = 13.40;
+    free_throws_made = 1.60;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Darius Garland";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 58;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.00;
+    rebounds = 2.70;
+    assists = 6.70;
+    steals = 1.20;
+    blocks = 0.10;
+    threes = 2.40;
+    field_goals_made = 6.90;
+    field_goals_attempted = 15.30;
+    free_throws_made = 2.80;
+    free_throws_attempted = 3.30;
+  },
+
+  {
+    name = "Tobias Harris";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 59;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 18.80;
+    rebounds = 6.10;
+    assists = 2.80;
+    steals = 1.00;
+    blocks = 0.60;
+    threes = 1.80;
+    field_goals_made = 7.20;
+    field_goals_attempted = 15.00;
+    free_throws_made = 2.60;
+    free_throws_attempted = 3.00;
+  },
+
+  {
+    name = "Herbert Jones";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 60;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.90;
+    rebounds = 4.00;
+    assists = 2.40;
+    steals = 1.60;
+    blocks = 0.80;
+    threes = 1.70;
+    field_goals_made = 4.10;
+    field_goals_attempted = 8.50;
+    free_throws_made = 2.00;
+    free_throws_attempted = 2.30;
+  },
+
+  {
+    name = "Brandon Miller";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 61;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.10;
+    rebounds = 4.80;
+    assists = 2.60;
+    steals = 1.10;
+    blocks = 0.70;
+    threes = 2.70;
+    field_goals_made = 7.00;
+    field_goals_attempted = 15.40;
+    free_throws_made = 2.50;
+    free_throws_attempted = 3.00;
+  },
+
+  {
+    name = "Rudy Gobert";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 62;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.90;
+    rebounds = 12.80;
+    assists = 1.10;
+    steals = 0.80;
+    blocks = 2.00;
+    threes = 0.00;
+    field_goals_made = 5.40;
+    field_goals_attempted = 8.20;
+    free_throws_made = 3.10;
+    free_throws_attempted = 4.80;
+  },
+
+  {
+    name = "Myles Turner";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 63;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.80;
+    rebounds = 6.80;
+    assists = 1.40;
+    steals = 0.60;
+    blocks = 2.20;
+    threes = 1.60;
+    field_goals_made = 6.10;
+    field_goals_attempted = 11.60;
+    free_throws_made = 3.00;
+    free_throws_attempted = 4.00;
+  },
+
+  {
+    name = "Bradley Beal";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 64;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 18.50;
+    rebounds = 4.00;
+    assists = 5.00;
+    steals = 1.00;
+    blocks = 0.30;
+    threes = 1.80;
+    field_goals_made = 7.10;
+    field_goals_attempted = 14.40;
+    free_throws_made = 2.50;
+    free_throws_attempted = 2.90;
+  },
+
+  {
+    name = "Michael Porter";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 65;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 18.40;
+    rebounds = 7.20;
+    assists = 1.60;
+    steals = 0.70;
+    blocks = 0.70;
+    threes = 2.90;
+    field_goals_made = 7.10;
+    field_goals_attempted = 14.40;
+    free_throws_made = 1.40;
+    free_throws_attempted = 1.70;
+  },
+
+  {
+    name = "Trey Murphy";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 66;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.00;
+    rebounds = 4.90;
+    assists = 2.40;
+    steals = 1.00;
+    blocks = 0.50;
+    threes = 3.30;
+    field_goals_made = 5.30;
+    field_goals_attempted = 11.60;
+    free_throws_made = 2.10;
+    free_throws_attempted = 2.40;
+  },
+
+  {
+    name = "Austin Reaves";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 67;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.20;
+    rebounds = 4.40;
+    assists = 5.20;
+    steals = 0.90;
+    blocks = 0.40;
+    threes = 2.00;
+    field_goals_made = 5.70;
+    field_goals_attempted = 11.50;
+    free_throws_made = 2.90;
+    free_throws_attempted = 3.40;
+  },
+
+  {
+    name = "Coby White";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 68;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 22.90;
+    rebounds = 4.80;
+    assists = 4.30;
+    steals = 0.60;
+    blocks = 0.20;
+    threes = 3.00;
+    field_goals_made = 8.30;
+    field_goals_attempted = 18.30;
+    free_throws_made = 3.40;
+    free_throws_attempted = 3.90;
+  },
+
+  {
+    name = "Nic Claxton";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 69;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.60;
+    rebounds = 9.50;
+    assists = 2.00;
+    steals = 0.90;
+    blocks = 2.20;
+    threes = 0.00;
+    field_goals_made = 5.50;
+    field_goals_attempted = 8.30;
+    free_throws_made = 1.60;
+    free_throws_attempted = 2.90;
+  },
+
+  {
+    name = "Jrue Holiday";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 70;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.70;
+    rebounds = 5.10;
+    assists = 5.00;
+    steals = 1.10;
+    blocks = 0.70;
+    threes = 1.90;
+    field_goals_made = 5.00;
+    field_goals_attempted = 10.50;
+    free_throws_made = 0.90;
+    free_throws_attempted = 1.10;
+  },
+
+  {
+    name = "CJ McCollum";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 71;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.40;
+    rebounds = 4.00;
+    assists = 4.70;
+    steals = 1.00;
+    blocks = 0.30;
+    threes = 3.30;
+    field_goals_made = 7.10;
+    field_goals_attempted = 16.10;
+    free_throws_made = 1.80;
+    free_throws_attempted = 2.30;
+  },
+
+  {
+    name = "Paolo Banchero";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 72;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 25.00;
+    rebounds = 7.60;
+    assists = 4.30;
+    steals = 0.80;
+    blocks = 0.80;
+    threes = 1.80;
+    field_goals_made = 9.00;
+    field_goals_attempted = 19.20;
+    free_throws_made = 5.20;
+    free_throws_attempted = 7.10;
+  },
+
+  {
+    name = "Khris Middleton";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 73;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.30;
+    rebounds = 4.70;
+    assists = 5.10;
+    steals = 1.00;
+    blocks = 0.30;
+    threes = 1.80;
+    field_goals_made = 6.10;
+    field_goals_attempted = 12.70;
+    free_throws_made = 2.30;
+    free_throws_attempted = 2.70;
+  },
+
+  {
+    name = "D'Angelo Russell";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 74;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 17.20;
+    rebounds = 3.20;
+    assists = 6.20;
+    steals = 0.90;
+    blocks = 0.30;
+    threes = 2.80;
+    field_goals_made = 6.10;
+    field_goals_attempted = 13.70;
+    free_throws_made = 2.20;
+    free_throws_attempted = 2.60;
+  },
+
+  {
+    name = "Marcus Smart";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 75;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.00;
+    rebounds = 3.80;
+    assists = 6.30;
+    steals = 1.60;
+    blocks = 0.30;
+    threes = 2.00;
+    field_goals_made = 4.50;
+    field_goals_attempted = 11.00;
+    free_throws_made = 1.90;
+    free_throws_attempted = 2.50;
+  },
+
+  {
+    name = "Brook Lopez";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 76;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.90;
+    rebounds = 5.30;
+    assists = 0.60;
+    steals = 0.80;
+    blocks = 2.20;
+    threes = 1.80;
+    field_goals_made = 4.90;
+    field_goals_attempted = 9.90;
+    free_throws_made = 1.30;
+    free_throws_attempted = 1.60;
+  },
+
+  {
+    name = "Immanuel Quickley";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 77;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.80;
+    rebounds = 4.40;
+    assists = 5.80;
+    steals = 1.00;
+    blocks = 0.10;
+    threes = 2.50;
+    field_goals_made = 5.70;
+    field_goals_attempted = 12.90;
+    free_throws_made = 3.00;
+    free_throws_attempted = 3.60;
+  },
+
+  {
+    name = "Draymond Green";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 78;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 8.10;
+    rebounds = 7.40;
+    assists = 6.80;
+    steals = 1.00;
+    blocks = 0.90;
+    threes = 0.80;
+    field_goals_made = 3.20;
+    field_goals_attempted = 6.80;
+    free_throws_made = 0.90;
+    free_throws_attempted = 1.20;
+  },
+
+  {
+    name = "Brandon Ingram";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 79;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.50;
+    rebounds = 5.30;
+    assists = 5.60;
+    steals = 0.60;
+    blocks = 0.50;
+    threes = 1.40;
+    field_goals_made = 7.50;
+    field_goals_attempted = 15.70;
+    free_throws_made = 4.00;
+    free_throws_attempted = 4.80;
+  },
+
+  {
+    name = "Tyler Herro";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 80;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.60;
+    rebounds = 5.20;
+    assists = 4.50;
+    steals = 0.70;
+    blocks = 0.10;
+    threes = 3.00;
+    field_goals_made = 7.50;
+    field_goals_attempted = 17.30;
+    free_throws_made = 2.50;
+    free_throws_attempted = 2.80;
+  },
+
+  {
+    name = "Jerami Grant";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 81;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.40;
+    rebounds = 4.10;
+    assists = 2.50;
+    steals = 1.00;
+    blocks = 1.10;
+    threes = 1.90;
+    field_goals_made = 6.60;
+    field_goals_attempted = 14.50;
+    free_throws_made = 4.30;
+    free_throws_attempted = 5.30;
+  },
+
+  {
+    name = "Julius Randle";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 82;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.90;
+    rebounds = 9.20;
+    assists = 4.40;
+    steals = 0.70;
+    blocks = 0.50;
+    threes = 1.60;
+    field_goals_made = 7.20;
+    field_goals_attempted = 15.60;
+    free_throws_made = 4.80;
+    free_throws_attempted = 6.30;
+  },
+
+  {
+    name = "Pascal Siakam";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 83;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.40;
+    rebounds = 7.70;
+    assists = 4.20;
+    steals = 0.70;
+    blocks = 0.50;
+    threes = 0.90;
+    field_goals_made = 8.10;
+    field_goals_attempted = 15.50;
+    free_throws_made = 3.30;
+    free_throws_attempted = 4.40;
+  },
+
+  {
+    name = "Kyle Kuzma";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 84;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 22.10;
+    rebounds = 6.70;
+    assists = 4.00;
+    steals = 0.60;
+    blocks = 0.70;
+    threes = 2.30;
+    field_goals_made = 8.60;
+    field_goals_attempted = 18.70;
+    free_throws_made = 2.50;
+    free_throws_attempted = 3.30;
+  },
+
+  {
+    name = "Tari Eason";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 85;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.30;
+    rebounds = 7.70;
+    assists = 1.30;
+    steals = 1.50;
+    blocks = 1.10;
+    threes = 1.00;
+    field_goals_made = 4.50;
+    field_goals_attempted = 9.60;
+    free_throws_made = 1.40;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "DeMar DeRozan";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 86;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.50;
+    rebounds = 3.90;
+    assists = 4.50;
+    steals = 0.90;
+    blocks = 0.30;
+    threes = 0.80;
+    field_goals_made = 7.20;
+    field_goals_attempted = 14.90;
+    free_throws_made = 5.30;
+    free_throws_attempted = 6.20;
+  },
+
+  {
+    name = "Zach LaVine";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 87;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 21.40;
+    rebounds = 4.30;
+    assists = 4.20;
+    steals = 0.60;
+    blocks = 0.30;
+    threes = 2.50;
+    field_goals_made = 7.70;
+    field_goals_attempted = 16.30;
+    free_throws_made = 3.60;
+    free_throws_attempted = 4.30;
+  },
+
+  {
+    name = "Terry Rozier";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 88;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.80;
+    rebounds = 4.00;
+    assists = 4.40;
+    steals = 1.20;
+    blocks = 0.30;
+    threes = 2.10;
+    field_goals_made = 6.20;
+    field_goals_attempted = 13.90;
+    free_throws_made = 2.30;
+    free_throws_attempted = 2.80;
+  },
+
+  {
+    name = "Josh Hart";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 89;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.60;
+    rebounds = 8.10;
+    assists = 4.20;
+    steals = 1.10;
+    blocks = 0.30;
+    threes = 1.40;
+    field_goals_made = 4.00;
+    field_goals_attempted = 8.60;
+    free_throws_made = 1.20;
+    free_throws_attempted = 1.50;
+  },
+
+  {
+    name = "Jabari Smith";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 90;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 15.10;
+    rebounds = 8.40;
+    assists = 1.70;
+    steals = 0.70;
+    blocks = 0.90;
+    threes = 2.10;
+    field_goals_made = 5.50;
+    field_goals_attempted = 11.90;
+    free_throws_made = 2.00;
+    free_throws_attempted = 2.50;
+  },
+
+  {
+    name = "Cam Thomas";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 91;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 25.10;
+    rebounds = 3.80;
+    assists = 3.50;
+    steals = 0.80;
+    blocks = 0.20;
+    threes = 2.60;
+    field_goals_made = 8.80;
+    field_goals_attempted = 20.40;
+    free_throws_made = 4.80;
+    free_throws_attempted = 5.70;
+  },
+
+  {
+    name = "Amen Thompson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 92;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.50;
+    rebounds = 6.50;
+    assists = 3.20;
+    steals = 1.40;
+    blocks = 0.80;
+    threes = 0.30;
+    field_goals_made = 4.70;
+    field_goals_attempted = 8.50;
+    free_throws_made = 1.80;
+    free_throws_attempted = 2.60;
+  },
+
+  {
+    name = "Bogdan Bogdanovic";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 93;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.60;
+    rebounds = 3.10;
+    assists = 3.20;
+    steals = 1.10;
+    blocks = 0.20;
+    threes = 2.90;
+    field_goals_made = 6.00;
+    field_goals_attempted = 13.70;
+    free_throws_made = 1.80;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Daniel Gafford";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 94;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.90;
+    rebounds = 7.80;
+    assists = 1.30;
+    steals = 0.60;
+    blocks = 2.00;
+    threes = 0.00;
+    field_goals_made = 4.50;
+    field_goals_attempted = 5.90;
+    free_throws_made = 2.00;
+    free_throws_attempted = 2.90;
+  },
+
+  {
+    name = "Alex Caruso";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 95;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 8.40;
+    rebounds = 3.50;
+    assists = 2.90;
+    steals = 1.60;
+    blocks = 0.90;
+    threes = 1.60;
+    field_goals_made = 2.90;
+    field_goals_attempted = 6.50;
+    free_throws_made = 1.00;
+    free_throws_attempted = 1.30;
+  },
+
+  {
+    name = "Cameron Johnson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 96;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.30;
+    rebounds = 4.50;
+    assists = 2.30;
+    steals = 1.20;
+    blocks = 0.30;
+    threes = 2.60;
+    field_goals_made = 5.20;
+    field_goals_attempted = 11.30;
+    free_throws_made = 1.40;
+    free_throws_attempted = 1.70;
+  },
+
+  {
+    name = "De'Anthony Melton";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 97;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.50;
+    rebounds = 3.90;
+    assists = 2.70;
+    steals = 1.60;
+    blocks = 0.50;
+    threes = 1.90;
+    field_goals_made = 3.60;
+    field_goals_attempted = 8.90;
+    free_throws_made = 1.40;
+    free_throws_attempted = 1.60;
+  },
+
+  {
+    name = "Mark Williams";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 98;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.00;
+    rebounds = 9.40;
+    assists = 1.20;
+    steals = 0.80;
+    blocks = 1.30;
+    threes = 0.00;
+    field_goals_made = 5.20;
+    field_goals_attempted = 8.00;
+    free_throws_made = 2.60;
+    free_throws_attempted = 3.70;
+  },
+
+  {
+    name = "Jordan Poole";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 99;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 17.70;
+    rebounds = 3.00;
+    assists = 4.60;
+    steals = 0.80;
+    blocks = 0.50;
+    threes = 2.30;
+    field_goals_made = 6.10;
+    field_goals_attempted = 14.40;
+    free_throws_made = 3.30;
+    free_throws_attempted = 3.70;
+  },
+
+  {
+    name = "John Collins";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 100;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.70;
+    rebounds = 7.90;
+    assists = 1.30;
+    steals = 0.60;
+    blocks = 1.00;
+    threes = 1.30;
+    field_goals_made = 5.70;
+    field_goals_attempted = 10.70;
+    free_throws_made = 2.10;
+    free_throws_attempted = 2.60;
+  },
+
+  {
+    name = "Anfernee Simons";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 101;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 20.30;
+    rebounds = 2.50;
+    assists = 4.20;
+    steals = 0.60;
+    blocks = 0.10;
+    threes = 3.60;
+    field_goals_made = 7.00;
+    field_goals_attempted = 16.10;
+    free_throws_made = 2.70;
+    free_throws_attempted = 3.00;
+  },
+
+  {
+    name = "Kelly Olynyk";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 102;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.20;
+    rebounds = 5.50;
+    assists = 4.50;
+    steals = 1.00;
+    blocks = 0.60;
+    threes = 1.00;
+    field_goals_made = 4.20;
+    field_goals_attempted = 8.00;
+    free_throws_made = 1.90;
+    free_throws_attempted = 2.40;
+  },
+
+  {
+    name = "Keegan Murray";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 103;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.90;
+    rebounds = 5.50;
+    assists = 1.50;
+    steals = 1.00;
+    blocks = 0.60;
+    threes = 2.60;
+    field_goals_made = 5.60;
+    field_goals_attempted = 12.20;
+    free_throws_made = 1.20;
+    free_throws_attempted = 1.50;
+  },
+
+  {
+    name = "Jusuf Nurkic";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 104;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.90;
+    rebounds = 9.90;
+    assists = 3.40;
+    steals = 1.00;
+    blocks = 1.00;
+    threes = 0.30;
+    field_goals_made = 3.90;
+    field_goals_attempted = 7.40;
+    free_throws_made = 1.90;
+    free_throws_attempted = 2.80;
+  },
+
+  {
+    name = "Jalen Green";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 105;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 21.60;
+    rebounds = 4.90;
+    assists = 3.80;
+    steals = 0.80;
+    blocks = 0.30;
+    threes = 2.70;
+    field_goals_made = 7.50;
+    field_goals_attempted = 17.70;
+    free_throws_made = 3.90;
+    free_throws_attempted = 4.90;
+  },
+
+  {
+    name = "Isaiah Hartenstein";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 106;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 8.00;
+    rebounds = 8.10;
+    assists = 2.30;
+    steals = 1.10;
+    blocks = 1.10;
+    threes = 0.00;
+    field_goals_made = 3.30;
+    field_goals_attempted = 5.20;
+    free_throws_made = 1.40;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Jakob Poeltl";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 107;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.50;
+    rebounds = 8.90;
+    assists = 2.30;
+    steals = 0.80;
+    blocks = 1.30;
+    threes = 0.00;
+    field_goals_made = 5.50;
+    field_goals_attempted = 8.60;
+    free_throws_made = 1.60;
+    free_throws_attempted = 2.70;
+  },
+
+  {
+    name = "Ayo Dosunmu";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 108;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 15.10;
+    rebounds = 3.60;
+    assists = 3.70;
+    steals = 0.90;
+    blocks = 0.50;
+    threes = 1.70;
+    field_goals_made = 5.90;
+    field_goals_attempted = 11.70;
+    free_throws_made = 1.60;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Naz Reid";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 109;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.90;
+    rebounds = 5.90;
+    assists = 1.40;
+    steals = 0.80;
+    blocks = 1.20;
+    threes = 1.90;
+    field_goals_made = 5.30;
+    field_goals_attempted = 10.90;
+    free_throws_made = 1.40;
+    free_throws_attempted = 1.90;
+  },
+
+  {
+    name = "Jalen Suggs";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 110;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.30;
+    rebounds = 3.10;
+    assists = 2.90;
+    steals = 1.40;
+    blocks = 0.50;
+    threes = 2.00;
+    field_goals_made = 4.40;
+    field_goals_attempted = 9.60;
+    free_throws_made = 1.60;
+    free_throws_attempted = 2.10;
+  },
+
+  {
+    name = "Donte DiVincenzo";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 111;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.60;
+    rebounds = 3.60;
+    assists = 2.90;
+    steals = 1.20;
+    blocks = 0.20;
+    threes = 3.20;
+    field_goals_made = 4.70;
+    field_goals_attempted = 11.10;
+    free_throws_made = 1.00;
+    free_throws_attempted = 1.30;
+  },
+
+  {
+    name = "Malcolm Brogdon";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 112;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.50;
+    rebounds = 4.00;
+    assists = 5.10;
+    steals = 0.80;
+    blocks = 0.30;
+    threes = 1.80;
+    field_goals_made = 5.10;
+    field_goals_attempted = 11.50;
+    free_throws_made = 2.60;
+    free_throws_attempted = 3.00;
+  },
+
+  {
+    name = "Clint Capela";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 113;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.80;
+    rebounds = 10.30;
+    assists = 1.10;
+    steals = 0.70;
+    blocks = 1.50;
+    threes = 0.00;
+    field_goals_made = 4.80;
+    field_goals_attempted = 7.50;
+    free_throws_made = 1.20;
+    free_throws_attempted = 2.10;
+  },
+
+  {
+    name = "Jaime Jaquez";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 114;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.30;
+    rebounds = 4.30;
+    assists = 3.00;
+    steals = 1.20;
+    blocks = 0.40;
+    threes = 1.00;
+    field_goals_made = 5.20;
+    field_goals_attempted = 10.50;
+    free_throws_made = 1.80;
+    free_throws_attempted = 2.20;
+  },
+
+  {
+    name = "Deni Avdija";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 115;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.80;
+    rebounds = 6.60;
+    assists = 3.50;
+    steals = 0.90;
+    blocks = 0.40;
+    threes = 1.30;
+    field_goals_made = 5.50;
+    field_goals_attempted = 11.10;
+    free_throws_made = 2.60;
+    free_throws_attempted = 3.50;
+  },
+
+  {
+    name = "Jonas Valanciunas";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 116;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.00;
+    rebounds = 8.80;
+    assists = 2.00;
+    steals = 0.50;
+    blocks = 0.80;
+    threes = 0.50;
+    field_goals_made = 5.30;
+    field_goals_attempted = 9.40;
+    free_throws_made = 1.90;
+    free_throws_attempted = 2.40;
+  },
+
+  {
+    name = "Ausar Thompson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 117;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.40;
+    rebounds = 6.50;
+    assists = 2.20;
+    steals = 1.30;
+    blocks = 1.00;
+    threes = 0.50;
+    field_goals_made = 4.80;
+    field_goals_attempted = 9.50;
+    free_throws_made = 1.40;
+    free_throws_attempted = 2.20;
+  },
+
+  {
+    name = "Mike Conley";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 118;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.70;
+    rebounds = 3.00;
+    assists = 5.60;
+    steals = 1.00;
+    blocks = 0.20;
+    threes = 2.00;
+    field_goals_made = 3.50;
+    field_goals_attempted = 8.00;
+    free_throws_made = 1.70;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Walker Kessler";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 119;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.30;
+    rebounds = 8.10;
+    assists = 1.00;
+    steals = 0.50;
+    blocks = 2.40;
+    threes = 0.00;
+    field_goals_made = 4.00;
+    field_goals_attempted = 5.80;
+    free_throws_made = 1.20;
+    free_throws_attempted = 2.10;
+  },
+
+  {
+    name = "Aaron Nesmith";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 120;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.80;
+    rebounds = 3.90;
+    assists = 1.50;
+    steals = 1.00;
+    blocks = 0.80;
+    threes = 2.00;
+    field_goals_made = 4.60;
+    field_goals_attempted = 9.50;
+    free_throws_made = 1.50;
+    free_throws_attempted = 1.90;
+  },
+
+  {
+    name = "Ivica Zubac";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 121;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.00;
+    rebounds = 9.50;
+    assists = 1.30;
+    steals = 0.50;
+    blocks = 1.20;
+    threes = 0.00;
+    field_goals_made = 5.00;
+    field_goals_attempted = 7.80;
+    free_throws_made = 1.90;
+    free_throws_attempted = 2.70;
+  },
+
+  {
+    name = "Onyeka Okongwu";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 122;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.20;
+    rebounds = 7.20;
+    assists = 1.40;
+    steals = 0.60;
+    blocks = 1.30;
+    threes = 0.50;
+    field_goals_made = 4.30;
+    field_goals_attempted = 7.30;
+    free_throws_made = 2.00;
+    free_throws_attempted = 2.60;
+  },
+
+  {
+    name = "Chris Paul";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 123;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.10;
+    rebounds = 3.70;
+    assists = 6.70;
+    steals = 1.10;
+    blocks = 0.20;
+    threes = 1.20;
+    field_goals_made = 3.50;
+    field_goals_attempted = 8.00;
+    free_throws_made = 0.90;
+    free_throws_attempted = 1.10;
+  },
+
+  {
+    name = "Jonathan Kuminga";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 124;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 17.90;
+    rebounds = 5.20;
+    assists = 2.70;
+    steals = 0.80;
+    blocks = 0.60;
+    threes = 1.00;
+    field_goals_made = 7.00;
+    field_goals_attempted = 13.20;
+    free_throws_made = 2.90;
+    free_throws_attempted = 4.00;
+  },
+
+  {
+    name = "Kentavious Caldwell-Pope";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 125;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.80;
+    rebounds = 3.60;
+    assists = 2.00;
+    steals = 1.10;
+    blocks = 0.40;
+    threes = 2.00;
+    field_goals_made = 4.00;
+    field_goals_attempted = 9.10;
+    free_throws_made = 1.90;
+    free_throws_attempted = 2.10;
+  },
+
+  {
+    name = "Taylor Hendricks";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 126;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.20;
+    rebounds = 5.40;
+    assists = 1.30;
+    steals = 0.90;
+    blocks = 1.10;
+    threes = 1.50;
+    field_goals_made = 3.80;
+    field_goals_attempted = 8.10;
+    free_throws_made = 1.10;
+    free_throws_attempted = 1.30;
+  },
+
+  {
+    name = "Tyus Jones";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 127;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.80;
+    rebounds = 3.10;
+    assists = 5.50;
+    steals = 1.20;
+    blocks = 0.00;
+    threes = 1.70;
+    field_goals_made = 4.80;
+    field_goals_attempted = 11.40;
+    free_throws_made = 1.50;
+    free_throws_attempted = 1.80;
+  },
+
+  {
+    name = "Bruce Brown";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 128;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.70;
+    rebounds = 4.20;
+    assists = 3.60;
+    steals = 1.20;
+    blocks = 0.70;
+    threes = 0.80;
+    field_goals_made = 3.70;
+    field_goals_attempted = 7.80;
+    free_throws_made = 1.50;
+    free_throws_attempted = 1.90;
+  },
+
+  {
+    name = "Scoot Henderson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 129;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.90;
+    rebounds = 3.40;
+    assists = 5.70;
+    steals = 0.90;
+    blocks = 0.40;
+    threes = 1.50;
+    field_goals_made = 5.30;
+    field_goals_attempted = 12.70;
+    free_throws_made = 2.80;
+    free_throws_attempted = 3.40;
+  },
+
+  {
+    name = "Grayson Allen";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 130;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.50;
+    rebounds = 3.90;
+    assists = 2.80;
+    steals = 0.80;
+    blocks = 0.30;
+    threes = 2.40;
+    field_goals_made = 4.20;
+    field_goals_attempted = 8.80;
+    free_throws_made = 1.70;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Reed Sheppard";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 131;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.00;
+    rebounds = 3.20;
+    assists = 4.00;
+    steals = 1.10;
+    blocks = 0.30;
+    threes = 2.00;
+    field_goals_made = 3.90;
+    field_goals_attempted = 9.20;
+    free_throws_made = 1.30;
+    free_throws_attempted = 1.50;
+  },
+
+  {
+    name = "Aaron Gordon";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 132;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 15.50;
+    rebounds = 6.80;
+    assists = 3.50;
+    steals = 0.70;
+    blocks = 0.90;
+    threes = 0.70;
+    field_goals_made = 6.10;
+    field_goals_attempted = 10.90;
+    free_throws_made = 2.60;
+    free_throws_attempted = 4.00;
+  },
+
+  {
+    name = "Dyson Daniels";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 133;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 7.90;
+    rebounds = 4.60;
+    assists = 3.10;
+    steals = 1.40;
+    blocks = 1.00;
+    threes = 0.90;
+    field_goals_made = 3.00;
+    field_goals_attempted = 6.90;
+    free_throws_made = 0.90;
+    free_throws_attempted = 1.40;
+  },
+
+  {
+    name = "Collin Sexton";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 134;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 17.00;
+    rebounds = 2.90;
+    assists = 4.50;
+    steals = 0.80;
+    blocks = 0.00;
+    threes = 1.60;
+    field_goals_made = 6.00;
+    field_goals_attempted = 12.20;
+    free_throws_made = 3.40;
+    free_throws_attempted = 4.20;
+  },
+
+  {
+    name = "Malik Monk";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 135;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.10;
+    rebounds = 2.80;
+    assists = 5.30;
+    steals = 0.70;
+    blocks = 0.40;
+    threes = 2.00;
+    field_goals_made = 5.00;
+    field_goals_attempted = 11.30;
+    free_throws_made = 2.10;
+    free_throws_attempted = 2.50;
+  },
+
+  {
+    name = "P.J. Washington";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 136;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.30;
+    rebounds = 6.10;
+    assists = 1.50;
+    steals = 1.00;
+    blocks = 1.00;
+    threes = 2.00;
+    field_goals_made = 4.60;
+    field_goals_attempted = 10.70;
+    free_throws_made = 1.20;
+    free_throws_attempted = 1.80;
+  },
+
+  {
+    name = "Devin Carter";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 137;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.10;
+    rebounds = 4.60;
+    assists = 3.00;
+    steals = 1.10;
+    blocks = 0.60;
+    threes = 1.50;
+    field_goals_made = 4.50;
+    field_goals_attempted = 10.10;
+    free_throws_made = 1.50;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Shaedon Sharpe";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 138;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.60;
+    rebounds = 4.50;
+    assists = 2.20;
+    steals = 0.90;
+    blocks = 0.60;
+    threes = 1.90;
+    field_goals_made = 5.10;
+    field_goals_attempted = 11.70;
+    free_throws_made = 2.60;
+    free_throws_attempted = 3.20;
+  },
+
+  {
+    name = "Klay Thompson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 139;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.10;
+    rebounds = 3.30;
+    assists = 2.30;
+    steals = 0.50;
+    blocks = 0.50;
+    threes = 3.30;
+    field_goals_made = 5.70;
+    field_goals_attempted = 13.40;
+    free_throws_made = 1.50;
+    free_throws_attempted = 1.60;
+  },
+
+  {
+    name = "Keyonte George";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 140;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 15.50;
+    rebounds = 3.30;
+    assists = 4.90;
+    steals = 0.80;
+    blocks = 0.10;
+    threes = 2.20;
+    field_goals_made = 5.20;
+    field_goals_attempted = 12.70;
+    free_throws_made = 2.80;
+    free_throws_attempted = 3.30;
+  },
+
+  {
+    name = "Norman Powell";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 141;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.50;
+    rebounds = 3.00;
+    assists = 1.90;
+    steals = 0.80;
+    blocks = 0.40;
+    threes = 2.30;
+    field_goals_made = 5.60;
+    field_goals_attempted = 11.90;
+    free_throws_made = 2.90;
+    free_throws_attempted = 3.60;
+  },
+
+  {
+    name = "Keldon Johnson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 142;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 15.00;
+    rebounds = 5.60;
+    assists = 2.80;
+    steals = 0.80;
+    blocks = 0.20;
+    threes = 1.70;
+    field_goals_made = 5.20;
+    field_goals_attempted = 11.50;
+    free_throws_made = 2.90;
+    free_throws_attempted = 3.60;
+  },
+
+  {
+    name = "Patrick Williams";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 143;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.20;
+    rebounds = 4.90;
+    assists = 2.00;
+    steals = 0.90;
+    blocks = 0.90;
+    threes = 1.60;
+    field_goals_made = 4.10;
+    field_goals_attempted = 9.10;
+    free_throws_made = 1.30;
+    free_throws_attempted = 1.70;
+  },
+
+  {
+    name = "Tre Jones";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 144;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.10;
+    rebounds = 3.50;
+    assists = 5.80;
+    steals = 1.00;
+    blocks = 0.20;
+    threes = 0.80;
+    field_goals_made = 3.40;
+    field_goals_attempted = 7.10;
+    free_throws_made = 1.40;
+    free_throws_attempted = 1.70;
+  },
+
+  {
+    name = "Jeremy Sochan";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 145;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.30;
+    rebounds = 5.90;
+    assists = 2.80;
+    steals = 1.00;
+    blocks = 0.70;
+    threes = 1.00;
+    field_goals_made = 4.50;
+    field_goals_attempted = 10.20;
+    free_throws_made = 1.20;
+    free_throws_attempted = 1.60;
+  },
+
+  {
+    name = "Jaden McDaniels";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 146;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.40;
+    rebounds = 3.50;
+    assists = 1.40;
+    steals = 1.10;
+    blocks = 0.80;
+    threes = 1.40;
+    field_goals_made = 4.50;
+    field_goals_attempted = 9.30;
+    free_throws_made = 0.90;
+    free_throws_attempted = 1.20;
+  },
+
+  {
+    name = "Dennis Schroder";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 147;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.20;
+    rebounds = 3.50;
+    assists = 4.80;
+    steals = 0.90;
+    blocks = 0.10;
+    threes = 1.40;
+    field_goals_made = 5.10;
+    field_goals_attempted = 11.70;
+    free_throws_made = 2.50;
+    free_throws_attempted = 3.00;
+  },
+
+  {
+    name = "Andrew Nembhard";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 148;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.70;
+    rebounds = 2.20;
+    assists = 4.70;
+    steals = 1.10;
+    blocks = 0.30;
+    threes = 1.10;
+    field_goals_made = 4.40;
+    field_goals_attempted = 9.00;
+    free_throws_made = 0.70;
+    free_throws_attempted = 0.90;
+  },
+
+  {
+    name = "Buddy Hield";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 149;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.50;
+    rebounds = 3.40;
+    assists = 2.50;
+    steals = 0.80;
+    blocks = 0.30;
+    threes = 2.70;
+    field_goals_made = 4.60;
+    field_goals_attempted = 10.30;
+    free_throws_made = 0.70;
+    free_throws_attempted = 0.80;
+  },
+
+  {
+    name = "Alex Sarr";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 150;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.10;
+    rebounds = 7.50;
+    assists = 1.00;
+    steals = 0.70;
+    blocks = 1.10;
+    threes = 0.50;
+    field_goals_made = 5.00;
+    field_goals_attempted = 9.70;
+    free_throws_made = 1.50;
+    free_throws_attempted = 2.10;
+  },
+
+  {
+    name = "Caris LeVert";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 151;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.10;
+    rebounds = 3.80;
+    assists = 4.60;
+    steals = 1.00;
+    blocks = 0.40;
+    threes = 1.60;
+    field_goals_made = 4.70;
+    field_goals_attempted = 11.20;
+    free_throws_made = 2.10;
+    free_throws_attempted = 2.80;
+  },
+
+  {
+    name = "Terance Mann";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 152;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.20;
+    rebounds = 4.10;
+    assists = 2.30;
+    steals = 0.90;
+    blocks = 0.30;
+    threes = 1.40;
+    field_goals_made = 5.00;
+    field_goals_attempted = 10.60;
+    free_throws_made = 1.70;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Ron Holland";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 153;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.40;
+    rebounds = 4.70;
+    assists = 2.40;
+    steals = 1.20;
+    blocks = 0.90;
+    threes = 0.70;
+    field_goals_made = 4.60;
+    field_goals_attempted = 10.30;
+    free_throws_made = 1.40;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Bobby Portis";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 154;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.50;
+    rebounds = 7.70;
+    assists = 1.10;
+    steals = 0.60;
+    blocks = 0.40;
+    threes = 1.20;
+    field_goals_made = 5.60;
+    field_goals_attempted = 11.20;
+    free_throws_made = 1.10;
+    free_throws_attempted = 1.40;
+  },
+
+  {
+    name = "Matas Buzelis";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 155;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.10;
+    rebounds = 5.90;
+    assists = 2.00;
+    steals = 0.70;
+    blocks = 1.00;
+    threes = 1.40;
+    field_goals_made = 5.30;
+    field_goals_attempted = 12.10;
+    free_throws_made = 1.20;
+    free_throws_attempted = 1.60;
+  },
+
+  {
+    name = "Max Strus";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 156;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.70;
+    rebounds = 4.60;
+    assists = 3.70;
+    steals = 0.60;
+    blocks = 0.30;
+    threes = 2.50;
+    field_goals_made = 4.70;
+    field_goals_attempted = 11.10;
+    free_throws_made = 0.90;
+    free_throws_attempted = 1.10;
+  },
+
+  {
+    name = "Robert Williams";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 157;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 6.30;
+    rebounds = 6.70;
+    assists = 1.30;
+    steals = 0.60;
+    blocks = 1.40;
+    threes = 0.00;
+    field_goals_made = 2.90;
+    field_goals_attempted = 3.80;
+    free_throws_made = 0.60;
+    free_throws_attempted = 0.90;
+  },
+
+  {
+    name = "Al Horford";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 158;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 7.20;
+    rebounds = 6.00;
+    assists = 2.40;
+    steals = 0.60;
+    blocks = 0.90;
+    threes = 1.50;
+    field_goals_made = 2.80;
+    field_goals_attempted = 5.60;
+    free_throws_made = 0.30;
+    free_throws_attempted = 0.40;
+  },
+
+  {
+    name = "Brandin Podziemski";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 159;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.00;
+    rebounds = 6.20;
+    assists = 4.00;
+    steals = 0.90;
+    blocks = 0.30;
+    threes = 1.50;
+    field_goals_made = 4.10;
+    field_goals_attempted = 9.00;
+    free_throws_made = 1.20;
+    free_throws_attempted = 1.90;
+  },
+
+  {
+    name = "Jaden Ivey";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 160;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.10;
+    rebounds = 3.80;
+    assists = 4.20;
+    steals = 0.80;
+    blocks = 0.30;
+    threes = 1.70;
+    field_goals_made = 5.80;
+    field_goals_attempted = 13.20;
+    free_throws_made = 2.90;
+    free_throws_attempted = 3.80;
+  },
+
+  {
+    name = "Mitchell Robinson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 161;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 7.20;
+    rebounds = 8.70;
+    assists = 0.60;
+    steals = 1.10;
+    blocks = 1.40;
+    threes = 0.00;
+    field_goals_made = 3.10;
+    field_goals_attempted = 4.50;
+    free_throws_made = 1.00;
+    free_throws_attempted = 2.20;
+  },
+
+  {
+    name = "Kyle Anderson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 162;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 8.30;
+    rebounds = 4.40;
+    assists = 4.40;
+    steals = 1.00;
+    blocks = 0.70;
+    threes = 0.40;
+    field_goals_made = 3.40;
+    field_goals_attempted = 6.90;
+    free_throws_made = 1.20;
+    free_throws_attempted = 1.70;
+  },
+
+  {
+    name = "Gary Trent";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 163;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 13.70;
+    rebounds = 2.30;
+    assists = 1.50;
+    steals = 1.20;
+    blocks = 0.20;
+    threes = 2.50;
+    field_goals_made = 5.00;
+    field_goals_attempted = 11.90;
+    free_throws_made = 1.20;
+    free_throws_attempted = 1.50;
+  },
+
+  {
+    name = "Kelly Oubre";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 164;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.90;
+    rebounds = 5.10;
+    assists = 1.20;
+    steals = 1.10;
+    blocks = 0.50;
+    threes = 1.40;
+    field_goals_made = 4.40;
+    field_goals_attempted = 10.20;
+    free_throws_made = 1.70;
+    free_throws_attempted = 2.20;
+  },
+
+  {
+    name = "Patrick Beverley";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 165;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 8.10;
+    rebounds = 3.60;
+    assists = 4.00;
+    steals = 1.00;
+    blocks = 0.80;
+    threes = 1.30;
+    field_goals_made = 2.60;
+    field_goals_attempted = 6.50;
+    free_throws_made = 1.50;
+    free_throws_attempted = 2.00;
+  },
+
+  {
+    name = "Dereck Lively";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 166;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.10;
+    rebounds = 7.70;
+    assists = 2.00;
+    steals = 0.60;
+    blocks = 1.30;
+    threes = 0.00;
+    field_goals_made = 3.60;
+    field_goals_attempted = 5.30;
+    free_throws_made = 1.90;
+    free_throws_attempted = 3.00;
+  },
+
+  {
+    name = "Jordan Clarkson";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 167;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 16.50;
+    rebounds = 3.50;
+    assists = 4.20;
+    steals = 0.60;
+    blocks = 0.20;
+    threes = 2.10;
+    field_goals_made = 5.80;
+    field_goals_attempted = 13.90;
+    free_throws_made = 2.80;
+    free_throws_attempted = 3.40;
+  },
+
+  {
+    name = "Zach Collins";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 168;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.20;
+    rebounds = 6.40;
+    assists = 2.60;
+    steals = 0.50;
+    blocks = 1.00;
+    threes = 0.60;
+    field_goals_made = 3.20;
+    field_goals_attempted = 6.50;
+    free_throws_made = 2.20;
+    free_throws_attempted = 2.70;
+  },
+
+  {
+    name = "Zach Edey";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 169;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.30;
+    rebounds = 7.00;
+    assists = 1.30;
+    steals = 0.40;
+    blocks = 1.50;
+    threes = 0.00;
+    field_goals_made = 4.00;
+    field_goals_attempted = 6.40;
+    free_throws_made = 2.40;
+    free_throws_attempted = 3.30;
+  },
+
+  {
+    name = "Wendell Carter";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 170;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.70;
+    rebounds = 7.00;
+    assists = 2.10;
+    steals = 0.50;
+    blocks = 0.60;
+    threes = 1.10;
+    field_goals_made = 4.40;
+    field_goals_attempted = 8.30;
+    free_throws_made = 1.90;
+    free_throws_attempted = 2.60;
+  },
+
+  {
+    name = "Stephon Castle";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 171;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 11.00;
+    rebounds = 3.30;
+    assists = 3.20;
+    steals = 1.00;
+    blocks = 0.60;
+    threes = 0.90;
+    field_goals_made = 4.40;
+    field_goals_attempted = 9.90;
+    free_throws_made = 1.30;
+    free_throws_attempted = 1.60;
+  },
+
+  {
+    name = "Bilal Coulibaly";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 172;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.80;
+    rebounds = 4.50;
+    assists = 1.80;
+    steals = 1.00;
+    blocks = 1.00;
+    threes = 1.10;
+    field_goals_made = 3.70;
+    field_goals_attempted = 8.10;
+    free_throws_made = 1.30;
+    free_throws_attempted = 1.90;
+  },
+
+  {
+    name = "Kevin Porter";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 173;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 12.90;
+    rebounds = 3.80;
+    assists = 4.20;
+    steals = 0.90;
+    blocks = 0.30;
+    threes = 1.60;
+    field_goals_made = 4.50;
+    field_goals_attempted = 10.60;
+    free_throws_made = 2.30;
+    free_throws_attempted = 3.10;
+  },
+
+  {
+    name = "Andrew Wiggins";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 174;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.10;
+    rebounds = 3.90;
+    assists = 1.90;
+    steals = 0.90;
+    blocks = 0.60;
+    threes = 1.60;
+    field_goals_made = 5.40;
+    field_goals_attempted = 11.80;
+    free_throws_made = 1.70;
+    free_throws_attempted = 2.40;
+  },
+
+  {
+    name = "Trayce Jackson-Davis";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 175;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 9.50;
+    rebounds = 6.30;
+    assists = 1.30;
+    steals = 0.60;
+    blocks = 1.40;
+    threes = 0.00;
+    field_goals_made = 4.10;
+    field_goals_attempted = 6.00;
+    free_throws_made = 1.30;
+    free_throws_attempted = 2.20;
+  },
+
+  {
+    name = "Bennedict Mathurin";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 176;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.70;
+    rebounds = 3.70;
+    assists = 2.00;
+    steals = 0.70;
+    blocks = 0.30;
+    threes = 1.40;
+    field_goals_made = 5.10;
+    field_goals_attempted = 11.20;
+    free_throws_made = 3.20;
+    free_throws_attempted = 3.80;
+  },
+
+  {
+    name = "RJ Barrett";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 177;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 19.40;
+    rebounds = 5.60;
+    assists = 3.50;
+    steals = 0.60;
+    blocks = 0.30;
+    threes = 1.40;
+    field_goals_made = 7.20;
+    field_goals_attempted = 15.10;
+    free_throws_made = 3.50;
+    free_throws_attempted = 5.00;
+  },
+
+  {
+    name = "Simone Fontecchio";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 178;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.50;
+    rebounds = 7.80;
+    assists = 0.70;
+    steals = 0.30;
+    blocks = 0.90;
+    threes = 1.50;
+    field_goals_made = 4.10;
+    field_goals_attempted = 8.60;
+    free_throws_made = 0.90;
+    free_throws_attempted = 1.10;
+  },
+
+  {
+    name = "Grant Williams";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 179;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 10.40;
+    rebounds = 4.80;
+    assists = 1.90;
+    steals = 0.60;
+    blocks = 0.60;
+    threes = 1.80;
+    field_goals_made = 3.50;
+    field_goals_attempted = 7.60;
+    free_throws_made = 1.50;
+    free_throws_attempted = 1.90;
+  },
+
+  {
+    name = "De'Andre Hunter";
+    positions = ["PG","SG","PF","SF","C"];
+    rank = 180;
+    draft_range_begin = 1;
+    draft_range_end = 180;
+    points = 14.80;
+    rebounds = 4.00;
+    assists = 1.30;
+    steals = 0.70;
+    blocks = 0.40;
+    threes = 1.90;
+    field_goals_made = 5.10;
+    field_goals_attempted = 11.60;
+    free_throws_made = 2.60;
+    free_throws_attempted = 3.20;
+  },
+
+];
