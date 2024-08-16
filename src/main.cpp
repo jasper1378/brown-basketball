@@ -34,9 +34,9 @@ int main(int argc, char *argv[]) {
   for (std::size_t i_trial{0}; i_trial < common::k_trial_count; ++i_trial) {
     // auto g{generation::generate_league(d, (generation::flags::draft_aware |
     // generation::flags::position_aware))};
-    // auto g{generation::generate_league(d, generation::flags::basic)};
-    auto g{generation::generate_league(
-        d, generation::flags::random_epiphany_thingy)};
+    auto g{generation::generate_league(d, generation::flags::basic)};
+    // auto g{generation::generate_league(
+    //     d, generation::flags::random_epiphany_thingy)};
     auto s_team_ranks{
         scoring::score_league(g, scoring::return_value_type::team_ranks)};
     a1.add(std::get<static_cast<std::size_t>(
