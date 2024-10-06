@@ -31,5 +31,14 @@ macro 'b'
 kkkkkkkkkkk"dywdwxjjjjjjjjjjj"dPa = f;a
 kkkkkkkkkkkk"dywdwxjjjjjjjjjjjj"dPa = f;a
 kkkkkkkkkkkkk"dywdwxjjjjjjjjjjjjj"dPa = f;a
-kkkkkkkkkkkkkk"dywdwddjjjjjjjjjjjjj"dPa = A;0jVkkkkkkkkkkkkkkk>jVjjjjjjjjjjjjj>jA,o0
+kkkkkkkkkkkkkk"dywdwxjjjjjjjjjjjjjj"dPa = f;a
+kkkkkkkkkkkkkkk"dywdwddjjjjjjjjjjjjjj"dPa = A;0jVkkkkkkkkkkkkkkkk>jVjjjjjjjjjjjjjj>jA,o0
+```
+input format
+```
+name	positions	rank	draft_range_begin	draft_range_end	points	rebounds	assists	steals	blocks	threes	field_goals_made	field_goals_attempted	free_throws_made	free_throws_attempted
+Victor Wembanyama	PG,SG,PF,SF,C	1	1	180	25.48	11.93	5.05	1.35	4.00	2.33	9.01	18.93	5.12	6.35
+Nikola Jokic	PG,SG,PF,SF,C	2	1	180	26.05	12.00	8.78	1.40	0.83	1.08	10.24	17.38	4.46	5.45
+Joel Embiid	PG,SG,PF,SF,C	3	1	180	30.75	10.50	4.78	1.13	1.60	1.25	10.24	19.35	9.00	10.38
+...
 ```
